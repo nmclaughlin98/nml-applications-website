@@ -3,7 +3,8 @@ name: Update Movies JSON from TMDB
 on:
   push:
     paths:
-      - 'website/assets/data/movie-ids.json' # Triggers only when this file is pushed/edited
+      - 'website/assets/data/current-movie-ids.json' # Triggers only when this file is pushed/edited
+      - 'website/assets/data/upcoming-movie-ids.json' # Triggers only when this file is pushed/edited
   workflow_dispatch:                 # Allows manual runs from the GitHub UI if needed
 
 permissions:
@@ -53,4 +54,29 @@ jobs:
             git push origin "HEAD:$TARGET_BRANCH"
           else
             echo "No changes detected in movies.json."
+          fi
+
+      - name: Commit and Push Updated upcoming-movies.json
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Stage the updated upcoming-movies.json
+          git add website/assets/data/upcoming-movies.json
+          
+          # Check if upcoming-movies.json actually changed before committing
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "chore: regenerate website/assets/data/upcoming-movies.json [skip ci]"
+            
+            # Determine target branch dynamically
+            TARGET_BRANCH="${{ github.head_ref || github.ref_name }}"
+            
+            # Rebase on top of the active branch remote state
+            git fetch origin "$TARGET_BRANCH"
+            git rebase "origin/$TARGET_BRANCH"
+            
+            # Push cleanly back to the active branch
+            git push origin "HEAD:$TARGET_BRANCH"
+          else
+            echo "No changes detected in upcoming-movies.json."
           fi

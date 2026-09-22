@@ -29,17 +29,41 @@ function sortMovies(movies, sortValue) {
   return sorted;
 }
 
+function getMovieGenreKeys(movie) {
+  const genreValues = [
+    ...(Array.isArray(movie.genres) ? movie.genres : []),
+    movie.genre,
+    ...(typeof movie.genre === 'string' ? movie.genre.split(/[\/,&|]/) : [])
+  ];
+
+  const genreKeys = new Set();
+
+  genreValues.forEach(value => {
+    if (!value) return;
+
+    const normalized = String(value).toLowerCase().trim();
+    const terms = normalized.split(/[\/,&|]/).map(term => term.trim()).filter(Boolean);
+
+    terms.forEach(term => {
+      if (term.includes('action')) genreKeys.add('action');
+      if (term.includes('animation')) genreKeys.add('animation');
+      if (term.includes('adventure')) genreKeys.add('action');
+      if (term.includes('comedy')) genreKeys.add('comedy');
+      if (term.includes('drama')) genreKeys.add('drama');
+      if (term.includes('horror')) genreKeys.add('horror');
+      if (term.includes('biographical')) genreKeys.add('biographical');
+      if (term.includes('music')) genreKeys.add('biographical');
+      if (term.includes('family') || term.includes('kids')) genreKeys.add('kids');
+      if (term.includes('classic')) genreKeys.add('classics');
+      if (term.includes('thriller')) genreKeys.add('thriller');
+    });
+  });
+
+  return genreKeys.size ? [...genreKeys] : ['all'];
+}
+
 function inferGenreKey(movie) {
-  const genre = (movie.genre || '').toLowerCase();
-
-  if (genre.includes('action')) return 'action';
-  if (genre.includes('comedy')) return 'comedy';
-  if (genre.includes('horror')) return 'horror';
-  if (genre.includes('biographical')) return 'biographical';
-  if (genre.includes('family') || genre.includes('kids')) return 'kids';
-  if (genre.includes('classic')) return 'classics';
-
-  return 'all';
+  return getMovieGenreKeys(movie)[0] || 'all';
 }
 
 function getActiveGenre() {
@@ -54,20 +78,21 @@ function getFilteredMovies() {
   return allMovies.filter(movie => {
     const title = (movie.title || '').toLowerCase();
     const matchesSearch = !searchTerm || title.includes(searchTerm);
-    const matchesGenre = activeGenre === 'all' || inferGenreKey(movie) === activeGenre;
+    const genreKeys = getMovieGenreKeys(movie);
+    const matchesGenre = activeGenre === 'all' || genreKeys.includes(activeGenre);
     return matchesSearch && matchesGenre;
   });
 }
 
 function renderMovies(container, movies) {
   container.innerHTML = movies.map(movie => {
-    const genreKey = inferGenreKey(movie);
+    const genreKeys = getMovieGenreKeys(movie);
     const safeTitle = encodeURIComponent(movie.title);
     const detailSlug = encodeURIComponent(movie.slug || movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
     const ratingImage = `../assets/Images/Ratings/${movie.rating}.png` || 'assets/Images/Ratings/tbc.png';
 
     return `
-      <div class="poster-column" data-genre="${genreKey}">
+      <div class="poster-column" data-genre="${genreKeys.join(' ')}">
         <img class="poster" src="${movie.poster || 'assets/Images/logo.png'}" alt="${movie.title}">
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>

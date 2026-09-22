@@ -4,8 +4,8 @@ import path from 'path';
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
 // Paths relative to project root
-const INPUT_FILE = path.resolve('./website/assets/data/movie-ids.json');
-const OUTPUT_FILE = path.resolve('./website/assets/data/movies.json');
+const INPUT_FILE = path.resolve('./website/assets/data/upcoming-movie-ids.json');
+const OUTPUT_FILE = path.resolve('./website/assets/data/upcoming-movies.json');
 
 async function fetchMovieData(item) {
     const movieId = typeof item === 'number' ? item : item.id;
@@ -42,7 +42,8 @@ async function fetchMovieData(item) {
     return {
         slug: data.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
         title: data.title,
-        genre: data.genres?.[0]?.name || 'Action',
+        genres: (data.genres || []).slice(0, 3).map(genre => genre.name),
+        genre: (data.genres || [])[0]?.name || 'Action',
         rating: rating,
         score: parseFloat(data.vote_average.toFixed(1)),
         runtime: data.runtime,
@@ -68,7 +69,7 @@ async function run() {
     const rawInput = fs.readFileSync(INPUT_FILE, 'utf-8');
     const movieEntries = JSON.parse(rawInput);
 
-    console.log(`Processing ${movieEntries.length} movie entries from movie-ids.json...`);
+    console.log(`Processing ${movieEntries.length} movie entries from upcoming-movie-ids.json...`);
 
     const results = await Promise.all(movieEntries.map(fetchMovieData));
     const validMovies = results.filter(Boolean);

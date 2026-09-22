@@ -3,8 +3,8 @@ async function loadComingSoonMovies() {
   if (!container) return;
 
   try {
-    const response = await fetch('assets/data/coming-soon.json');
-    if (!response.ok) throw new Error('Unable to load coming soon data');
+    const response = await fetch('assets/data/upcoming-movies.json');
+    if (!response.ok) throw new Error('Unable to load upcoming movie data');
 
     const movies = await response.json();
     renderComingSoonMovies(container, movies);
@@ -15,23 +15,27 @@ async function loadComingSoonMovies() {
 }
 
 function renderComingSoonMovies(container, movies) {
-  if (!movies || !movies.length) {
+  const upcomingMovies = Array.isArray(movies) ? movies.filter(movie => movie.visible !== false) : [];
+
+  if (!upcomingMovies.length) {
     container.innerHTML = '<p>No upcoming movies available.</p>';
     return;
   }
 
-  container.innerHTML = movies.map((movie, index) => {
+  container.innerHTML = upcomingMovies.map((movie, index) => {
     const countdownId = `countdown-${index}`;
+    const ratingImage = movie.ratingImage || 'assets/Images/Ratings/tbc.png';
+
     return `
       <div class="poster-column">
-        <img class="poster" src="${movie.poster}" alt="${movie.title}">
+        <img class="poster" src="${movie.poster || 'assets/Images/logo.png'}" alt="${movie.title}">
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>
-          <div class="runtime">${movie.releaseLabel}</div>
-          <img class="rating" src="${movie.ratingImage || 'assets/Images/Ratings/tbc.png'}" alt="TBC">
+          <div class="runtime">${movie.releaseLabel || 'Release date coming soon'}</div>
+          <img class="rating" src="${ratingImage}" alt="${movie.title} rating">
           <p id="${countdownId}" data-countdown="${movie.countdownTarget}">Loading countdown...</p>
           <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for ${movie.title}! We will notify you when advance tickets drop.')">🔔 Remind Me</button>
-          <button class="button" data-trailer="${movie.trailer}">▶ Teaser Trailer</button>
+          <button class="button" data-trailer="${movie.trailer || ''}">▶ Teaser Trailer</button>
         </div>
       </div>
     `;
