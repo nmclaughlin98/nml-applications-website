@@ -14,6 +14,22 @@ async function loadComingSoonMovies() {
   }
 }
 
+function getComingSoonCountdownTarget(movie) {
+  return movie.countdownTarget || movie.releaseDate || null;
+}
+
+function getComingSoonReleaseLabel(movie) {
+  if (movie.releaseLabel) return movie.releaseLabel;
+
+  if (!movie.releaseDate) return 'Release date coming soon';
+
+  const releaseDate = new Date(movie.releaseDate);
+  if (Number.isNaN(releaseDate.getTime())) return 'Release date coming soon';
+
+  const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
+  return releaseDate.toLocaleDateString('en-GB', dateOptions);
+}
+
 function renderComingSoonMovies(container, movies) {
   const upcomingMovies = Array.isArray(movies) ? movies.filter(movie => movie.visible !== false) : [];
 
@@ -24,19 +40,16 @@ function renderComingSoonMovies(container, movies) {
 
   container.innerHTML = upcomingMovies.map((movie, index) => {
     const countdownId = `countdown-${index}`;
-    const releaseDate = new Date(movie.releaseDate);
-
-    const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
-    const formattedReleaseDate = releaseDate.toLocaleDateString('en-GB', dateOptions);
+    const countdownTarget = getComingSoonCountdownTarget(movie);
 
     return `
       <div class="poster-column">
         <img class="poster" src="${movie.poster || 'assets/Images/logo.png'}" alt="${movie.title}">
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>
-          <div class="release-date">${formattedReleaseDate}</div>
+          <div class="release-date">${getComingSoonReleaseLabel(movie)}</div>
           <div class="overlay-text"></div>
-          <p id="${countdownId}" data-countdown="${movie.countdownTarget}">Loading countdown...</p>
+          <p id="${countdownId}" data-countdown="${countdownTarget || ''}">Loading countdown...</p>
           <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for ${movie.title}! We will notify you when advance tickets drop.')">Remind Me</button>
           <button class="button" data-trailer="${movie.trailer || ''}" type="button">Teaser Trailer</button>
         </div>
