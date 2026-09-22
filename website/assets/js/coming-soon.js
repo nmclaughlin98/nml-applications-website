@@ -22,18 +22,24 @@ function renderComingSoonMovies(container, movies) {
     return;
   }
 
+  const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
+
   container.innerHTML = upcomingMovies.map((movie, index) => {
     const countdownId = `countdown-${index}`;
-    const ratingImage = movie.ratingImage || 'assets/Images/Ratings/tbc.png';
+
+    // Parse the movie's release date
+    const releaseDate = new Date(movie.releaseDate);
+    const formattedReleaseDate = !isNaN(releaseDate.getTime())
+      ? releaseDate.toLocaleDateString('en-GB', dateOptions)
+      : 'TBA';
 
     return `
       <div class="poster-column">
         <img class="poster" src="${movie.poster || 'assets/Images/logo.png'}" alt="${movie.title}">
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>
-          <div class="runtime">${movie.releaseDate || 'Release date coming soon'}</div>
-          <img class="rating" src="${ratingImage}" alt="${movie.title} rating">
-          <p id="${countdownId}" data-countdown="${movie.countdownTarget}">Loading countdown...</p>
+          <div class="release-date">${formattedReleaseDate}</div>
+          <p id="${countdownId}" data-countdown="${movie.releaseDate}">Loading countdown...</p>
           <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for ${movie.title}! We will notify you when advance tickets drop.')">Remind Me</button>
           <button class="button" data-trailer="${movie.trailer || ''}" type="button">Teaser Trailer</button>
         </div>
@@ -72,8 +78,10 @@ function initComingSoonCountdowns() {
 
   const updateCountdowns = () => {
     countdownEls.forEach(el => {
-      const target = new Date(el.getAttribute('data-countdown'));
-      if (Number.isNaN(target.getTime())) {
+      const rawTarget = el.getAttribute('data-countdown');
+      const target = new Date(rawTarget);
+
+      if (!rawTarget || Number.isNaN(target.getTime())) {
         el.textContent = 'Release date coming soon';
         return;
       }
