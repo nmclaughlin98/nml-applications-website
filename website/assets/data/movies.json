@@ -520,71 +520,6 @@
     }
   },
   {
-    "slug": "evil-dead-ii",
-    "title": "Evil Dead II",
-    "genre": "Horror",
-    "rating": "18",
-    "score": 7.5,
-    "runtime": 84,
-    "releaseDate": "1987-03-13",
-    "visible": true,
-    "topPick": false,
-    "starring": [
-      "Bruce Campbell",
-      "Sarah Berry",
-      "Dan Hicks"
-    ],
-    "director": "Sam Raimi",
-    "synopsis": "Ash Williams and his girlfriend Linda find a log cabin in the woods with a voice recording from an archeologist who had recorded himself reciting ancient chants from \"The Book of the Dead.\" As they play the recording an evil power is unleashed taking over Linda's body.",
-    "still": "https://image.tmdb.org/t/p/w1280/dOvEJK2u0slAGTfhdZOjnNgCQet.jpg",
-    "trailer": "https://www.youtube-nocookie.com/embed/s7WNgzilRBw?rel=0",
-    "poster": "https://image.tmdb.org/t/p/w500/4zqCKJVHUolGs6C5AZwAZqLWixW.jpg",
-    "showtimes": {
-      "Monday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Tuesday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Wednesday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Thursday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Friday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Saturday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Sunday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ]
-    }
-  },
-  {
     "slug": "forrest-gump",
     "title": "Forrest Gump",
     "genre": "Comedy",
@@ -650,25 +585,25 @@
     }
   },
   {
-    "slug": "inside-out-2",
-    "title": "Inside Out 2",
-    "genre": "Animation",
-    "rating": "U",
+    "slug": "i-tonya",
+    "title": "I, Tonya",
+    "genre": "Drama",
+    "rating": "PG",
     "score": 7.5,
-    "runtime": 97,
-    "releaseDate": "2024-06-11",
+    "runtime": 120,
+    "releaseDate": "2017-12-07",
     "visible": true,
     "topPick": false,
     "starring": [
-      "Amy Poehler",
-      "Maya Hawke",
-      "Kensington Tallman"
+      "Margot Robbie",
+      "Sebastian Stan",
+      "Allison Janney"
     ],
-    "director": "Kelsey Mann",
-    "synopsis": "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.",
-    "still": "https://image.tmdb.org/t/p/w1280/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg",
-    "trailer": "https://www.youtube-nocookie.com/embed/u69y5Ie519M?rel=0",
-    "poster": "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+    "director": "Craig Gillespie",
+    "synopsis": "Competitive ice skater Tonya Harding rises amongst the ranks at the U.S. Figure Skating Championships, but her future in the sport is thrown into doubt when her ex-husband intervenes.",
+    "still": "https://image.tmdb.org/t/p/w1280/5owIV2sqdfILBKyOOIkLYVqanZp.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/d2iy5y0YjGM?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/6gNXwSHxaksR1PjVZRqNapmkgj3.jpg",
     "showtimes": {
       "Monday": [
         "11:00",
@@ -1170,25 +1105,25 @@
     }
   },
   {
-    "slug": "spider-man-across-the-spider-verse",
-    "title": "Spider-Man: Across the Spider-Verse",
-    "genre": "Animation",
-    "rating": "PG",
-    "score": 8.3,
-    "runtime": 140,
-    "releaseDate": "2023-05-31",
+    "slug": "spider-man-brand-new-day",
+    "title": "Spider-Man: Brand New Day",
+    "genre": "Science Fiction",
+    "rating": "12A",
+    "score": 7.9,
+    "runtime": 145,
+    "releaseDate": "2026-07-29",
     "visible": true,
     "topPick": false,
     "starring": [
-      "Shameik Moore",
-      "Hailee Steinfeld",
-      "Brian Tyree Henry"
+      "Tom Holland",
+      "Zendaya",
+      "Mark Ruffalo"
     ],
-    "director": "Kemp Powers",
-    "synopsis": "After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse's very existence. But when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders and must set out on his own to save those he loves most.",
-    "still": "https://image.tmdb.org/t/p/w1280/kVd3a9YeLGkoeR50jGEXM6EqseS.jpg",
-    "trailer": "https://www.youtube-nocookie.com/embed/yFrxzaBLDQM?rel=0",
-    "poster": "https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+    "director": "Destin Daniel Cretton",
+    "synopsis": "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see.",
+    "still": "https://image.tmdb.org/t/p/w1280/qeQJx07rK2xm8SD2sJxFKhE7gs0.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/P3uI5sLosKU?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg",
     "showtimes": {
       "Monday": [
         "11:00",
@@ -1495,6 +1430,71 @@
     }
   },
   {
+    "slug": "the-exorcist",
+    "title": "The Exorcist",
+    "genre": "Horror",
+    "rating": "18",
+    "score": 7.7,
+    "runtime": 122,
+    "releaseDate": "1973-12-26",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Ellen Burstyn",
+      "Linda Blair",
+      "Jason Miller"
+    ],
+    "director": "William Friedkin",
+    "synopsis": "When a mysterious entity possesses a young girl, her mother seeks the help of two Catholic priests to save her life.",
+    "still": "https://image.tmdb.org/t/p/w1280/xcjJ5khg2yzOa282mza39Lbrm7j.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/BU2eYAO31Cc?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/5x0CeVHJI8tcDx8tUUwYHQSNILq.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
     "slug": "the-godfather",
     "title": "The Godfather",
     "genre": "Drama",
@@ -1644,6 +1644,71 @@
     "still": "https://image.tmdb.org/t/p/w1280/bqFxtuGNsz30HTk5mzgGs8m9Po.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/UgjEj5mXLlk?rel=0",
     "poster": "https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
+    "slug": "the-odyssey",
+    "title": "The Odyssey",
+    "genre": "Adventure",
+    "rating": "15",
+    "score": 8,
+    "runtime": 173,
+    "releaseDate": "2026-07-15",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Matt Damon",
+      "Tom Holland",
+      "Anne Hathaway"
+    ],
+    "director": "Christopher Nolan",
+    "synopsis": "Odysseus, the legendary King of Ithaca, embarks on a long and perilous journey home following the Trojan War. Throughout his voyage, he is forced to confront the whims of gods, mythological monsters, and trials that stretch both his cunning and his humanity to the breaking point.",
+    "still": "https://image.tmdb.org/t/p/w1280/RMXG8myu1aGlNUsRjtxzmpdMK0.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/AyIZ9tiiN8I?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
     "showtimes": {
       "Monday": [
         "11:00",
@@ -1904,70 +1969,6 @@
     "still": "https://image.tmdb.org/t/p/w1280/3Rfvhy1Nl6sSGJwyjb0QiZzZYlB.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/CxwTLktovTU?rel=0",
     "poster": "https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
-    "showtimes": {
-      "Monday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Tuesday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Wednesday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Thursday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Friday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Saturday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Sunday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ]
-    }
-  },
-  {
-    "slug": "trailer-made",
-    "title": "Trailer Made",
-    "genre": "Family",
-    "rating": "PG",
-    "score": 2,
-    "runtime": 78,
-    "releaseDate": "2016-01-01",
-    "visible": true,
-    "topPick": false,
-    "starring": [
-      "Lee Raviv",
-      "Heike Brunner"
-    ],
-    "director": "Jacobus Kriel",
-    "synopsis": "In an attempt to reconnect with his estranged son Daniel, struggling Los Angeles screenwriter Peter Davis resolves to bring his young boy along on his latest research expedition to Africa. But after their luggage is accidentally switched, leaving them stranded without money and passports, the down and out pair is forced to seek refuge in an old run-down trailer scheduled for imminent scrapping! Befriending the scrap yard owner’s son, Daniel and his new found companion Asanda embark on an imaginative journey through different worlds in order to seek the “ultimate story” to help Peter. After travelling through fantastical lands and strange new planets Daniel finally realises that the true meaning of life is actually found in spending time with those you love.",
-    "still": null,
-    "trailer": "https://www.youtube-nocookie.com/embed/Oe64nPdD00o?rel=0",
-    "poster": "https://image.tmdb.org/t/p/w500/e14lxqHo5XZYmisAff2heT8XRPy.jpg",
     "showtimes": {
       "Monday": [
         "11:00",
