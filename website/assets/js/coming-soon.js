@@ -17,21 +17,18 @@ async function loadComingSoonMovies() {
 function renderComingSoonMovies(container, movies) {
   const upcomingMovies = Array.isArray(movies) ? movies.filter(movie => movie.visible !== false) : [];
 
+  const releaseDate = new Date(movie.releaseDate);
+
+  const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
+  const formattedReleaseDate = releaseDate.toLocaleDateString('en-GB', dateOptions);
+
   if (!upcomingMovies.length) {
     container.innerHTML = '<p>No upcoming movies available.</p>';
     return;
   }
 
-  const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
-
   container.innerHTML = upcomingMovies.map((movie, index) => {
     const countdownId = `countdown-${index}`;
-
-    // Parse the movie's release date
-    const releaseDate = new Date(movie.releaseDate);
-    const formattedReleaseDate = !isNaN(releaseDate.getTime())
-      ? releaseDate.toLocaleDateString('en-GB', dateOptions)
-      : 'TBA';
 
     return `
       <div class="poster-column">
@@ -39,7 +36,8 @@ function renderComingSoonMovies(container, movies) {
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>
           <div class="release-date">${formattedReleaseDate}</div>
-          <p id="${countdownId}" data-countdown="${movie.releaseDate}">Loading countdown...</p>
+          <div class="overlay-text"></div>
+          <p id="${countdownId}" data-countdown="${movie.countdownTarget}">Loading countdown...</p>
           <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for ${movie.title}! We will notify you when advance tickets drop.')">Remind Me</button>
           <button class="button" data-trailer="${movie.trailer || ''}" type="button">Teaser Trailer</button>
         </div>
@@ -78,10 +76,8 @@ function initComingSoonCountdowns() {
 
   const updateCountdowns = () => {
     countdownEls.forEach(el => {
-      const rawTarget = el.getAttribute('data-countdown');
-      const target = new Date(rawTarget);
-
-      if (!rawTarget || Number.isNaN(target.getTime())) {
+      const target = new Date(el.getAttribute('data-countdown'));
+      if (Number.isNaN(target.getTime())) {
         el.textContent = 'Release date coming soon';
         return;
       }
