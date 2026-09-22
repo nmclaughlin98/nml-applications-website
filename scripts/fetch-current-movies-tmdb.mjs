@@ -41,6 +41,7 @@ async function fetchMovieData(item) {
 
     return {
         slug: data.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
+        movieId: movieId,
         title: data.title,
         genres: (data.genres || []).slice(0, 3).map(genre => genre.name),
         genre: (data.genres || [])[0]?.name || 'Action',
@@ -49,7 +50,6 @@ async function fetchMovieData(item) {
         runtime: data.runtime,
         releaseDate: ukRelease?.release_dates?.[ukRelease.release_dates.length - 1]?.release_date || data.release_date,
         visible: item.visible ?? true,
-        topPick: item.topPick ?? false,
         starring: data.credits?.cast?.slice(0, 5).map(actor => actor.name) || [],
         director: directorObj ? directorObj.name : 'Unknown',
         synopsis: data.overview,
