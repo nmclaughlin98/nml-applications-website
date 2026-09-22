@@ -17,11 +17,6 @@ async function loadComingSoonMovies() {
 function renderComingSoonMovies(container, movies) {
   const upcomingMovies = Array.isArray(movies) ? movies.filter(movie => movie.visible !== false) : [];
 
-  const releaseDate = new Date(movie.releaseDate);
-
-  const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
-  const formattedReleaseDate = releaseDate.toLocaleDateString('en-GB', dateOptions);
-
   if (!upcomingMovies.length) {
     container.innerHTML = '<p>No upcoming movies available.</p>';
     return;
@@ -29,6 +24,10 @@ function renderComingSoonMovies(container, movies) {
 
   container.innerHTML = upcomingMovies.map((movie, index) => {
     const countdownId = `countdown-${index}`;
+    const releaseDate = new Date(movie.releaseDate);
+
+    const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    const formattedReleaseDate = releaseDate.toLocaleDateString('en-GB', dateOptions);
 
     return `
       <div class="poster-column">

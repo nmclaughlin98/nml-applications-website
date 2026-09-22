@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initGenreFilterAndSearch();
   initBookingWizard();
   initMoviePageShowtimes();
-  renderTimetable();
   initFooterCopyright();
 });
 
