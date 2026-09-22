@@ -29,7 +29,7 @@ async function loadMovieDetail() {
   movieRuntime.textContent = `Run Time: ${movie.runtime} mins`;
   movieCast.innerHTML = `<strong>Starring:</strong> ${movie.starring.join(', ')}`;
   movieDirector.textContent = `Director: ${movie.director}`;
-  movieReleaseDate.textContent = `Release Date: ${new Date(movie.releaseDate).toLocaleDateString()}`;
+  movieReleaseDate.textContent = `Release Date: ${new Date(movie.releaseDate).toLocaleDateString(localeString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }))}`;
   synopsisContainer.innerHTML = movie.synopsis
     .split('\n')
     .map(paragraph => `<p>${paragraph}</p>`)
