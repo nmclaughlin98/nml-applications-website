@@ -46,7 +46,7 @@ async function fetchMovieData(item) {
         rating: rating,
         score: parseFloat(data.vote_average.toFixed(1)),
         runtime: data.runtime,
-        releaseDate: ukRelease?.release_dates?.[0]?.release_date || data.release_date,
+        releaseDate: data.release_date,
         visible: item.visible ?? true,
         topPick: item.topPick ?? false,
         starring: data.credits?.cast?.slice(0, 5).map(actor => actor.name) || [],
