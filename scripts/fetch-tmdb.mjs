@@ -4,8 +4,8 @@ import path from 'path';
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
 // Paths relative to project root
-const INPUT_FILE = path.resolve('./assets/data/movie-ids.json');
-const OUTPUT_FILE = path.resolve('./assets/data/movies.json');
+const INPUT_FILE = path.resolve('./website/assets/data/movie-ids.json');
+const OUTPUT_FILE = path.resolve('./website/assets/data/movies.json');
 
 async function fetchMovieData(item) {
     const movieId = typeof item === 'number' ? item : item.id;
