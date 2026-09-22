@@ -40,7 +40,8 @@ function renderMovieSection(container, movies) {
   container.innerHTML = movies.map(movie => {
     const safeTitle = encodeURIComponent(movie.title);
     const detailSlug = encodeURIComponent(movie.slug || movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
-    const ratingImage = movie.ratingImage || 'assets/Images/Ratings/tbc.png';
+    const ratingImage = `../assets/Images/Ratings/${movie.rating}.png` || 'assets/Images/Ratings/tbc.png';
+
 
     return `
       <div class="poster-column">
