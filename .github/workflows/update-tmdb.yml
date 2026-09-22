@@ -36,11 +36,11 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           # Stage the updated movies.json[cite: 1]
-          git add assets/data/movies.json
+          git add website/assets/data/movies.json
           
           # Check if movies.json actually changed before committing
           if ! git diff-index --quiet HEAD; then
-            git commit -m "chore: regenerate assets/data/movies.json [skip ci]"
+            git commit -m "chore: regenerate website/assets/data/movies.json [skip ci]"
             
             # Determine target branch dynamically
             TARGET_BRANCH="${{ github.head_ref || github.ref_name }}"

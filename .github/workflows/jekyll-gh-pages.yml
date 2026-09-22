@@ -2,11 +2,17 @@
 name: Deploy website
 
 on:
-  # Runs on pushes targeting the default branch
+  # Triggers automatically after the TMDB update workflow completes
+  workflow_run:
+    workflows: ["Update Movies JSON from TMDB"] # Must match the exact `name:` inside update-tmdb.yml
+    types:
+      - completed
+
+  # Runs on direct pushes targeting main (e.g. HTML/CSS code edits)
   push:
     branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows manual triggers from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -15,8 +21,7 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -24,6 +29,8 @@ concurrency:
 jobs:
   # Build job
   build:
+    # Only run if triggered by push/dispatch OR if the TMDB update workflow succeeded
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
