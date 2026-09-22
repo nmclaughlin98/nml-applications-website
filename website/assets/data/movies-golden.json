@@ -1,10 +1,137 @@
 [
   {
+    "slug": "spider-man-brand-new-day",
+    "title": "Spider-Man: Brand New Day",
+    "genre": "Action",
+    "rating": "12A",
+    "score": 8.2,
+    "runtime": 145,
+    "releaseDate": "2026-07-31",
+    "visible": true,
+    "topPick": true,
+    "starring": [
+      "Tom Holland",
+      "Zendaya",
+      "Mark Ruffalo"
+    ],
+    "director": "Destin Daniel Cretton",
+    "synopsis": "Peter Parker is on his own in New York City trying to rebuild his life. As he faces a dangerous new threat, his powers begin to evolve, forcing him to balance his duty as Spider-Man with his own humanity.",
+    "still": "assets/Images/Stills/spiderman_brand_new_day_still.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    },
+    "poster": "assets/Images/Posters/Action/spiderman-brand-new-day.jpg",
+    "ratingImage": "assets/Images/Ratings/12A.png"
+  },
+  {
+    "slug": "the-odyssey",
+    "title": "The Odyssey",
+    "genre": "Action",
+    "rating": "15",
+    "score": 8.4,
+    "runtime": 173,
+    "releaseDate": "2026-07-17",
+    "visible": true,
+    "topPick": true,
+    "starring": [
+      "Matt Damon",
+      "Tom Holland",
+      "Anne Hathaway"
+    ],
+    "director": "Christopher Nolan",
+    "synopsis": "Homer's foundational saga comes to life as King Odysseus faces a perilous ten-year journey home from the Trojan War against divine monsters and deadly temptations.",
+    "still": "assets/Images/Stills/the_odyssey_still.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/f_bKjZeJBBI?rel=0",
+    "showtimes": {
+      "Monday": [
+        "12:00",
+        "16:00",
+        "20:00"
+      ],
+      "Tuesday": [
+        "12:00",
+        "16:00",
+        "20:00"
+      ],
+      "Wednesday": [
+        "12:00",
+        "16:00",
+        "20:00"
+      ],
+      "Thursday": [
+        "12:00",
+        "16:00",
+        "20:00"
+      ],
+      "Friday": [
+        "12:00",
+        "16:00",
+        "20:00"
+      ],
+      "Saturday": [
+        "12:00",
+        "16:00",
+        "20:00"
+      ],
+      "Sunday": [
+        "12:00",
+        "16:00",
+        "20:00"
+      ]
+    },
+    "poster": "assets/Images/Posters/Action/the-odyssey.jpg",
+    "ratingImage": "assets/Images/Ratings/15.png"
+  },
+  {
     "slug": "avengers-infinity-war",
     "title": "Avengers: Infinity War",
     "genre": "Action",
     "rating": "12A",
+    "score": 8.4,
     "runtime": 160,
+    "releaseDate": "2018-04-27",
     "visible": true,
     "topPick": true,
     "starring": [
@@ -68,7 +195,9 @@
     "title": "Spider-Man: Homecoming",
     "genre": "Action",
     "rating": "12",
+    "score": 7.4,
     "runtime": 133,
+    "releaseDate": "2017-07-07",
     "visible": true,
     "topPick": true,
     "starring": [
@@ -132,7 +261,9 @@
     "title": "Deadpool 2",
     "genre": "Action",
     "rating": "15",
+    "score": 7.6,
     "runtime": 119,
+    "releaseDate": "2018-05-18",
     "visible": true,
     "starring": [
       "Ryan Reynolds",
@@ -195,7 +326,9 @@
     "title": "Star Wars: The Last Jedi",
     "genre": "Action",
     "rating": "12",
+    "score": 6.8,
     "runtime": 152,
+    "releaseDate": "2017-12-15",
     "visible": true,
     "starring": [
       "Daisy Ridley",
@@ -258,12 +391,14 @@
     "title": "007: Spectre",
     "genre": "Action",
     "rating": "12A",
+    "score": 6.8,
     "runtime": 148,
+    "releaseDate": "2015-11-06",
     "visible": true,
     "starring": [
       "Daniel Craig",
       "Christoph Waltz",
-      "L\u00e9a Seydoux"
+      "Léa Seydoux"
     ],
     "director": "Sam Mendes",
     "synopsis": "Bond investigates a sinister organisation and uncovers a conspiracy that reaches the highest levels of global power.",
@@ -321,7 +456,9 @@
     "title": "Elf",
     "genre": "Comedy",
     "rating": "PG",
+    "score": 7.1,
     "runtime": 97,
+    "releaseDate": "2003-11-07",
     "visible": true,
     "starring": [
       "Will Ferrell",
@@ -384,7 +521,9 @@
     "title": "Johnny English: Strikes Again",
     "genre": "Comedy",
     "rating": "PG",
+    "score": 6.2,
     "runtime": 88,
+    "releaseDate": "2018-10-26",
     "visible": true,
     "starring": [
       "Rowan Atkinson",
@@ -392,7 +531,7 @@
       "Olga Kurylenko"
     ],
     "director": "David Kerr",
-    "synopsis": "The world\u2019s most inept secret agent is back for one more mission when cyberterrorists target the British government.",
+    "synopsis": "The world’s most inept secret agent is back for one more mission when cyberterrorists target the British government.",
     "still": "assets/Images/Stills/johnny_english_still.png",
     "trailer": "https://www.youtube-nocookie.com/embed/6F2bC_V3V2E?rel=0",
     "showtimes": {
@@ -447,7 +586,9 @@
     "title": "The Grinch",
     "genre": "Comedy",
     "rating": "PG",
+    "score": 6.4,
     "runtime": 90,
+    "releaseDate": "2018-11-09",
     "visible": true,
     "starring": [
       "Benedict Cumberbatch",
@@ -455,7 +596,7 @@
       "Rashida Jones"
     ],
     "director": "Yarrow Cheney & Scott Mosier",
-    "synopsis": "The Grinch hatches a scheme to ruin Christmas for Whoville, but a young girl\u2019s kindness begins to thaw his hardened heart.",
+    "synopsis": "The Grinch hatches a scheme to ruin Christmas for Whoville, but a young girl’s kindness begins to thaw his hardened heart.",
     "still": "assets/Images/Stills/the_grinch_still.png",
     "trailer": "https://www.youtube-nocookie.com/embed/0Q8sXvJdI0U?rel=0",
     "showtimes": {
@@ -510,7 +651,9 @@
     "title": "Nobody's Fool",
     "genre": "Comedy",
     "rating": "15",
+    "score": 5.0,
     "runtime": 110,
+    "releaseDate": "2018-11-02",
     "visible": true,
     "starring": [
       "Tiffany Haddish",
@@ -573,7 +716,9 @@
     "title": "Ralph Breaks the Internet",
     "genre": "Comedy",
     "rating": "PG",
+    "score": 7.0,
     "runtime": 112,
+    "releaseDate": "2018-11-21",
     "visible": true,
     "starring": [
       "John C. Reilly",
@@ -636,7 +781,9 @@
     "title": "Bohemian Rhapsody",
     "genre": "Biographical",
     "rating": "12A",
+    "score": 7.9,
     "runtime": 134,
+    "releaseDate": "2018-11-02",
     "visible": true,
     "starring": [
       "Rami Malek",
@@ -644,7 +791,7 @@
       "Gwilym Lee"
     ],
     "director": "Bryan Singer",
-    "synopsis": "The story of Freddie Mercury and Queen\u2019s rise to global stardom, told through the emotional and creative journey behind their iconic sound.",
+    "synopsis": "The story of Freddie Mercury and Queen’s rise to global stardom, told through the emotional and creative journey behind their iconic sound.",
     "still": "assets/Images/Stills/Bohemian_Rhapsody_Still.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/mP0VHJYFOAU?rel=0",
     "showtimes": {
@@ -699,7 +846,9 @@
     "title": "127 Hours",
     "genre": "Biographical",
     "rating": "15",
+    "score": 7.5,
     "runtime": 94,
+    "releaseDate": "2010-11-05",
     "visible": true,
     "starring": [
       "James Franco",
@@ -762,7 +911,9 @@
     "title": "The Wolf of Wall Street",
     "genre": "Biographical",
     "rating": "18",
+    "score": 8.2,
     "runtime": 180,
+    "releaseDate": "2013-12-25",
     "visible": true,
     "starring": [
       "Leonardo DiCaprio",
@@ -825,7 +976,9 @@
     "title": "Steve Jobs",
     "genre": "Biographical",
     "rating": "15",
+    "score": 7.2,
     "runtime": 122,
+    "releaseDate": "2015-10-09",
     "visible": true,
     "starring": [
       "Michael Fassbender",
@@ -833,7 +986,7 @@
       "Seth Rogen"
     ],
     "director": "Danny Boyle",
-    "synopsis": "A portrait of Steve Jobs and the personal and professional choices that shaped one of technology\u2019s most influential visionaries.",
+    "synopsis": "A portrait of Steve Jobs and the personal and professional choices that shaped one of technology’s most influential visionaries.",
     "still": "assets/Images/Stills/Steve_Jobs_Still.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/7d0Q4Kb0qv0?rel=0",
     "showtimes": {
@@ -888,7 +1041,9 @@
     "title": "I, Tonya",
     "genre": "Biographical",
     "rating": "15",
+    "score": 7.5,
     "runtime": 120,
+    "releaseDate": "2017-12-08",
     "visible": true,
     "starring": [
       "Margot Robbie",
@@ -951,7 +1106,9 @@
     "title": "The Shining",
     "genre": "Horror",
     "rating": "15",
+    "score": 8.4,
     "runtime": 146,
+    "releaseDate": "1980-05-23",
     "visible": true,
     "starring": [
       "Jack Nicholson",
@@ -1006,7 +1163,9 @@
     "title": "The Exorcist",
     "genre": "Horror",
     "rating": "18",
+    "score": 8.1,
     "runtime": 122,
+    "releaseDate": "1973-12-26",
     "visible": true,
     "starring": [
       "Ellen Burstyn",
@@ -1061,7 +1220,9 @@
     "title": "The Conjuring",
     "genre": "Horror",
     "rating": "15",
+    "score": 7.5,
     "runtime": 112,
+    "releaseDate": "2013-07-19",
     "visible": true,
     "starring": [
       "Vera Farmiga",
@@ -1116,7 +1277,9 @@
     "title": "Poltergeist",
     "genre": "Horror",
     "rating": "15",
+    "score": 7.3,
     "runtime": 114,
+    "releaseDate": "1982-06-04",
     "visible": true,
     "starring": [
       "JoBeth Williams",
@@ -1124,7 +1287,7 @@
       "Heather O'Rourke"
     ],
     "director": "Tobe Hooper",
-    "synopsis": "A family\u2019s home becomes the site of supernatural terror when sinister forces invade their living space.",
+    "synopsis": "A family’s home becomes the site of supernatural terror when sinister forces invade their living space.",
     "still": "assets/Images/Stills/Poltergeist_Still.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/sfTNhMntWc0?rel=0",
     "showtimes": {
@@ -1171,7 +1334,9 @@
     "title": "The Ring",
     "genre": "Horror",
     "rating": "15",
+    "score": 7.1,
     "runtime": 115,
+    "releaseDate": "2002-10-18",
     "visible": true,
     "starring": [
       "Naomi Watts",
@@ -1226,7 +1391,9 @@
     "title": "Toy Story",
     "genre": "Kids & Family",
     "rating": "PG",
+    "score": 8.3,
     "runtime": 81,
+    "releaseDate": "1995-11-22",
     "visible": true,
     "starring": [
       "Tom Hanks",
@@ -1289,7 +1456,9 @@
     "title": "The Lion King",
     "genre": "Kids & Family",
     "rating": "PG",
+    "score": 8.5,
     "runtime": 88,
+    "releaseDate": "1994-06-15",
     "visible": true,
     "starring": [
       "Matthew Broderick",
@@ -1352,12 +1521,14 @@
     "title": "Aladdin",
     "genre": "Kids & Family",
     "rating": "PG",
+    "score": 6.9,
     "runtime": 90,
+    "releaseDate": "1992-11-11",
     "visible": true,
     "starring": [
-      "Will Smith",
-      "Mena Massoud",
-      "Naomi Scott"
+      "Scott Weinger",
+      "Robin Williams",
+      "Linda Larkin"
     ],
     "director": "Guy Ritchie",
     "synopsis": "A street-smart young man discovers a magical lamp and is drawn into a world of wonder, peril, and romance.",
@@ -1415,7 +1586,9 @@
     "title": "E.T. The Extra-Terrestrial",
     "genre": "Kids & Family",
     "rating": "PG",
+    "score": 7.9,
     "runtime": 115,
+    "releaseDate": "1982-06-11",
     "visible": true,
     "starring": [
       "Henry Thomas",
@@ -1478,7 +1651,9 @@
     "title": "The Godfather",
     "genre": "Classics",
     "rating": "15",
+    "score": 9.2,
     "runtime": 175,
+    "releaseDate": "1972-03-24",
     "visible": true,
     "starring": [
       "Marlon Brando",
@@ -1541,7 +1716,9 @@
     "title": "Pulp Fiction",
     "genre": "Classics",
     "rating": "18",
+    "score": 8.9,
     "runtime": 154,
+    "releaseDate": "1994-10-14",
     "visible": true,
     "starring": [
       "John Travolta",
@@ -1604,7 +1781,9 @@
     "title": "Forrest Gump",
     "genre": "Classics",
     "rating": "12",
+    "score": 8.8,
     "runtime": 142,
+    "releaseDate": "1994-07-06",
     "visible": true,
     "starring": [
       "Tom Hanks",
@@ -1612,7 +1791,7 @@
       "Gary Sinise"
     ],
     "director": "Robert Zemeckis",
-    "synopsis": "A kind-hearted man with an extraordinary life journey finds love, purpose, and a front-row seat to some of history\u2019s most iconic moments.",
+    "synopsis": "A kind-hearted man with an extraordinary life journey finds love, purpose, and a front-row seat to some of history’s most iconic moments.",
     "still": "assets/Images/Stills/Forrest_Gump_Still.jpeg",
     "trailer": "https://www.youtube-nocookie.com/embed/bLvqoHBptjg?rel=0",
     "showtimes": {
@@ -1667,7 +1846,9 @@
     "title": "One Flew Over the Cuckoo's Nest",
     "genre": "Classics",
     "rating": "15",
+    "score": 8.7,
     "runtime": 133,
+    "releaseDate": "1975-11-19",
     "visible": true,
     "starring": [
       "Jack Nicholson",
@@ -1676,7 +1857,7 @@
     ],
     "director": "Milos Forman",
     "synopsis": "A rebellious patient challenges the authority of a strict psychiatric ward and fights for his freedom and dignity.",
-    "still": "assets/Images/Stills/One_Flew_Over_The_Cuckoo's_Nest_Still.jpg",
+    "still": "assets/Images/Stills/One_Flew_Over_The_Cuckoos_Nest_Still.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/2W3hQs8i9Qs?rel=0",
     "showtimes": {
       "Monday": [
@@ -1722,7 +1903,7 @@
         "19:00"
       ]
     },
-    "poster": "assets/Images/Posters/Classics/One_Flew_Over_The_Cuckoo's_Nest_Poster.jpg",
+    "poster": "assets/Images/Posters/Classics/One_Flew_Over_The_Cuckoos_Nest_Poster.jpg",
     "ratingImage": "assets/Images/Ratings/15.png"
   },
   {
@@ -1730,7 +1911,9 @@
     "title": "Raging Bull",
     "genre": "Classics",
     "rating": "18",
+    "score": 8.1,
     "runtime": 129,
+    "releaseDate": "1980-12-19",
     "visible": true,
     "starring": [
       "Robert De Niro",
