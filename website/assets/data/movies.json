@@ -2,6 +2,11 @@
   {
     "slug": "127-hours",
     "title": "127 Hours",
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Thriller"
+    ],
     "genre": "Adventure",
     "rating": "PG",
     "score": 7.1,
@@ -67,8 +72,83 @@
     }
   },
   {
+    "slug": "airplane",
+    "title": "Airplane!",
+    "genres": [
+      "Comedy"
+    ],
+    "genre": "Comedy",
+    "rating": "15",
+    "score": 7.3,
+    "runtime": 88,
+    "releaseDate": "1980-06-27",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Robert Hays",
+      "Julie Hagerty",
+      "Leslie Nielsen",
+      "Kareem Abdul-Jabbar",
+      "Lloyd Bridges"
+    ],
+    "director": "Jim Abrahams",
+    "synopsis": "An ex-fighter pilot is forced to take over the controls of an airliner when the flight crew succumbs to food poisoning.",
+    "still": "https://image.tmdb.org/t/p/w1280/wQyvrsNSTzFVEGgarZbFkFyIciy.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/JWNBROLN8Oc?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/7Q3efxd3AF1vQjlSxnlerSA7RzN.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
     "slug": "aladdin",
     "title": "Aladdin",
+    "genres": [
+      "Animation",
+      "Family",
+      "Adventure"
+    ],
     "genre": "Animation",
     "rating": "U",
     "score": 7.7,
@@ -134,8 +214,85 @@
     }
   },
   {
+    "slug": "avengers-endgame",
+    "title": "Avengers: Endgame",
+    "genres": [
+      "Adventure",
+      "Science Fiction",
+      "Action"
+    ],
+    "genre": "Adventure",
+    "rating": "12A",
+    "score": 8.2,
+    "runtime": 181,
+    "releaseDate": "2019-04-24",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Mark Ruffalo",
+      "Chris Hemsworth",
+      "Scarlett Johansson"
+    ],
+    "director": "Anthony Russo",
+    "synopsis": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
+    "still": "https://image.tmdb.org/t/p/w1280/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/L2NAh3CIdig?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
     "slug": "avengers-infinity-war",
     "title": "Avengers: Infinity War",
+    "genres": [
+      "Adventure",
+      "Action",
+      "Science Fiction"
+    ],
     "genre": "Adventure",
     "rating": "12A",
     "score": 8.2,
@@ -203,6 +360,10 @@
   {
     "slug": "bohemian-rhapsody",
     "title": "Bohemian Rhapsody",
+    "genres": [
+      "Music",
+      "Drama"
+    ],
     "genre": "Music",
     "rating": "12A",
     "score": 8,
@@ -270,6 +431,9 @@
   {
     "slug": "dead-squad-temple-of-the-undead",
     "title": "Dead Squad: Temple of the Undead",
+    "genres": [
+      "Horror"
+    ],
     "genre": "Horror",
     "rating": "PG",
     "score": 4.5,
@@ -337,6 +501,11 @@
   {
     "slug": "deadpool-2",
     "title": "Deadpool 2",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Adventure"
+    ],
     "genre": "Action",
     "rating": "15",
     "score": 7.5,
@@ -404,6 +573,11 @@
   {
     "slug": "e-t-the-extra-terrestrial",
     "title": "E.T. the Extra-Terrestrial",
+    "genres": [
+      "Adventure",
+      "Science Fiction",
+      "Family"
+    ],
     "genre": "Adventure",
     "rating": "PG",
     "score": 7.5,
@@ -471,6 +645,11 @@
   {
     "slug": "elf",
     "title": "Elf",
+    "genres": [
+      "Comedy",
+      "Family",
+      "Fantasy"
+    ],
     "genre": "Comedy",
     "rating": "PG",
     "score": 6.7,
@@ -538,6 +717,11 @@
   {
     "slug": "forrest-gump",
     "title": "Forrest Gump",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
     "genre": "Comedy",
     "rating": "PG",
     "score": 8.5,
@@ -603,8 +787,83 @@
     }
   },
   {
+    "slug": "heartstopper-forever",
+    "title": "Heartstopper Forever",
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "genre": "Romance",
+    "rating": "15",
+    "score": 7.2,
+    "runtime": 110,
+    "releaseDate": "2026-07-14",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Kit Connor",
+      "Joe Locke",
+      "William Gao",
+      "Yasmin Finney",
+      "Corinna Brown"
+    ],
+    "director": "Wash Westmoreland",
+    "synopsis": "It's a new school year for the Truham-Higgs gang. As Nick and Charlie's relationship deepens, their thoughts turn to life after the last bell rings.",
+    "still": "https://image.tmdb.org/t/p/w1280/wG6yUcgv4xaj64KX7SSPEwBGXW0.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/locuQ-skySE?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/r4lVJVO1BeBb11cBcXBdbHc9e9k.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
     "slug": "i-tonya",
     "title": "I, Tonya",
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
     "genre": "Drama",
     "rating": "PG",
     "score": 7.5,
@@ -672,6 +931,11 @@
   {
     "slug": "johnny-english-strikes-again",
     "title": "Johnny English Strikes Again",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
     "genre": "Action",
     "rating": "PG",
     "score": 6.3,
@@ -739,6 +1003,9 @@
   {
     "slug": "one-flew-over-the-cuckoo-s-nest",
     "title": "One Flew Over the Cuckoo's Nest",
+    "genres": [
+      "Drama"
+    ],
     "genre": "Drama",
     "rating": "PG",
     "score": 8.4,
@@ -806,6 +1073,9 @@
   {
     "slug": "poltergeist",
     "title": "Poltergeist",
+    "genres": [
+      "Horror"
+    ],
     "genre": "Horror",
     "rating": "15",
     "score": 7.2,
@@ -873,6 +1143,11 @@
   {
     "slug": "pulp-fiction",
     "title": "Pulp Fiction",
+    "genres": [
+      "Thriller",
+      "Crime",
+      "Comedy"
+    ],
     "genre": "Thriller",
     "rating": "18",
     "score": 8.5,
@@ -940,6 +1215,10 @@
   {
     "slug": "raging-bull",
     "title": "Raging Bull",
+    "genres": [
+      "Drama",
+      "History"
+    ],
     "genre": "Drama",
     "rating": "15",
     "score": 7.9,
@@ -1007,6 +1286,11 @@
   {
     "slug": "ralph-breaks-the-internet",
     "title": "Ralph Breaks the Internet",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Animation"
+    ],
     "genre": "Action",
     "rating": "PG",
     "score": 7.2,
@@ -1072,8 +1356,85 @@
     }
   },
   {
+    "slug": "resident-evil",
+    "title": "Resident Evil",
+    "genres": [
+      "Horror",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "genre": "Horror",
+    "rating": "15",
+    "score": 7.3,
+    "runtime": 95,
+    "releaseDate": "2026-09-16",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Austin Abrams",
+      "Paul Walter Hauser",
+      "Kali Reis",
+      "Zach Cherry",
+      "Johnno Wilson"
+    ],
+    "director": "Zach Cregger",
+    "synopsis": "Medical courier Bryan unwittingly finds himself fighting for survival as one fateful, horrifying night collapses around him in chaos.",
+    "still": "https://image.tmdb.org/t/p/w1280/1CIaRYKf3zg2Xyce1CSfCMg2Vfw.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/mNd1gb19A-c?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/i7UyjfPio0VFHB9rBUZSFyhOoM8.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
     "slug": "spectre",
     "title": "Spectre",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Thriller"
+    ],
     "genre": "Action",
     "rating": "12A",
     "score": 6.6,
@@ -1141,6 +1502,11 @@
   {
     "slug": "spider-man-brand-new-day",
     "title": "Spider-Man: Brand New Day",
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure"
+    ],
     "genre": "Science Fiction",
     "rating": "12A",
     "score": 7.9,
@@ -1208,6 +1574,11 @@
   {
     "slug": "spider-man-homecoming",
     "title": "Spider-Man: Homecoming",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Science Fiction"
+    ],
     "genre": "Action",
     "rating": "12A",
     "score": 7.3,
@@ -1275,6 +1646,11 @@
   {
     "slug": "star-wars-the-last-jedi",
     "title": "Star Wars: The Last Jedi",
+    "genres": [
+      "Adventure",
+      "Action",
+      "Science Fiction"
+    ],
     "genre": "Adventure",
     "rating": "12A",
     "score": 6.7,
@@ -1342,6 +1718,10 @@
   {
     "slug": "steve-jobs",
     "title": "Steve Jobs",
+    "genres": [
+      "Drama",
+      "History"
+    ],
     "genre": "Drama",
     "rating": "15",
     "score": 6.8,
@@ -1409,6 +1789,10 @@
   {
     "slug": "the-conjuring",
     "title": "The Conjuring",
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
     "genre": "Horror",
     "rating": "PG",
     "score": 7.5,
@@ -1476,6 +1860,9 @@
   {
     "slug": "the-exorcist",
     "title": "The Exorcist",
+    "genres": [
+      "Horror"
+    ],
     "genre": "Horror",
     "rating": "18",
     "score": 7.7,
@@ -1543,6 +1930,10 @@
   {
     "slug": "the-godfather",
     "title": "The Godfather",
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
     "genre": "Drama",
     "rating": "15",
     "score": 8.7,
@@ -1610,6 +2001,11 @@
   {
     "slug": "the-grinch",
     "title": "The Grinch",
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Family"
+    ],
     "genre": "Animation",
     "rating": "PG",
     "score": 6.9,
@@ -1677,6 +2073,11 @@
   {
     "slug": "the-lion-king",
     "title": "The Lion King",
+    "genres": [
+      "Animation",
+      "Family",
+      "Drama"
+    ],
     "genre": "Animation",
     "rating": "PG",
     "score": 8.3,
@@ -1742,8 +2143,85 @@
     }
   },
   {
+    "slug": "the-naked-gun",
+    "title": "The Naked Gun",
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Action"
+    ],
+    "genre": "Comedy",
+    "rating": "PG",
+    "score": 6.3,
+    "runtime": 85,
+    "releaseDate": "2025-07-30",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Liam Neeson",
+      "Pamela Anderson",
+      "Paul Walter Hauser",
+      "Danny Huston",
+      "CCH Pounder"
+    ],
+    "director": "Akiva Schaffer",
+    "synopsis": "Only one man has the particular set of skills... to lead Police Squad and save the world: Lt. Frank Drebin Jr. Following in his father's footsteps, he must solve a murder case to prevent Police Squad from closure.",
+    "still": "https://image.tmdb.org/t/p/w1280/1wi1hcbl6KYqARjdQ4qrBWZdiau.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/uLguU7WLreA?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/rwla9vqzrKVVKVKiOuROTIXGsxj.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
     "slug": "the-odyssey",
     "title": "The Odyssey",
+    "genres": [
+      "Adventure",
+      "Action",
+      "Fantasy"
+    ],
     "genre": "Adventure",
     "rating": "15",
     "score": 8,
@@ -1811,6 +2289,10 @@
   {
     "slug": "the-ring",
     "title": "The Ring",
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
     "genre": "Horror",
     "rating": "15",
     "score": 6.7,
@@ -1878,6 +2360,10 @@
   {
     "slug": "the-shining",
     "title": "The Shining",
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
     "genre": "Horror",
     "rating": "15",
     "score": 8.2,
@@ -1945,6 +2431,11 @@
   {
     "slug": "the-wolf-of-wall-street",
     "title": "The Wolf of Wall Street",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Comedy"
+    ],
     "genre": "Crime",
     "rating": "PG",
     "score": 8,
@@ -2012,6 +2503,11 @@
   {
     "slug": "toy-story",
     "title": "Toy Story",
+    "genres": [
+      "Family",
+      "Comedy",
+      "Animation"
+    ],
     "genre": "Family",
     "rating": "PG",
     "score": 8,

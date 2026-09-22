@@ -1,10 +1,74 @@
 [
   {
-    "title": "Captain Marvel",
-    "poster": "assets/Images/Posters/Upcoming/Captain_Marvel.jpg",
-    "releaseLabel": "Release: In 2 Weeks",
-    "ratingImage": "assets/Images/Ratings/tbc.png",
-    "trailer": "https://www.youtube-nocookie.com/embed/Z1BCujX3pw8?rel=0",
-    "countdownTarget": "2026-10-01T00:00:00Z"
+    "slug": "avengers-doomsday",
+    "title": "Avengers: Doomsday",
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure"
+    ],
+    "genre": "Science Fiction",
+    "rating": "PG",
+    "score": 0,
+    "runtime": 165,
+    "releaseDate": "2026-12-16",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Chris Hemsworth",
+      "Pedro Pascal",
+      "Paul Rudd"
+    ],
+    "director": "Joe Russo",
+    "synopsis": "Beloved heroes from three distinct universes are set on a deadly collision course and face an existential threat unlike anything they've ever encountered.",
+    "still": "https://image.tmdb.org/t/p/w1280/s4v0UX1anfXm0UvloLsTTJ4v222.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/X1aFkAkFASk?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/jzPwsojjFStf5lR5Nm07w2hH56G.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
   }
 ]
