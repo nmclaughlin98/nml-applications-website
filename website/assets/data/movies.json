@@ -6,13 +6,15 @@
     "rating": "PG",
     "score": 7.1,
     "runtime": 94,
-    "releaseDate": "2010-11-12",
+    "releaseDate": "2010-10-28T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "James Franco",
       "Kate Mara",
-      "Amber Tamblyn"
+      "Amber Tamblyn",
+      "Clémence Poésy",
+      "Lizzy Caplan"
     ],
     "director": "Danny Boyle",
     "synopsis": "The true story of mountain climber Aron Ralston's remarkable adventure to save himself after a fallen boulder crashes on his arm and traps him in an isolated canyon in Utah.",
@@ -71,13 +73,15 @@
     "rating": "U",
     "score": 7.7,
     "runtime": 91,
-    "releaseDate": "1992-11-25",
+    "releaseDate": "1993-11-18T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Scott Weinger",
       "Robin Williams",
-      "Linda Larkin"
+      "Linda Larkin",
+      "Jonathan Freeman",
+      "Gilbert Gottfried"
     ],
     "director": "John Musker",
     "synopsis": "In the boorish city of Agrabah, kind-hearted street urchin Aladdin and Princess Jasmine fall in love, although she can only marry a prince. He and power-hungry Grand Vizier Jafar vie for a magic lamp that can fulfill their wishes.",
@@ -136,13 +140,15 @@
     "rating": "12A",
     "score": 8.2,
     "runtime": 149,
-    "releaseDate": "2018-04-25",
+    "releaseDate": "2018-04-26T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Robert Downey Jr.",
       "Chris Evans",
-      "Chris Hemsworth"
+      "Chris Hemsworth",
+      "Josh Brolin",
+      "Mark Ruffalo"
     ],
     "director": "Joe Russo",
     "synopsis": "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
@@ -201,13 +207,15 @@
     "rating": "12A",
     "score": 8,
     "runtime": 135,
-    "releaseDate": "2018-10-24",
+    "releaseDate": "2018-10-23T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Rami Malek",
       "Gwilym Lee",
-      "Ben Hardy"
+      "Ben Hardy",
+      "Joseph Mazzello",
+      "Lucy Boynton"
     ],
     "director": "Bryan Singer",
     "synopsis": "Singer Freddie Mercury, guitarist Brian May, drummer Roger Taylor and bass guitarist John Deacon take the music world by storm when they form the rock 'n' roll band Queen in 1970. Hit songs become instant classics. When Mercury's increasingly wild lifestyle starts to spiral out of control, Queen soon faces its greatest challenge yet – finding a way to keep the band together amid the success and excess.",
@@ -272,7 +280,9 @@
     "starring": [
       "Erika Ervin",
       "Conan Stevens",
-      "Carma Sharon"
+      "Carma Sharon",
+      "Ryan Sobolski",
+      "Bianca Zouppas"
     ],
     "director": "Dominik Hauser",
     "synopsis": "A group of young people become lost in the jungle during a river rafting trip and stumble upon a long lost ruin that is home to a host of mysterious monsters.",
@@ -331,13 +341,15 @@
     "rating": "15",
     "score": 7.5,
     "runtime": 120,
-    "releaseDate": "2018-05-15",
+    "releaseDate": "2018-05-15T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Ryan Reynolds",
       "Josh Brolin",
-      "Morena Baccarin"
+      "Morena Baccarin",
+      "Julian Dennison",
+      "Zazie Beetz"
     ],
     "director": "David Leitch",
     "synopsis": "Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.",
@@ -396,13 +408,15 @@
     "rating": "PG",
     "score": 7.5,
     "runtime": 115,
-    "releaseDate": "1982-06-11",
+    "releaseDate": "1982-08-13T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Henry Thomas",
       "Drew Barrymore",
-      "Robert MacNaughton"
+      "Robert MacNaughton",
+      "Peter Coyote",
+      "Dee Wallace"
     ],
     "director": "Steven Spielberg",
     "synopsis": "An alien is left behind on Earth and saved by the 10-year-old Elliott who decides to keep him hidden in his home. While a task force hunts for the extra-terrestrial, Elliott, his brother, and his little sister Gertie form an emotional bond with their new friend, and try to help him find his way home.",
@@ -461,13 +475,15 @@
     "rating": "PG",
     "score": 6.7,
     "runtime": 97,
-    "releaseDate": "2003-11-07",
+    "releaseDate": "2003-11-14T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Will Ferrell",
       "James Caan",
-      "Bob Newhart"
+      "Bob Newhart",
+      "Ed Asner",
+      "Mary Steenburgen"
     ],
     "director": "Jon Favreau",
     "synopsis": "When young Buddy falls into Santa's gift sack on Christmas Eve, he's transported back to the North Pole and raised as a toy-making elf by Santa's helpers. But as he grows into adulthood, he can't shake the nagging feeling that he doesn't belong. Buddy vows to visit Manhattan and find his real dad, a workaholic.",
@@ -526,13 +542,15 @@
     "rating": "PG",
     "score": 8.5,
     "runtime": 142,
-    "releaseDate": "1994-06-23",
+    "releaseDate": "2024-07-19T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Tom Hanks",
       "Robin Wright",
-      "Gary Sinise"
+      "Gary Sinise",
+      "Sally Field",
+      "Mykelti Williamson"
     ],
     "director": "Robert Zemeckis",
     "synopsis": "A man with a low IQ has accomplished great things in his life and been present during significant historic events—in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.",
@@ -591,13 +609,15 @@
     "rating": "PG",
     "score": 7.5,
     "runtime": 120,
-    "releaseDate": "2017-12-07",
+    "releaseDate": "2018-02-15T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Margot Robbie",
       "Sebastian Stan",
-      "Allison Janney"
+      "Allison Janney",
+      "Julianne Nicholson",
+      "Paul Walter Hauser"
     ],
     "director": "Craig Gillespie",
     "synopsis": "Competitive ice skater Tonya Harding rises amongst the ranks at the U.S. Figure Skating Championships, but her future in the sport is thrown into doubt when her ex-husband intervenes.",
@@ -656,13 +676,15 @@
     "rating": "PG",
     "score": 6.3,
     "runtime": 88,
-    "releaseDate": "2018-08-30",
+    "releaseDate": "2018-10-05T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Rowan Atkinson",
       "Olga Kurylenko",
-      "Ben Miller"
+      "Ben Miller",
+      "Emma Thompson",
+      "Jake Lacy"
     ],
     "director": "David Kerr",
     "synopsis": "Disaster strikes when a criminal mastermind reveals the identities of all active undercover agents in Britain. The secret service can now rely on only one man - Johnny English. Currently teaching at a minor prep school, Johnny springs back into action to find the mysterious hacker. For this mission to succeed, he’ll need all of his skills - what few he has - as the man with yesterday’s analogue methods faces off against tomorrow’s digital technology.",
@@ -721,13 +743,15 @@
     "rating": "PG",
     "score": 8.4,
     "runtime": 135,
-    "releaseDate": "1975-11-19",
+    "releaseDate": "1976-02-26T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Jack Nicholson",
       "Brad Dourif",
-      "Louise Fletcher"
+      "Louise Fletcher",
+      "Danny DeVito",
+      "William Redfield"
     ],
     "director": "Miloš Forman",
     "synopsis": "A petty criminal fakes insanity to serve his sentence in a mental ward rather than prison. He soon finds himself as a leader to the other patients—and an enemy to the cruel, domineering nurse who runs the ward.",
@@ -786,13 +810,15 @@
     "rating": "15",
     "score": 7.2,
     "runtime": 114,
-    "releaseDate": "1982-06-04",
+    "releaseDate": "1982-09-16T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "JoBeth Williams",
       "Craig T. Nelson",
-      "Beatrice Straight"
+      "Beatrice Straight",
+      "Dominique Dunne",
+      "Heather O'Rourke"
     ],
     "director": "Tobe Hooper",
     "synopsis": "The Freelings' suburban home becomes the center of paranormal activity that opens a portal to the 'other side'. With help, they must cross over to get their daughter back.",
@@ -851,13 +877,15 @@
     "rating": "18",
     "score": 8.5,
     "runtime": 154,
-    "releaseDate": "1994-09-10",
+    "releaseDate": "1994-10-21T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "John Travolta",
       "Samuel L. Jackson",
-      "Uma Thurman"
+      "Uma Thurman",
+      "Bruce Willis",
+      "Ving Rhames"
     ],
     "director": "Quentin Tarantino",
     "synopsis": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
@@ -916,13 +944,15 @@
     "rating": "15",
     "score": 7.9,
     "runtime": 129,
-    "releaseDate": "1980-11-14",
+    "releaseDate": "1981-02-19T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Robert De Niro",
       "Cathy Moriarty",
-      "Joe Pesci"
+      "Joe Pesci",
+      "Frank Vincent",
+      "Nicholas Colasanto"
     ],
     "director": "Martin Scorsese",
     "synopsis": "The life of boxer Jake LaMotta, whose violence and temper that led him to the top in the ring destroyed his life outside of it.",
@@ -981,13 +1011,15 @@
     "rating": "PG",
     "score": 7.2,
     "runtime": 112,
-    "releaseDate": "2018-11-20",
+    "releaseDate": "2018-11-30T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "John C. Reilly",
       "Sarah Silverman",
-      "Gal Gadot"
+      "Gal Gadot",
+      "Taraji P. Henson",
+      "Jack McBrayer"
     ],
     "director": "Phil Johnston",
     "synopsis": "Video game bad guy Ralph and fellow misfit Vanellope von Schweetz must risk it all by traveling to the World Wide Web in search of a replacement part to save Vanellope's video game, Sugar Rush. In way over their heads, Ralph and Vanellope rely on the citizens of the internet — the netizens — to help navigate their way, including an entrepreneur named Yesss, who is the head algorithm and the heart and soul of trend-making site BuzzzTube.",
@@ -1046,13 +1078,15 @@
     "rating": "12A",
     "score": 6.6,
     "runtime": 148,
-    "releaseDate": "2015-10-26",
+    "releaseDate": "2015-10-26T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Daniel Craig",
       "Christoph Waltz",
-      "Léa Seydoux"
+      "Léa Seydoux",
+      "Ralph Fiennes",
+      "Monica Bellucci"
     ],
     "director": "Sam Mendes",
     "synopsis": "A cryptic message from Bond’s past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.",
@@ -1111,13 +1145,15 @@
     "rating": "12A",
     "score": 7.9,
     "runtime": 145,
-    "releaseDate": "2026-07-29",
+    "releaseDate": "2026-07-29T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Tom Holland",
       "Zendaya",
-      "Mark Ruffalo"
+      "Mark Ruffalo",
+      "Jon Bernthal",
+      "Jacob Batalon"
     ],
     "director": "Destin Daniel Cretton",
     "synopsis": "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see.",
@@ -1176,13 +1212,15 @@
     "rating": "12A",
     "score": 7.3,
     "runtime": 133,
-    "releaseDate": "2017-07-05",
+    "releaseDate": "2017-07-05T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Tom Holland",
       "Michael Keaton",
-      "Robert Downey Jr."
+      "Robert Downey Jr.",
+      "Marisa Tomei",
+      "Jon Favreau"
     ],
     "director": "Jon Watts",
     "synopsis": "Following the events of Captain America: Civil War, Peter Parker, with the help of his mentor Tony Stark, tries to balance his life as an ordinary high school student in Queens, New York City, with fighting crime as his superhero alter ego Spider-Man as a new threat, the Vulture, emerges.",
@@ -1241,13 +1279,15 @@
     "rating": "12A",
     "score": 6.7,
     "runtime": 152,
-    "releaseDate": "2017-12-13",
+    "releaseDate": "2017-12-12T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Mark Hamill",
       "Carrie Fisher",
-      "Adam Driver"
+      "Adam Driver",
+      "Daisy Ridley",
+      "John Boyega"
     ],
     "director": "Rian Johnson",
     "synopsis": "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.",
@@ -1306,13 +1346,15 @@
     "rating": "15",
     "score": 6.8,
     "runtime": 123,
-    "releaseDate": "2015-10-09",
+    "releaseDate": "2015-10-18T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Michael Fassbender",
       "Kate Winslet",
-      "Seth Rogen"
+      "Seth Rogen",
+      "Jeff Daniels",
+      "Michael Stuhlbarg"
     ],
     "director": "Danny Boyle",
     "synopsis": "Set backstage at three iconic product launches and ending in 1998 with the unveiling of the iMac, Steve Jobs takes us behind the scenes of the digital revolution to paint an intimate portrait of the brilliant man at its epicenter.",
@@ -1371,13 +1413,15 @@
     "rating": "PG",
     "score": 7.5,
     "runtime": 112,
-    "releaseDate": "2013-07-18",
+    "releaseDate": "2013-06-27T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Vera Farmiga",
       "Patrick Wilson",
-      "Lili Taylor"
+      "Lili Taylor",
+      "Ron Livingston",
+      "Hayley McFarland"
     ],
     "director": "James Wan",
     "synopsis": "Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse. Forced to confront a powerful entity, the Warrens find themselves caught in the most terrifying case of their lives.",
@@ -1436,13 +1480,15 @@
     "rating": "18",
     "score": 7.7,
     "runtime": 122,
-    "releaseDate": "1973-12-26",
+    "releaseDate": "1974-03-14T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Ellen Burstyn",
       "Linda Blair",
-      "Jason Miller"
+      "Jason Miller",
+      "Max von Sydow",
+      "Lee J. Cobb"
     ],
     "director": "William Friedkin",
     "synopsis": "When a mysterious entity possesses a young girl, her mother seeks the help of two Catholic priests to save her life.",
@@ -1501,13 +1547,15 @@
     "rating": "15",
     "score": 8.7,
     "runtime": 175,
-    "releaseDate": "1972-03-14",
+    "releaseDate": "1972-08-24T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Marlon Brando",
       "Al Pacino",
-      "James Caan"
+      "James Caan",
+      "Robert Duvall",
+      "Richard S. Castellano"
     ],
     "director": "Francis Ford Coppola",
     "synopsis": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
@@ -1566,13 +1614,15 @@
     "rating": "PG",
     "score": 6.9,
     "runtime": 85,
-    "releaseDate": "2018-11-08",
+    "releaseDate": "2018-11-09T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Benedict Cumberbatch",
       "Rashida Jones",
-      "Kenan Thompson"
+      "Kenan Thompson",
+      "Cameron Seely",
+      "Angela Lansbury"
     ],
     "director": "Yarrow Cheney",
     "synopsis": "The Grinch hatches a scheme to ruin Christmas when the residents of Whoville plan their annual holiday celebration. But a certain little who might change things.",
@@ -1631,13 +1681,15 @@
     "rating": "PG",
     "score": 8.3,
     "runtime": 89,
-    "releaseDate": "1994-06-15",
+    "releaseDate": "1994-10-05T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Matthew Broderick",
       "Moira Kelly",
-      "Jeremy Irons"
+      "Jeremy Irons",
+      "Nathan Lane",
+      "Ernie Sabella"
     ],
     "director": "Roger Allers",
     "synopsis": "Young lion prince Simba, eager to one day become king of the Pride Lands, grows up under the watchful eye of his father Mufasa; all the while his villainous uncle Scar conspires to take the throne for himself. Amid betrayal and tragedy, Simba must confront his past and find his rightful place in the Circle of Life.",
@@ -1696,13 +1748,15 @@
     "rating": "15",
     "score": 8,
     "runtime": 173,
-    "releaseDate": "2026-07-15",
+    "releaseDate": "2026-07-06T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Matt Damon",
       "Tom Holland",
-      "Anne Hathaway"
+      "Anne Hathaway",
+      "Robert Pattinson",
+      "Himesh Patel"
     ],
     "director": "Christopher Nolan",
     "synopsis": "Odysseus, the legendary King of Ithaca, embarks on a long and perilous journey home following the Trojan War. Throughout his voyage, he is forced to confront the whims of gods, mythological monsters, and trials that stretch both his cunning and his humanity to the breaking point.",
@@ -1761,13 +1815,15 @@
     "rating": "15",
     "score": 6.7,
     "runtime": 115,
-    "releaseDate": "2002-10-18",
+    "releaseDate": "2003-02-21T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Naomi Watts",
       "Martin Henderson",
-      "David Dorfman"
+      "David Dorfman",
+      "Brian Cox",
+      "Jane Alexander"
     ],
     "director": "Gore Verbinski",
     "synopsis": "Journalist Rachel Keller investigates a strange videotape that may be behind the untimely deaths of four teenagers. There is an urban legend about this tape: the viewer will die seven days after watching it. Rachel tracks down the video... and watches it. Now she has just seven days to unravel the mystery of the Ring in order to save herself and her son.",
@@ -1826,13 +1882,15 @@
     "rating": "15",
     "score": 8.2,
     "runtime": 144,
-    "releaseDate": "1980-05-23",
+    "releaseDate": "2007-08-15T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Jack Nicholson",
       "Shelley Duvall",
-      "Danny Lloyd"
+      "Danny Lloyd",
+      "Scatman Crothers",
+      "Barry Nelson"
     ],
     "director": "Stanley Kubrick",
     "synopsis": "Jack Torrance accepts a caretaker job at the Overlook Hotel, where he, along with his wife Wendy and their son Danny, must live isolated from the rest of the world for the winter. But they aren't prepared for the madness that lurks within.",
@@ -1891,13 +1949,15 @@
     "rating": "PG",
     "score": 8,
     "runtime": 180,
-    "releaseDate": "2013-12-25",
+    "releaseDate": "2014-01-09T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Leonardo DiCaprio",
       "Jonah Hill",
-      "Margot Robbie"
+      "Margot Robbie",
+      "Matthew McConaughey",
+      "Kyle Chandler"
     ],
     "director": "Martin Scorsese",
     "synopsis": "A New York stockbroker refuses to cooperate in a large securities fraud case involving corruption on Wall Street, corporate banking world and mob infiltration. Based on Jordan Belfort's autobiography.",
@@ -1956,13 +2016,15 @@
     "rating": "PG",
     "score": 8,
     "runtime": 81,
-    "releaseDate": "1995-11-22",
+    "releaseDate": "1996-03-22T00:00:00.000Z",
     "visible": true,
     "topPick": false,
     "starring": [
       "Tom Hanks",
       "Tim Allen",
-      "Don Rickles"
+      "Don Rickles",
+      "Jim Varney",
+      "Wallace Shawn"
     ],
     "director": "John Lasseter",
     "synopsis": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
