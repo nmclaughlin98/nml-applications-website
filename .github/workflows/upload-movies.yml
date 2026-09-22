@@ -1,0 +1,41 @@
+name: Upload or Update Movies JSON
+
+on:
+  workflow_dispatch:
+    inputs:
+      json_content:
+        description: 'Paste new JSON array here (Leave blank to restore from movies-clean.json)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  update-movies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Write Uploaded JSON or Fallback to Clean
+        run: |
+          if [ -n "${{ inputs.json_content }}" ]; then
+            echo "Writing uploaded JSON payload to movies.json..."
+            echo '${{ inputs.json_content }}' > assets/data/movies.json
+          else
+            echo "No payload provided. Restoring movies.json from movies.clean.json..."
+            cp assets/data/movies.clean.json assets/data/movies.json
+          fi
+
+      - name: Validate JSON Format
+        run: |
+          python3 -m json.tool assets/data/movies.json > /dev/null
+
+      - name: Commit and Push to Main
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/data/movies.json
+          git commit -m "update: uploaded new movies.json via workflow dispatch" || exit 0
+          git push

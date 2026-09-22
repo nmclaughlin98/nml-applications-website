@@ -46,7 +46,10 @@
   --shadow-glow: 0 0 30px var(--accent-glow);
 
   --transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-line: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-line-2: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ==========================================================================
@@ -149,16 +152,17 @@ header {
   right: 0;
   height: 80px;
   background: var(--glass-bg);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(16px, 4vw, 48px);
   z-index: 1000;
-  transition: background-color var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition-smooth), box-shadow var(--transition-smooth);
 }
+
 
 header.scrolled {
   background: rgba(10, 11, 15, 0.95);
@@ -170,6 +174,7 @@ header.scrolled {
   align-items: center;
   gap: 14px;
   text-decoration: none;
+  transition: all var(--transition-slow);
 }
 
 .header-box div {
@@ -182,12 +187,18 @@ header.scrolled {
   height: 52px;
   width: auto;
   object-fit: contain;
-  transition: transform var(--transition);
+  transition: transform var(--transition-smooth), filter var(--transition-smooth);
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
 }
 
 .header-box:hover .logo {
-  transform: scale(1.06) rotate(-2deg);
+  transform: scale(1.2) rotate(-5deg);
+}
+
+.header-box:hover .header-text {
+  color: var(--accent-red);
+  -webkit-text-fill-color: var(--accent-red);
+  text-decoration: none;
 }
 
 .header-text {
@@ -200,12 +211,8 @@ header.scrolled {
   background: linear-gradient(135deg, #fff 40%, #ff8a99);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: opacity var(--transition);
-}
-
-.header-box:hover .header-text {
-  opacity: 0.9;
-  color: #ff8a99;
+  /* Change transition to cover text-fill-color and background */
+  transition: -webkit-text-fill-color var(--transition-smooth), color var(--transition-smooth), background var(--transition-smooth);
 }
 
 /* Nav Menu */
@@ -307,7 +314,7 @@ header.scrolled {
   height: 2px;
   background-color: var(--text-primary);
   border-radius: 2px;
-  transition: transform var(--transition), opacity var(--transition);
+  transition: transform var(--transition-line), opacity var(--transition-line-2);
 }
 
 .hamburger .line.transition:nth-child(1) {
@@ -671,7 +678,7 @@ section {
       rgba(10, 11, 15, 0.95) 0%,
       rgba(10, 11, 15, 0.6) 35%,
       transparent 65%);
-  transition: background 0.35s ease;
+  transition: background 0.7s ease;
   z-index: 2;
   pointer-events: auto;
 }
@@ -694,7 +701,7 @@ section {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  transition: transform var(--transition);
+  transition: transform var(--transition-smooth);
 }
 
 .runtime {
@@ -949,6 +956,268 @@ section {
 }
 
 /* ==========================================================================
+   Weekly Timetable Page Styling
+   ========================================================================== */
+
+.page-banner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 46px 20px 18px;
+  text-align: center;
+  position: relative;
+}
+
+.page-banner::before {
+  content: "";
+  position: absolute;
+  inset: 18px 18% auto;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 51, 75, 0.25), transparent 68%);
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+.page-banner h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  position: relative;
+  background: linear-gradient(135deg, #fff 30%, #ffb0ba 55%, #ffd7d7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-banner p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  position: relative;
+}
+
+.timetable-controls {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.timetable-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.day-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.day-tab {
+  padding: 10px 18px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.day-tab:hover,
+.day-tab:focus-visible,
+.day-tab.active {
+  background: linear-gradient(135deg, var(--accent-red), #ff4968);
+  border-color: rgba(255, 255, 255, 0.26);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(255, 51, 75, 0.28);
+  outline: none;
+}
+
+.filter-bar {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto 0 0;
+  flex: 1 1 320px;
+}
+
+.print-pdf-btn {
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.filter-bar .search-input {
+  background: rgba(15, 18, 28, 0.9);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.filter-bar .search-input:focus {
+  border-color: rgba(255, 51, 75, 0.65);
+  box-shadow: 0 0 0 4px rgba(255, 51, 75, 0.12), 0 10px 20px rgba(0, 0, 0, 0.28);
+}
+
+.timetable-container {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.movie-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 2.3fr);
+  gap: 24px;
+  background: linear-gradient(180deg, rgba(24, 28, 42, 0.92), rgba(17, 19, 28, 0.96));
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), transparent);
+  pointer-events: none;
+}
+
+.movie-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.28);
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.movie-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.movie-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-genre {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 51, 75, 0.12);
+  border: 1px solid rgba(255, 51, 75, 0.32);
+  color: #ffe4ea;
+  font-weight: 700;
+}
+
+.showtimes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+.showtime-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  min-height: 74px;
+  padding: 14px 10px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.showtime-btn:hover {
+  color: #fff;
+  background: linear-gradient(180deg, rgba(255, 51, 75, 0.2), rgba(255, 51, 75, 0.08));
+  border-color: rgba(255, 51, 75, 0.42);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(255, 51, 75, 0.12);
+}
+
+.showtime-btn span {
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media print {
+  body {
+    padding-top: 0;
+  }
+
+  header,
+  .ham-overlay,
+  .hamburger,
+  .timetable-controls,
+  .page-banner p,
+  footer,
+  .back-to-top {
+    display: none !important;
+  }
+
+  .page-banner {
+    padding-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .movie-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .showtime-btn {
+    color: #111 !important;
+    background: #fff !important;
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* ==========================================================================
    Interactive Multi-step Booking Wizard (bookNow.html)
    ========================================================================== */
 
@@ -1075,7 +1344,7 @@ section {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xl);
-  padding: clamp(24px, 5vw, 48px);
+  padding: clamp(24px, 5vw, 28px);
   box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
@@ -2074,118 +2343,6 @@ select option {
 }
 
 /* ==========================================================================
-   Modern Cinema Footer
-   ========================================================================== */
-
-footer {
-  background: #08090d;
-  border-top: 1px solid var(--border-subtle);
-  padding: 40px clamp(16px, 5vw, 60px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-footer small {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.secondary-nav ul {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.secondary-nav ul li a {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color var(--transition);
-}
-
-.secondary-nav ul li a:hover {
-  color: var(--accent-red);
-}
-
-/* ==========================================================================
-   Responsive Breakpoints & Fluid Mobile Layouts
-   ========================================================================== */
-
-@media (max-width: 900px) {
-
-  .movie-body-layout,
-  .about-grid-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .primary-nav {
-    display: flex;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background: var(--bg-surface);
-    border-bottom: 1px solid var(--border-subtle);
-    padding: 24px;
-    box-shadow: var(--shadow-lg);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-12px);
-    pointer-events: none;
-    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .primary-nav.open {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
-    pointer-events: auto !important;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .carousel-inner .item {
-    height: 480px;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .poster-section,
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 16px;
-  }
-
-  .poster-column .overlay {
-    padding: 12px;
-  }
-
-  .overlay-text {
-    font-size: 1rem;
-  }
-
-  .payment-methods-grid {
-    grid-template-columns: 1fr;
-  }
-
-  footer {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* ==========================================================================
    Movie Detail Pages Class Support & Modern Styling
    ========================================================================== */
 
@@ -2231,6 +2388,8 @@ footer small {
   left: 0;
   right: 0;
   bottom: 0;
+  opacity: 1;
+  transform: none;
 }
 
 .carousel-caption.movie h1 {
@@ -2272,7 +2431,6 @@ footer small {
   grid-template-columns: 2fr 1fr;
   gap: 40px;
   padding: 30px clamp(16px, 5vw, 60px);
-  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -2380,14 +2538,107 @@ iframe.trailer {
   transform: translateY(-2px);
 }
 
+.show-time.active {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #fff;
+  box-shadow: 0 0 0 2px rgba(157, 36, 59, 0.25);
+}
+
 hr {
   border: none;
   border-top: 1px solid var(--border-subtle);
   margin: 10px 0;
 }
 
-@media (max-width: 900px) {
-  .movie-page {
-    grid-template-columns: 1fr;
-  }
+.sort-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 320px;
+  width: 100%;
+}
+
+.sort-wrapper label {
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.sort-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 44px 12px 16px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(180deg, rgba(17, 20, 28, 0.96), rgba(13, 16, 22, 0.96));
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all var(--transition);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.sort-select:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.sort-select:focus {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 3px rgba(255, 51, 75, 0.16), 0 0 18px rgba(255, 51, 75, 0.12);
+}
+
+.sort-wrapper::after {
+  content: "▾";
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Modern Cinema Footer
+   ========================================================================== */
+
+footer {
+  background: #08090d;
+  border-top: 1px solid var(--border-subtle);
+  padding: 40px clamp(16px, 5vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+footer small {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.secondary-nav ul {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.secondary-nav ul li a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.secondary-nav ul li a:hover {
+  color: var(--accent-red);
 }

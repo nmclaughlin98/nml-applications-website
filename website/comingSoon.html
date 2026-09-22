@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Exciting blockbuster movies coming soon to Blockbuster Theatres. Set reminders and watch the latest teaser trailers.">
   <title>Blockbuster Theatres - Coming Soon</title>
+  
+  <link rel="icon" type="image/png" href="assets/Images/favicon.png"/>
 
   <link rel="stylesheet" href="assets/stylesheets/main.css">
   <link rel="stylesheet" href="assets/stylesheets/media-queries.css">
@@ -46,85 +48,7 @@
     </div>
 
     <!-- Movie Grid -->
-    <div class="poster-section">
-      <!-- Movie 1 -->
-      <div class="poster-column">
-        <img class="poster" src="assets/Images/Posters/Upcoming/Captain_Marvel.jpg" alt="Captain Marvel">
-        <div class="overlay">
-          <div class="overlay-text">Captain Marvel</div>
-          <div class="runtime">Release: In 2 Weeks</div>
-          <img class="rating" src="assets/Images/Ratings/tbc.png" alt="TBC">
-          <p id="Captain_Marvel" data-countdown="Captain_Marvel">Loading countdown...</p>
-          <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for Captain Marvel! We will notify you when advance tickets drop.')">🔔 Remind Me</button>
-          <button class="button" data-trailer="https://www.youtube-nocookie.com/embed/Z1BCujX3pw8?rel=0">▶ Teaser Trailer</button>
-        </div>
-      </div>
-
-      <!-- Movie 2 -->
-      <div class="poster-column">
-        <img class="poster" src="assets/Images/Posters/Upcoming/Avengers.jpg" alt="Avengers: Endgame">
-        <div class="overlay">
-          <div class="overlay-text">Avengers: Endgame</div>
-          <div class="runtime">Release: In 4 Weeks</div>
-          <img class="rating" src="assets/Images/Ratings/tbc.png" alt="TBC">
-          <p id="Avengers" data-countdown="Avengers">Loading countdown...</p>
-          <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for Avengers: Endgame! Midnight premiere alerts enabled.')">🔔 Remind Me</button>
-          <button class="button" data-trailer="https://www.youtube-nocookie.com/embed/TcMBFSGVi1c?rel=0">▶ Teaser Trailer</button>
-        </div>
-      </div>
-
-      <!-- Movie 3 -->
-      <div class="poster-column">
-        <img class="poster" src="assets/Images/Posters/Upcoming/Godzilla.jpg" alt="Godzilla: King of the Monsters">
-        <div class="overlay">
-          <div class="overlay-text">Godzilla: King of the Monsters</div>
-          <div class="runtime">Release: In 6 Weeks</div>
-          <img class="rating" src="assets/Images/Ratings/tbc.png" alt="TBC">
-          <p id="Godzilla" data-countdown="Godzilla">Loading countdown...</p>
-          <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for Godzilla: King of the Monsters!')">🔔 Remind Me</button>
-          <button class="button" data-trailer="https://www.youtube-nocookie.com/embed/QFxN2oDKk0E?rel=0">▶ Teaser Trailer</button>
-        </div>
-      </div>
-
-      <!-- Movie 4 -->
-      <div class="poster-column">
-        <img class="poster" src="assets/Images/Posters/Upcoming/Dark_Pheonix.jpg" alt="X-Men: Dark Phoenix">
-        <div class="overlay">
-          <div class="overlay-text">X-Men: Dark Phoenix</div>
-          <div class="runtime">Release: In 8 Weeks</div>
-          <img class="rating" src="assets/Images/Ratings/tbc.png" alt="TBC">
-          <p id="Dark_Phoenix" data-countdown="Dark_Phoenix">Loading countdown...</p>
-          <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for Dark Phoenix!')">🔔 Remind Me</button>
-          <button class="button" data-trailer="https://www.youtube-nocookie.com/embed/QWbMckU3AOQ?rel=0">▶ Teaser Trailer</button>
-        </div>
-      </div>
-
-      <!-- Movie 5 -->
-      <div class="poster-column">
-        <img class="poster" src="assets/Images/Posters/Upcoming/Toy_Story_4.jpg" alt="Toy Story 4">
-        <div class="overlay">
-          <div class="overlay-text">Toy Story 4</div>
-          <div class="runtime">Release: In 10 Weeks</div>
-          <img class="rating" src="assets/Images/Ratings/tbc.png" alt="TBC">
-          <p id="Toy_Story_4" data-countdown="Toy_Story_4">Loading countdown...</p>
-          <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for Toy Story 4! Family tickets coming soon.')">🔔 Remind Me</button>
-          <button class="button" data-trailer="https://www.youtube-nocookie.com/embed/wmiIUN-7qhE?rel=0">▶ Teaser Trailer</button>
-        </div>
-      </div>
-
-      <!-- Movie 6 -->
-      <div class="poster-column">
-        <img class="poster" src="assets/Images/Posters/Upcoming/Lion_King.jpg" alt="The Lion King">
-        <div class="overlay">
-          <div class="overlay-text">The Lion King</div>
-          <div class="runtime">Release: In 12 Weeks</div>
-          <img class="rating" src="assets/Images/Ratings/tbc.png" alt="TBC">
-          <p id="Lion_King" data-countdown="Lion_King">Loading countdown...</p>
-          <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for The Lion King in IMAX!')">🔔 Remind Me</button>
-          <button class="button" data-trailer="https://www.youtube-nocookie.com/embed/7TavVZMewpY?rel=0">▶ Teaser Trailer</button>
-        </div>
-      </div>
-    </div>
+    <div id="coming-soon-list" class="poster-section"></div>
   </section>
 
   <!-- Back to Top Button -->
@@ -149,5 +73,6 @@
   </footer>
 
   <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/coming-soon.js"></script>
 </body>
 </html>

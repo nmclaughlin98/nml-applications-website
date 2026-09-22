@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Timetable | Blockbuster Theatre</title>
     <link href="assets/Images/favicon.png" rel="icon" type="image/png">
-    
+
     <link rel="stylesheet" href="assets/stylesheets/main.css">
-	<link rel="stylesheet" href="assets/stylesheets/media-queries.css">
+    <link rel="stylesheet" href="assets/stylesheets/media-queries.css">
 </head>
+
 <body>
 
+    <!-- Header & Navigation -->
     <header>
-        <a href="index.html" class="logo">
-            <img src="assets/Images/logo.png" alt="Blockbuster Theatres Logo">
-            <span>BLOCKBUSTER<br>THEATRE</span>
+        <a class="header-box" href="index.html">
+            <img class="logo" src="assets/Images/logo.png" alt="Blockbuster Theatres">
+            <span class="header-text">BLOCKBUSTER<br>THEATRE</span>
         </a>
-        <nav>
-            <ul>
+
+        <nav class="nav primary-nav">
+            <ul class="menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="nowShowing.html" class="active">Now Showing</a></li>
+                <li><a class="current" href="nowShowing.html">Now Showing</a></li>
                 <li><a href="comingSoon.html">Coming Soon</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="bookNow.html">Book Tickets</a></li>
+                <li><a class="nav-cta-btn" href="bookNow.html">Book Tickets</a></li>
             </ul>
         </nav>
+
+        <div class="hamburger" aria-label="Toggle navigation">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
     </header>
 
-    <section class="page-banner">
-        <h1>Weekly Movie Timetable</h1>
-        <p>Schedule for Week Commencing 10th December 2018</p>
-    </section>
+    <div class="ham-overlay"></div>
 
-    <div class="timetable-controls">
-        <div class="day-tabs" role="tablist">
-            <button class="day-tab active" onclick="filterDay('Monday')">Monday</button>
-            <button class="day-tab" onclick="filterDay('Tuesday')">Tuesday</button>
-            <button class="day-tab" onclick="filterDay('Wednesday')">Wednesday</button>
-            <button class="day-tab" onclick="filterDay('Thursday')">Thursday</button>
-            <button class="day-tab" onclick="filterDay('Friday')">Friday</button>
-            <button class="day-tab" onclick="filterDay('Saturday')">Saturday</button>
-            <button class="day-tab" onclick="filterDay('Sunday')">Sunday</button>
+    <div id="timetablePrintArea">
+        <section class="page-banner">
+            <h1>Weekly Movie Timetable</h1>
+            <p id="weekCommencingLabel">Schedule for Week Commencing</p>
+        </section>
+
+        <div class="timetable-controls">
+            <div class="day-tabs" role="tablist">
+                <button class="day-tab active" onclick="filterDay('Monday')">Monday</button>
+                <button class="day-tab" onclick="filterDay('Tuesday')">Tuesday</button>
+                <button class="day-tab" onclick="filterDay('Wednesday')">Wednesday</button>
+                <button class="day-tab" onclick="filterDay('Thursday')">Thursday</button>
+                <button class="day-tab" onclick="filterDay('Friday')">Friday</button>
+                <button class="day-tab" onclick="filterDay('Saturday')">Saturday</button>
+                <button class="day-tab" onclick="filterDay('Sunday')">Sunday</button>
+            </div>
+
+            <div class="timetable-toolbar">
+                <div class="filter-bar">
+                    <input type="text" id="movieSearch" class="search-input" placeholder="Search film title..."
+                        onkeyup="filterMovies()">
+                </div>
+                <button type="button" class="button btn-glass print-pdf-btn" onclick="generateTimetablePdf()">Download
+                    PDF</button>
+            </div>
         </div>
 
-        <div class="filter-bar">
-            <input type="text" id="movieSearch" class="search-input" placeholder="Search film title..." onkeyup="filterMovies()">
-        </div>
+        <div id="timetableList" class="timetable-container" aria-live="polite"></div>
     </div>
 
-    <main class="timetable-container" id="timetableList">
-        <!-- Rendered via JS -->
-    </main>
-
+    <!-- Footer -->
     <footer>
         <div class="footer-info">
             <strong>Blockbuster Theatre Derry</strong>
@@ -60,5 +78,11 @@
         </div>
         <small>© Blockbuster Theatres. Modern cinema • IMAX • Dolby Atmos.</small>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/timetable-pdf.js"></script>
 </body>
+
 </html>

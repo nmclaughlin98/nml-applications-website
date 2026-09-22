@@ -8,12 +8,13 @@
     content="Browse movies now showing at Blockbuster Theatres. Book tickets, view showtimes, and watch trailers.">
   <title>Blockbuster Theatres - Now Showing</title>
 
+  <link rel="icon" type="image/png" href="assets/Images/favicon.png" />
+
   <link rel="stylesheet" href="assets/stylesheets/main.css">
   <link rel="stylesheet" href="assets/stylesheets/media-queries.css">
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <a class="header-box" href="index.html">
       <img class="logo" src="assets/Images/logo.png" alt="Blockbuster Theatres">
@@ -39,7 +40,6 @@
 
   <div class="ham-overlay"></div>
 
-  <!-- Now Showing Section -->
   <section class="movie-poster">
     <div class="section-header">
       <div>
@@ -47,15 +47,26 @@
         <p style="color: var(--text-secondary); margin-top: 6px;">Select a movie to view synopsis, showtimes,
           and book reserved luxury seats.</p>
       </div>
-      <a class="button btn-glass" href="assets/Blockbuster-Theatre-Timetable.pdf" target="_blank">📄 Download PDF
-        Timetable</a>
+      <a class="button btn-glass" href="timetable.html">View Timetable</a>
     </div>
 
-    <!-- Genre Filter Tabs & Search Bar -->
     <div class="genre-filter-container">
       <div class="search-wrapper">
         <span class="search-icon"></span>
+        <label for="movie-search-input">Search by movie title:</label>
         <input type="text" id="movie-search-input" class="search-input" placeholder="Search by movie title...">
+      </div>
+
+      <div class="sort-wrapper">
+        <label for="movie-sort-select">Sort movies:</label>
+        <select id="movie-sort-select" class="sort-select" name="sort" aria-label="Sort movies">
+          <option value="title-asc" selected>Alphabetical (A–Z)</option>
+          <option value="title-desc">Alphabetical (Z–A)</option>
+          <option value="release-desc">Release date (newest first)</option>
+          <option value="release-asc">Release date (oldest first)</option>
+          <option value="score-desc">Popularity / score (highest first)</option>
+          <option value="score-asc">Popularity / score (lowest first)</option>
+        </select>
       </div>
 
       <div class="genre-tabs">
@@ -69,348 +80,15 @@
       </div>
     </div>
 
-    <!-- Movie Cards Grid -->
-    <div class="poster-section">
-      <!-- ACTION -->
-      <div class="poster-column" data-genre="action">
-        <img class="poster" src="assets/Images/Posters/infinity-war.jpg" alt="Avengers: Infinity War">
-        <div class="overlay">
-          <div class="overlay-text">Avengers: Infinity War</div>
-          <div class="runtime">160 mins</div>
-          <img class="rating" src="assets/Images/Ratings/12A.png" alt="12A">
-          <a class="button" href="bookNow.html?movie=Avengers:%20Infinity%20War&time=19:00">Book Now</a>
-          <a class="button" href="move-webpages/action/Infinity_War.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="action">
-        <img class="poster" src="assets/Images/Posters/spiderman.jpg" alt="Spider-Man: Homecoming">
-        <div class="overlay">
-          <div class="overlay-text">Spider-Man: Homecoming</div>
-          <div class="runtime">133 mins</div>
-          <img class="rating" src="assets/Images/Ratings/12.png" alt="12">
-          <a class="button" href="bookNow.html?movie=Spider-Man:%20Homecoming&time=17:00">Book Now</a>
-          <a class="button" href="move-webpages/action/Spiderman_Homecoming.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="action">
-        <img class="poster" src="assets/Images/Posters/Action/Deadpool_2_Poster.jpg" alt="Deadpool 2">
-        <div class="overlay">
-          <div class="overlay-text">Deadpool 2</div>
-          <div class="runtime">119 mins</div>
-          <img class="rating" src="assets/Images/Ratings/15.png" alt="15">
-          <a class="button" href="bookNow.html?movie=Deadpool%202&time=21:00">Book Now</a>
-          <a class="button" href="move-webpages/action/Deadpool_2.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="action">
-        <img class="poster" src="assets/Images/Posters/Action/The_Last_Jedi_Poster.jpg" alt="Star Wars: The Last Jedi">
-        <div class="overlay">
-          <div class="overlay-text">Star Wars: The Last Jedi</div>
-          <div class="runtime">152 mins</div>
-          <img class="rating" src="assets/Images/Ratings/12.png" alt="12">
-          <a class="button" href="bookNow.html?movie=Star%20Wars:%20The%20Last%20Jedi&time=19:30">Book Now</a>
-          <a class="button" href="move-webpages/action/The_Last_Jedi.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="action">
-        <img class="poster" src="assets/Images/Posters/Action/007_Spectre_Poster.jpg" alt="Spectre">
-        <div class="overlay">
-          <div class="overlay-text">007: Spectre</div>
-          <div class="runtime">148 mins</div>
-          <img class="rating" src="assets/Images/Ratings/12A.png" alt="12A">
-          <a class="button" href="bookNow.html?movie=Spectre&time=20:00">Book Now</a>
-          <a class="button" href="move-webpages/action/Spectre.html">More Info</a>
-        </div>
-      </div>
-
-      <!-- COMEDY -->
-      <div class="poster-column" data-genre="comedy">
-        <img class="poster" src="assets/Images/Posters/Kids/Elf_Poster.jpg" alt="Elf">
-        <div class="overlay">
-          <div class="overlay-text">Elf</div>
-          <div class="runtime">97 mins</div>
-          <img class="rating" src="assets/Images/Ratings/PG.png" alt="PG">
-          <a class="button" href="bookNow.html?movie=Elf&time=14:30">Book Now</a>
-          <a class="button" href="move-webpages/kids/Elf.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="comedy">
-        <img class="poster" src="assets/Images/Posters/Comedy/johnny-english.jpg" alt="Johnny English">
-        <div class="overlay">
-          <div class="overlay-text">Johnny English: Strikes Again</div>
-          <div class="runtime">88 mins</div>
-          <img class="rating" src="assets/Images/Ratings/PG.png" alt="PG">
-          <a class="button" href="bookNow.html?movie=Johnny%20English:%20Strikes%20Again&time=16:15">Book
-            Now</a>
-          <a class="button" href="move-webpages/comedy/johnny-english.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="comedy">
-        <img class="poster" src="assets/Images/Posters/Comedy/the-grinch.jpg" alt="The Grinch">
-        <div class="overlay">
-          <div class="overlay-text">The Grinch</div>
-          <div class="runtime">90 mins</div>
-          <img class="rating" src="assets/Images/Ratings/PG.png" alt="PG">
-          <a class="button" href="bookNow.html?movie=The%20Grinch&time=13:00">Book Now</a>
-          <a class="button" href="move-webpages/comedy/the-grinch.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="comedy">
-        <img class="poster" src="assets/Images/Posters/Comedy/nobodys-fool.jpg" alt="Nobody's Fool">
-        <div class="overlay">
-          <div class="overlay-text">Nobody's Fool</div>
-          <div class="runtime">110 mins</div>
-          <img class="rating" src="assets/Images/Ratings/15.png" alt="15">
-          <a class="button" href="bookNow.html?movie=Nobodys%20Fool&time=18:45">Book Now</a>
-          <a class="button" href="move-webpages/comedy/nobodys-fool.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="comedy">
-        <img class="poster" src="assets/Images/Posters/Comedy/wreck-it-ralph.jpg" alt="Ralph Breaks The Internet">
-        <div class="overlay">
-          <div class="overlay-text">Ralph Breaks The Internet</div>
-          <div class="runtime">112 mins</div>
-          <img class="rating" src="assets/Images/Ratings/PG.png" alt="PG">
-          <a class="button" href="bookNow.html?movie=Ralph%20Breaks%20the%20Internet&time=15:00">Book Now</a>
-          <a class="button" href="move-webpages/comedy/wreck-it-ralph.html">More Info</a>
-        </div>
-      </div>
-
-      <!-- BIOGRAPHICAL -->
-      <div class="poster-column" data-genre="biographical">
-        <img class="poster" src="assets/Images/Posters/bohemian-rhapsody.jpg" alt="Bohemian Rhapsody">
-        <div class="overlay">
-          <div class="overlay-text">Bohemian Rhapsody</div>
-          <div class="runtime">134 mins</div>
-          <img class="rating" src="assets/Images/Ratings/12A.png" alt="12A">
-          <a class="button" href="bookNow.html?movie=Bohemian%20Rhapsody&time=19:00">Book Now</a>
-          <a class="button" href="move-webpages/biographical/Bohemian_Rhapsody.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="biographical">
-        <img class="poster" src="assets/Images/Posters/Biographical/127_Hours_Poster.jpg" alt="127 Hours">
-        <div class="overlay">
-          <div class="overlay-text">127 Hours</div>
-          <div class="runtime">94 mins</div>
-          <img class="rating" src="assets/Images/Ratings/15.png" alt="15">
-          <a class="button" href="bookNow.html?movie=127%20Hours&time=20:30">Book Now</a>
-          <a class="button" href="move-webpages/biographical/127_Hours.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="biographical">
-        <img class="poster" src="assets/Images/Posters/Biographical/The_Wolf_Of_Wall_Street_Poster.jpg"
-          alt="The Wolf of Wall Street">
-        <div class="overlay">
-          <div class="overlay-text">The Wolf of Wall Street</div>
-          <div class="runtime">180 mins</div>
-          <img class="rating" src="assets/Images/Ratings/18.png" alt="18">
-          <a class="button" href="bookNow.html?movie=The%20Wolf%20Of%20Wall%20Street&time=21:15">Book Now</a>
-          <a class="button" href="move-webpages/biographical/The_Wolf_Of_Wall_Street.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="biographical">
-        <img class="poster" src="assets/Images/Posters/Biographical/Steve_Jobs_Poster.jpg" alt="Steve Jobs">
-        <div class="overlay">
-          <div class="overlay-text">Steve Jobs</div>
-          <div class="runtime">122 mins</div>
-          <img class="rating" src="assets/Images/Ratings/15.png" alt="15">
-          <a class="button" href="bookNow.html?movie=Steve%20Jobs&time=18:00">Book Now</a>
-          <a class="button" href="move-webpages/biographical/Steve_Jobs.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="biographical">
-        <img class="poster" src="assets/Images/Posters/Biographical/I_Tonya_Poster.jpg" alt="I, Tonya">
-        <div class="overlay">
-          <div class="overlay-text">I, Tonya</div>
-          <div class="runtime">120 mins</div>
-          <img class="rating" src="assets/Images/Ratings/15.png" alt="15">
-          <a class="button" href="bookNow.html?movie=I,%20Tonya&time=20:45">Book Now</a>
-          <a class="button" href="move-webpages/biographical/I_Tonya.html">More Info</a>
-        </div>
-      </div>
-
-      <!-- HORROR -->
-      <div class="poster-column" data-genre="horror">
-        <img class="poster" src="assets/Images/Posters/Horror/The_Shining_Poster.jpg" alt="The Shining">
-        <div class="overlay">
-          <div class="overlay-text">The Shining</div>
-          <div class="runtime">146 mins</div>
-          <img class="rating" src="assets/Images/Ratings/15.png" alt="15">
-          <a class="button" href="bookNow.html?movie=The%20Shining&time=21:30">Book Now</a>
-          <a class="button" href="move-webpages/horror/The_Shining.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="horror">
-        <img class="poster" src="assets/Images/Posters/Horror/The_Exorcist_Poster.jpg" alt="The Exorcist">
-        <div class="overlay">
-          <div class="overlay-text">The Exorcist</div>
-          <div class="runtime">122 mins</div>
-          <img class="rating" src="assets/Images/Ratings/18.png" alt="18">
-          <a class="button" href="bookNow.html?movie=The%20Exorcist&time=22:00">Book Now</a>
-          <a class="button" href="move-webpages/horror/The_Exorcist.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="horror">
-        <img class="poster" src="assets/Images/Posters/Horror/The_Conjuring_Poster.jpg" alt="The Conjuring">
-        <div class="overlay">
-          <div class="overlay-text">The Conjuring</div>
-          <div class="runtime">112 mins</div>
-          <img class="rating" src="assets/Images/Ratings/15.png" alt="15">
-          <a class="button" href="bookNow.html?movie=The%20Conjuring&time=21:00">Book Now</a>
-          <a class="button" href="move-webpages/horror/The_Conjuring.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="horror">
-        <img class="poster" src="assets/Images/Posters/Horror/Poltergeist_Poster.jpg" alt="Poltergeist">
-        <div class="overlay">
-          <div class="overlay-text">Poltergeist</div>
-          <div class="runtime">114 mins</div>
-          <img class="rating" src="assets/Images/Ratings/15.png" alt="15">
-          <a class="button" href="bookNow.html?movie=Poltergeist&time=20:15">Book Now</a>
-          <a class="button" href="move-webpages/horror/Poltergeist.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="horror">
-        <img class="poster" src="assets/Images/Posters/Horror/The_Ring_Poster.jpg" alt="The Ring">
-        <div class="overlay">
-          <div class="overlay-text">The Ring</div>
-          <div class="runtime">115 mins</div>
-          <img class="rating" src="assets/Images/Ratings/15.png" alt="15">
-          <a class="button" href="bookNow.html?movie=The%20Ring&time=22:15">Book Now</a>
-          <a class="button" href="move-webpages/horror/The_Ring.html">More Info</a>
-        </div>
-      </div>
-
-      <!-- KIDS & FAMILY -->
-      <div class="poster-column" data-genre="kids">
-        <img class="poster" src="assets/Images/Posters/Kids/Toy_Story_Poster.jpg" alt="Toy Story">
-        <div class="overlay">
-          <div class="overlay-text">Toy Story</div>
-          <div class="runtime">81 mins</div>
-          <img class="rating" src="assets/Images/Ratings/PG.png" alt="PG">
-          <a class="button" href="bookNow.html?movie=Toy%20Story&time=13:30">Book Now</a>
-          <a class="button" href="move-webpages/kids/Toy_Story.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="kids">
-        <img class="poster" src="assets/Images/Posters/Kids/The_Lion_King_Poster.jpg" alt="The Lion King">
-        <div class="overlay">
-          <div class="overlay-text">The Lion King</div>
-          <div class="runtime">88 mins</div>
-          <img class="rating" src="assets/Images/Ratings/PG.png" alt="PG">
-          <a class="button" href="bookNow.html?movie=The%20Lion%20King&time=14:15">Book Now</a>
-          <a class="button" href="move-webpages/kids/The_Lion_King.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="kids">
-        <img class="poster" src="assets/Images/Posters/Kids/Aladdin_Poster.jpg" alt="Aladdin">
-        <div class="overlay">
-          <div class="overlay-text">Aladdin</div>
-          <div class="runtime">90 mins</div>
-          <img class="rating" src="assets/Images/Ratings/PG.png" alt="PG">
-          <a class="button" href="bookNow.html?movie=Aladdin&time=15:45">Book Now</a>
-          <a class="button" href="move-webpages/kids/Aladdin.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="kids">
-        <img class="poster" src="assets/Images/Posters/Kids/E.T_Poster.jpg" alt="E.T.">
-        <div class="overlay">
-          <div class="overlay-text">E.T. The Extra-Terrestrial</div>
-          <div class="runtime">115 mins</div>
-          <img class="rating" src="assets/Images/Ratings/PG.png" alt="PG">
-          <a class="button" href="bookNow.html?movie=E.T&time=16:30">Book Now</a>
-          <a class="button" href="move-webpages/kids/E.T.html">More Info</a>
-        </div>
-      </div>
-
-      <!-- CLASSICS -->
-      <div class="poster-column" data-genre="classics">
-        <img class="poster" src="assets/Images/Posters/Classics/The_Godfather_Poster.jpg" alt="The Godfather">
-        <div class="overlay">
-          <div class="overlay-text">The Godfather</div>
-          <div class="runtime">175 mins</div>
-          <img class="rating" src="assets/Images/Ratings/15.png" alt="15">
-          <a class="button" href="bookNow.html?movie=The%20Godfather&time=19:00">Book Now</a>
-          <a class="button" href="move-webpages/classics/The_Godfather.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="classics">
-        <img class="poster" src="assets/Images/Posters/Classics/Pulp_Fiction_Poster.jpg" alt="Pulp Fiction">
-        <div class="overlay">
-          <div class="overlay-text">Pulp Fiction</div>
-          <div class="runtime">154 mins</div>
-          <img class="rating" src="assets/Images/Ratings/18.png" alt="18">
-          <a class="button" href="bookNow.html?movie=Pulp%20Fiction&time=20:30">Book Now</a>
-          <a class="button" href="move-webpages/classics/Pulp_Fiction.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="classics">
-        <img class="poster" src="assets/Images/Posters/Classics/Forrest_Gump_Poster.jpg" alt="Forrest Gump">
-        <div class="overlay">
-          <div class="overlay-text">Forrest Gump</div>
-          <div class="runtime">142 mins</div>
-          <img class="rating" src="assets/Images/Ratings/12.png" alt="12">
-          <a class="button" href="bookNow.html?movie=Forrest%20Gump&time=17:45">Book Now</a>
-          <a class="button" href="move-webpages/classics/Forrest_Gump.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="classics">
-        <img class="poster"
-          src="assets/Images/Posters/Classics/One_Flew_Over_The_Cuckoo's_Nest_Poster.jpg"
-          alt="One Flew Over The Cuckoo's Nest">
-        <div class="overlay">
-          <div class="overlay-text">One Flew Over The Cuckoo's Nest</div>
-          <div class="runtime">133 mins</div>
-          <img class="rating" src="assets/Images/Ratings/15.png" alt="15">
-          <a class="button" href="bookNow.html?movie=One%20Flew%20Over%20the%20Cuckoos%20Nest&time=18:15">Book
-            Now</a>
-          <a class="button" href="move-webpages/classics/One_Flew_Over_The_Cuckoo's_Nest.html">More Info</a>
-        </div>
-      </div>
-
-      <div class="poster-column" data-genre="classics">
-        <img class="poster" src="assets/Images/Posters/Classics/Raging_Bull_Poster.jpg" alt="Raging Bull">
-        <div class="overlay">
-          <div class="overlay-text">Raging Bull</div>
-          <div class="runtime">129 mins</div>
-          <img class="rating" src="assets/Images/Ratings/18.png" alt="18">
-          <a class="button" href="bookNow.html?movie=Raging%20Bull&time=21:00">Book Now</a>
-          <a class="button" href="move-webpages/classics/Raging_Bull.html">More Info</a>
-        </div>
-      </div>
-    </div>
+    <div id="now-showing-list" class="poster-section"></div>
   </section>
 
-  <!-- Back to Top Button -->
   <div class="back-to-top" id="back-to-top" aria-label="Back to top">
     <svg viewBox="0 0 24 24">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </div>
 
-  <!-- Footer -->
   <footer>
     <small>&copy; Blockbuster Theatres. Modern cinema &bull; IMAX &bull; Dolby Atmos.</small>
     <nav class="secondary-nav">
@@ -425,6 +103,7 @@
   </footer>
 
   <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/now-showing.js"></script>
 </body>
 
 </html>

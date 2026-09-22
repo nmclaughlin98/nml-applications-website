@@ -61,9 +61,10 @@
 					</p>
 					<div class="hero-actions">
 						<a class="button" href="bookNow.html?movie=Bohemian%20Rhapsody&time=19:00">Book Tickets</a>
-						<button class="button btn-secondary" data-trailer="https://www.youtube-nocookie.com/embed/mP0VHJYFOAU?rel=0">
+						<button class="button btn-secondary"
+							data-trailer="https://www.youtube-nocookie.com/embed/mP0VHJYFOAU?rel=0">
 							Watch Trailer</button>
-						<a class="button btn-glass" href="move-webpages/biographical/Bohemian_Rhapsody.html">More
+						<a class="button btn-glass" href="templates/movie-detail.html?movie=bohemian-rhapsody">More
 							Info</a>
 					</div>
 				</div>
@@ -79,9 +80,11 @@
 					<div class="hero-actions">
 						<a class="button" href="bookNow.html?movie=Avengers:%20Infinity%20War&time=20:00">Book
 							Tickets</a>
-						<button class="button btn-secondary" data-trailer="https://www.youtube-nocookie.com/embed/6ZfuNTqbHE8?rel=0">
+						<button class="button btn-secondary"
+							data-trailer="https://www.youtube-nocookie.com/embed/6ZfuNTqbHE8?rel=0">
 							Watch Trailer</button>
-						<a class="button btn-glass" href="move-webpages/action/Infinity_War.html">More Info</a>
+						<a class="button btn-glass" href="templates/movie-detail.html?movie=avengers-infinity-war">More
+							Info</a>
 					</div>
 				</div>
 			</div>
@@ -95,9 +98,11 @@
 						May. Under the watchful eye of Tony Stark, Parker embraces his newfound identity.</p>
 					<div class="hero-actions">
 						<a class="button" href="bookNow.html?movie=Spider-Man:%20Homecoming&time=17:30">Book Tickets</a>
-						<button class="button btn-secondary" data-trailer="https://www.youtube-nocookie.com/embed/n9DwoQ7HWvI?rel=0">
+						<button class="button btn-secondary"
+							data-trailer="https://www.youtube-nocookie.com/embed/n9DwoQ7HWvI?rel=0">
 							Watch Trailer</button>
-						<a class="button btn-glass" href="move-webpages/action/Spiderman_Homecoming.html">More Info</a>
+						<a class="button btn-glass" href="templates/movie-detail.html?movie=spider-man-homecoming">More
+							Info</a>
 					</div>
 				</div>
 			</div>
@@ -111,9 +116,10 @@
 						main source of aggravation comes during Christmastime in Whoville.</p>
 					<div class="hero-actions">
 						<a class="button" href="bookNow.html?movie=The%20Grinch&time=14:00">Book Tickets</a>
-						<button class="button btn-secondary" data-trailer="https://www.youtube-nocookie.com/embed/Bf6D-i8YpHg?rel=0">
+						<button class="button btn-secondary"
+							data-trailer="https://www.youtube-nocookie.com/embed/Bf6D-i8YpHg?rel=0">
 							Watch Trailer</button>
-						<a class="button btn-glass" href="move-webpages/comedy/the-grinch.html">More Info</a>
+						<a class="button btn-glass" href="templates/movie-detail.html?movie=the-grinch">More Info</a>
 					</div>
 				</div>
 			</div>
@@ -128,6 +134,16 @@
 		</a>
 	</div>
 
+	<!-- New Releases Section -->
+	<section class="movie-poster">
+		<div class="section-header">
+			<h1>New Releases</h1>
+			<a class="btn-glass button" style="font-size: 0.85rem;" href="nowShowing.html">View All Movies &rarr;</a>
+		</div>
+
+		<div id="new-releases-list" class="poster-section"></div>
+	</section>
+
 	<!-- Top Picks Section -->
 	<section class="movie-poster">
 		<div class="section-header">
@@ -135,68 +151,7 @@
 			<a class="btn-glass button" style="font-size: 0.85rem;" href="nowShowing.html">View All Movies &rarr;</a>
 		</div>
 
-		<div class="poster-section">
-			<!-- Card 1 -->
-			<div class="poster-column">
-				<img class="poster" src="assets/Images/Posters/infinity-war.jpg" alt="Avengers: Infinity War">
-				<div class="overlay">
-					<div class="overlay-text">Avengers: Infinity War</div>
-					<div class="runtime">160 mins</div>
-					<img class="rating" src="assets/Images/Ratings/12A.png" alt="12A Rating">
-					<a class="button" href="bookNow.html?movie=Avengers:%20Infinity%20War&time=19:00">Book Now</a>
-					<a class="button" href="move-webpages/action/Infinity_War.html">More Info</a>
-				</div>
-			</div>
-
-			<!-- Card 2 -->
-			<div class="poster-column">
-				<img class="poster" src="assets/Images/Posters/bohemian-rhapsody.jpg" alt="Bohemian Rhapsody">
-				<div class="overlay">
-					<div class="overlay-text">Bohemian Rhapsody</div>
-					<div class="runtime">134 mins</div>
-					<img class="rating" src="assets/Images/Ratings/12A.png" alt="12A Rating">
-					<a class="button" href="bookNow.html?movie=Bohemian%20Rhapsody&time=18:30">Book Now</a>
-					<a class="button" href="move-webpages/biographical/Bohemian_Rhapsody.html">More Info</a>
-				</div>
-			</div>
-
-			<!-- Card 3 -->
-			<div class="poster-column">
-				<img class="poster" src="assets/Images/Posters/spiderman.jpg" alt="Spider-Man: Homecoming">
-				<div class="overlay">
-					<div class="overlay-text">Spider-Man: Homecoming</div>
-					<div class="runtime">133 mins</div>
-					<img class="rating" src="assets/Images/Ratings/12.png" alt="12 Rating">
-					<a class="button" href="bookNow.html?movie=Spider-Man:%20Homecoming&time=16:00">Book Now</a>
-					<a class="button" href="move-webpages/action/Spiderman_Homecoming.html">More Info</a>
-				</div>
-			</div>
-
-			<!-- Card 4 -->
-			<div class="poster-column">
-				<img class="poster" src="assets/Images/Posters/Action/The_Last_Jedi_Poster.jpg"
-					alt="Star Wars: The Last Jedi">
-				<div class="overlay">
-					<div class="overlay-text">Star Wars: The Last Jedi</div>
-					<div class="runtime">152 mins</div>
-					<img class="rating" src="assets/Images/Ratings/12.png" alt="12 Rating">
-					<a class="button" href="bookNow.html?movie=Star%20Wars:%20The%20Last%20Jedi&time=20:15">Book Now</a>
-					<a class="button" href="move-webpages/action/The_Last_Jedi.html">More Info</a>
-				</div>
-			</div>
-
-			<!-- Card 5 -->
-			<div class="poster-column">
-				<img class="poster" src="assets/Images/Posters/Comedy/the-grinch.jpg" alt="The Grinch">
-				<div class="overlay">
-					<div class="overlay-text">The Grinch</div>
-					<div class="runtime">90 mins</div>
-					<img class="rating" src="assets/Images/Ratings/PG.png" alt="PG Rating">
-					<a class="button" href="bookNow.html?movie=The%20Grinch&time=13:30">Book Now</a>
-					<a class="button" href="move-webpages/comedy/the-grinch.html">More Info</a>
-				</div>
-			</div>
-		</div>
+		<div id="top-picks-list" class="poster-section"></div>
 	</section>
 
 	<!-- Special Offers Section -->
@@ -259,6 +214,7 @@
 	</footer>
 
 	<!-- Scripts -->
+	<script src="assets/js/index.js"></script>
 	<script src="assets/js/scripts.js"></script>
 </body>
 

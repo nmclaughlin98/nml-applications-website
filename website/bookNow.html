@@ -8,6 +8,8 @@
     content="Book cinema tickets online at Blockbuster Theatres. Select your film, choose luxury reserved seats, and receive your digital ticket pass instantly.">
   <title>Blockbuster Theatres - Booking</title>
 
+  <link rel="icon" type="image/png" href="assets/Images/favicon.png" />
+
   <link rel="stylesheet" href="assets/stylesheets/main.css">
   <link rel="stylesheet" href="assets/stylesheets/media-queries.css">
 </head>
@@ -134,36 +136,7 @@
         <div class="form-group">
           <label for="Movie">Select Film</label>
           <select name="Movie" id="Movie" required>
-            <option value="Please Select" disabled>-- Choose a Feature Film --</option>
-            <option value="Avengers: Infinity War" selected>Avengers: Infinity War (12A)</option>
-            <option value="Spider-Man: Homecoming">Spider-Man: Homecoming (12)</option>
-            <option value="Bohemian Rhapsody">Bohemian Rhapsody (12A)</option>
-            <option value="Star Wars: The Last Jedi">Star Wars: The Last Jedi (12)</option>
-            <option value="Deadpool 2">Deadpool 2 (15)</option>
-            <option value="Spectre">007: Spectre (12A)</option>
-            <option value="The Grinch">The Grinch (PG)</option>
-            <option value="Johnny English: Strikes Again">Johnny English: Strikes Again (PG)</option>
-            <option value="Elf">Elf (PG)</option>
-            <option value="Ralph Breaks the Internet">Ralph Breaks the Internet (PG)</option>
-            <option value="Nobody's Fool">Nobody's Fool (15)</option>
-            <option value="The Shining">The Shining (15)</option>
-            <option value="The Exorcist">The Exorcist (18)</option>
-            <option value="The Conjuring">The Conjuring (15)</option>
-            <option value="Poltergeist">Poltergeist (15)</option>
-            <option value="The Ring">The Ring (15)</option>
-            <option value="Toy Story">Toy Story (PG)</option>
-            <option value="The Lion King">The Lion King (PG)</option>
-            <option value="Aladdin">Aladdin (PG)</option>
-            <option value="E.T. - The Extra-Terrestrial">E.T. - The Extra-Terrestrial (PG)</option>
-            <option value="The Godfather">The Godfather (15)</option>
-            <option value="Pulp Fiction">Pulp Fiction (18)</option>
-            <option value="Forrest Gump">Forrest Gump (12)</option>
-            <option value="One Flew Over the Cuckoo's Nest">One Flew Over the Cuckoo's Nest (15)</option>
-            <option value="Raging Bull">Raging Bull (18)</option>
-            <option value="127 Hours">127 Hours (15)</option>
-            <option value="Steve Jobs">Steve Jobs (15)</option>
-            <option value="The Wolf of Wall Street">The Wolf of Wall Street (18)</option>
-            <option value="I, Tonya">I, Tonya (15)</option>
+            <option value="Please Select" disabled selected>-- Choose a Feature Film --</option>
           </select>
         </div>
 
@@ -177,13 +150,9 @@
           <div class="form-group">
             <label>Select Showtime</label>
             <div class="showtime-chips">
-              <button type="button" class="time-chip" data-time="11:00">11:00</button>
-              <button type="button" class="time-chip" data-time="13:30">13:30</button>
-              <button type="button" class="time-chip" data-time="16:00">16:00</button>
-              <button type="button" class="time-chip active" data-time="19:00">19:00</button>
-              <button type="button" class="time-chip" data-time="21:30">21:30</button>
+              <span class="showtime-placeholder">Select a film to see available showtimes.</span>
             </div>
-            <input type="hidden" id="Time" name="Time" value="19:00">
+            <input type="hidden" id="Time" name="Time" value="">
           </div>
         </div>
 
@@ -264,7 +233,7 @@
             <span>Total: </span>
             <strong id="booking-subtotal-price">£9.50</strong>
           </div>
-          <button type="button" class="form-button next" id="btn-step1-next">Select Seats &rarr;</button>
+          <button type="button" class="form-button next" id="btn-step1-next">Select Seats</button>
         </div>
       </fieldset>
 
@@ -304,20 +273,24 @@
 
           <!-- Seat Grid Rows -->
           <div class="seat-grid">
-            <!-- Row A -->
+            <!-- Row A (Accessible) -->
             <div class="seat-row">
               <span class="row-label">A</span>
+              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
+                  class="seat-accessible-icon"></div>
               <div class="seat"></div>
               <div class="seat"></div>
-              <div class="seat bookedSeat"></div>
               <div class="seat"></div>
-              <div class="seat"></div>
+              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
+                  class="seat-accessible-icon"></div>
               <div class="seat seat-spacer"></div>
+              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
+                  class="seat-accessible-icon"></div>
               <div class="seat"></div>
               <div class="seat"></div>
-              <div class="seat bookedSeat"></div>
               <div class="seat"></div>
-              <div class="seat"></div>
+              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
+                  class="seat-accessible-icon"></div>
             </div>
 
             <!-- Row B -->
@@ -326,10 +299,10 @@
               <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
+              <div class="seat bookedSeat"></div>
               <div class="seat"></div>
-              <div class="seat bookedSeat"></div>
               <div class="seat seat-spacer"></div>
-              <div class="seat bookedSeat"></div>
+              <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
@@ -358,7 +331,39 @@
               <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat seat-spacer"></div>
               <div class="seat bookedSeat"></div>
+              <div class="seat bookedSeat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+
+            <!-- Row E -->
+            <div class="seat-row">
+              <span class="row-label">E</span>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat bookedSeat"></div>
+              <div class="seat bookedSeat"></div>
+              <div class="seat"></div>
+              <div class="seat seat-spacer"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat bookedSeat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+
+            <!-- Row F -->
+            <div class="seat-row">
+              <span class="row-label">F</span>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat seat-spacer"></div>
               <div class="seat"></div>
@@ -368,24 +373,20 @@
               <div class="seat"></div>
             </div>
 
-            <!-- Row E (Accessible) -->
+            <!-- Row G -->
             <div class="seat-row">
-              <span class="row-label">E</span>
-              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
-                  class="seat-accessible-icon"></div>
+              <span class="row-label">G</span>
               <div class="seat"></div>
               <div class="seat"></div>
+              <div class="seat bookedSeat"></div>
+              <div class="seat bookedSeat"></div>
               <div class="seat"></div>
-              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
-                  class="seat-accessible-icon"></div>
               <div class="seat seat-spacer"></div>
-              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
-                  class="seat-accessible-icon"></div>
               <div class="seat"></div>
               <div class="seat"></div>
+              <div class="seat bookedSeat"></div>
               <div class="seat"></div>
-              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
-                  class="seat-accessible-icon"></div>
+              <div class="seat"></div>
             </div>
           </div>
 
@@ -446,7 +447,7 @@
           <div class="credit-card-mockup">
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <div class="card-chip"></div>
-              <div style="font-family: var(--font-display); font-size: 1.1rem; color: #fff;">BLOCKBUSTER PASS</div>
+              <div style="font-family: var(--font-display); font-size: 1.1rem; color: #fff;">VISA</div>
             </div>
             <div class="card-number-display" id="mockup-card-number">•••• •••• •••• ••••</div>
             <div class="card-meta-row">
@@ -464,9 +465,9 @@
 
         <!-- Express Checkout Chips -->
         <div class="payment-methods-grid">
-          <div class="payment-chip active">💳 Credit / Debit Card</div>
-          <div class="payment-chip" onclick="showToast('Apple Pay selected for 1-tap checkout!')"> Apple Pay</div>
-          <div class="payment-chip" onclick="showToast('Google Pay selected!')">G Google Pay</div>
+          <div class="payment-chip active">Credit / Debit Card</div>
+          <div class="payment-chip">ApplePay</div>
+          <div class="payment-chip">GooglePay</div>
         </div>
 
         <div class="form-group">
