@@ -31,15 +31,37 @@ function renderComingSoonMovies(container, movies) {
         <img class="poster" src="${movie.poster || 'assets/Images/logo.png'}" alt="${movie.title}">
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>
-          <div class="runtime">${movie.releaseLabel || 'Release date coming soon'}</div>
+          <div class="runtime">${movie.releaseDate || 'Release date coming soon'}</div>
           <img class="rating" src="${ratingImage}" alt="${movie.title} rating">
           <p id="${countdownId}" data-countdown="${movie.countdownTarget}">Loading countdown...</p>
-          <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for ${movie.title}! We will notify you when advance tickets drop.')">🔔 Remind Me</button>
-          <button class="button" data-trailer="${movie.trailer || ''}">▶ Teaser Trailer</button>
+          <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for ${movie.title}! We will notify you when advance tickets drop.')">Remind Me</button>
+          <button class="button" data-trailer="${movie.trailer || ''}" type="button">Teaser Trailer</button>
         </div>
       </div>
     `;
   }).join('');
+
+  document.querySelectorAll('#coming-soon-list [data-trailer]').forEach(trigger => {
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      const url = trigger.getAttribute('data-trailer');
+      if (!url) return;
+
+      if (typeof openTrailer === 'function') {
+        openTrailer(url);
+        return;
+      }
+
+      const modal = document.getElementById('trailer-modal');
+      const iframe = document.getElementById('trailer-iframe');
+      if (!modal || !iframe) return;
+
+      const embedUrl = url.includes('autoplay=1') ? url : (url.includes('?') ? `${url}&autoplay=1` : `${url}?autoplay=1`);
+      iframe.src = embedUrl;
+      modal.classList.add('open');
+      document.body.classList.add('noScroll');
+    });
+  });
 
   initComingSoonCountdowns();
 }
