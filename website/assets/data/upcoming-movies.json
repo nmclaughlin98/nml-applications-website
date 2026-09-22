@@ -70,5 +70,77 @@
         "19:00"
       ]
     }
+  },
+  {
+    "slug": "the-legend-of-zelda",
+    "title": "The Legend of Zelda",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "genre": "Action",
+    "rating": "PG",
+    "score": 0,
+    "runtime": 0,
+    "releaseDate": "2027-04-28",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Benjamin Evan Ainsworth",
+      "Bo Bragason",
+      "Uli Latukefu",
+      "Sam Neill",
+      "Dichen Lachman"
+    ],
+    "director": "Wes Ball",
+    "synopsis": "A live-action adaptation of Nintendo's Legend of Zelda video game series.",
+    "still": "https://image.tmdb.org/t/p/w1280/7iHZruybsGB7g9vrm9eeypzmpV1.jpg",
+    "trailer": null,
+    "poster": "https://image.tmdb.org/t/p/w500/4XuaHHQ5eR9czPZPHcaaUjekx5w.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
   }
 ]

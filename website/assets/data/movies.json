@@ -429,76 +429,6 @@
     }
   },
   {
-    "slug": "dead-squad-temple-of-the-undead",
-    "title": "Dead Squad: Temple of the Undead",
-    "genres": [
-      "Horror"
-    ],
-    "genre": "Horror",
-    "rating": "PG",
-    "score": 4.5,
-    "runtime": 91,
-    "releaseDate": "2018-10-21",
-    "visible": true,
-    "topPick": false,
-    "starring": [
-      "Erika Ervin",
-      "Conan Stevens",
-      "Carma Sharon",
-      "Ryan Sobolski",
-      "Bianca Zouppas"
-    ],
-    "director": "Dominik Hauser",
-    "synopsis": "A group of young people become lost in the jungle during a river rafting trip and stumble upon a long lost ruin that is home to a host of mysterious monsters.",
-    "still": "https://image.tmdb.org/t/p/w1280/xCQDmUQyTW5bOAb5yMtfLJXKYhG.jpg",
-    "trailer": "https://www.youtube-nocookie.com/embed/8oA96akWODE?rel=0",
-    "poster": "https://image.tmdb.org/t/p/w500/t9yQUutIUcKtsVbFnbmtex7rV62.jpg",
-    "showtimes": {
-      "Monday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Tuesday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Wednesday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Thursday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Friday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Saturday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ],
-      "Sunday": [
-        "11:00",
-        "13:00",
-        "15:00",
-        "19:00"
-      ]
-    }
-  },
-  {
     "slug": "deadpool-2",
     "title": "Deadpool 2",
     "genres": [
@@ -787,6 +717,76 @@
     }
   },
   {
+    "slug": "going-big",
+    "title": "Going Big",
+    "genres": [
+      "Documentary"
+    ],
+    "genre": "Documentary",
+    "rating": "PG",
+    "score": 7,
+    "runtime": 51,
+    "releaseDate": "2012-12-20",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Sam Bowie",
+      "Charles Barkley",
+      "Hakeem Olajuwon",
+      "Patrick Ewing",
+      "John Thompson"
+    ],
+    "director": "Jon Fish",
+    "synopsis": "Sam Bowie had a productive basketball career at Kentucky and in the NBA but was plagued by leg injuries and lofty expectations (he was drafted one spot ahead of Michael Jordan). Still, he never let his run of bad fortune deflate his spirit, eventually finding success and happiness as a horse owner in Lexington, Kentucky.",
+    "still": "https://image.tmdb.org/t/p/w1280/qmENetD1UYR6I6QHvXkDph0AwWY.jpg",
+    "trailer": null,
+    "poster": "https://image.tmdb.org/t/p/w500/ztH02AbpaLrcodP1ixPPfTi6i5y.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
     "slug": "heartstopper-forever",
     "title": "Heartstopper Forever",
     "genres": [
@@ -955,6 +955,150 @@
     "still": "https://image.tmdb.org/t/p/w1280/qw6nuv56NW1JqzMoONlM84Iciwz.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/__c_SVavGF4?rel=0",
     "poster": "https://image.tmdb.org/t/p/w500/tCBxnZwLiY1BOKw3tH6AxHZdqPh.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
+    "slug": "knives-out",
+    "title": "Knives Out",
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Mystery"
+    ],
+    "genre": "Comedy",
+    "rating": "12A",
+    "score": 7.8,
+    "runtime": 131,
+    "releaseDate": "2020-01-08T00:00:00.000Z",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Daniel Craig",
+      "Chris Evans",
+      "Ana de Armas",
+      "Jamie Lee Curtis",
+      "Michael Shannon"
+    ],
+    "director": "Rian Johnson",
+    "synopsis": "When renowned crime novelist Harlan Thrombey is found dead at his estate just after his 85th birthday, the inquisitive and debonair Detective Benoit Blanc is mysteriously enlisted to investigate. From Harlan's dysfunctional family to his devoted staff, Blanc sifts through a web of red herrings and self-serving lies to uncover the truth behind Harlan's untimely death.",
+    "still": "https://image.tmdb.org/t/p/w1280/4HWAQu28e2yaWrtupFPGFkdNU7V.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/qOg3AoRc4nI?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
+    "slug": "mrs-doubtfire",
+    "title": "Mrs. Doubtfire",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Family"
+    ],
+    "genre": "Comedy",
+    "rating": "12",
+    "score": 7.2,
+    "runtime": 125,
+    "releaseDate": "1994-01-29T00:00:00.000Z",
+    "visible": true,
+    "topPick": false,
+    "starring": [
+      "Robin Williams",
+      "Sally Field",
+      "Lisa Jakub",
+      "Matthew Lawrence",
+      "Mara Wilson"
+    ],
+    "director": "Chris Columbus",
+    "synopsis": "Loving but irresponsible dad Daniel Hillard, estranged from his exasperated spouse, is crushed by a court order allowing only weekly visits with his kids. When Daniel learns his ex needs a housekeeper, he gets the job -- disguised as a British nanny. Soon he becomes not only his children's best pal but the kind of parent he should have been from the start.",
+    "still": "https://image.tmdb.org/t/p/w1280/f9X91dUckoRzOZlw4XBUOfkN9FC.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/NBZ2ioWBxD8?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/shHrSmXS5140o6sQzgzXxn3KqSm.jpg",
     "showtimes": {
       "Monday": [
         "11:00",
