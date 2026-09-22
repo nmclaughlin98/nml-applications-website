@@ -8,6 +8,11 @@ async function loadMovieDetail() {
     return;
   }
 
+  const releaseDate = new Date(movie.releaseDate);
+
+  const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
+  const formattedReleaseDate = releaseDate.toLocaleDateString('en-GB', dateOptions);
+
   const movieTitle = document.getElementById('movie-title');
   const movieStill = document.getElementById('movie-still');
   const movieRating = document.getElementById('movie-rating');
@@ -29,7 +34,7 @@ async function loadMovieDetail() {
   movieRuntime.textContent = `Run Time: ${movie.runtime} mins`;
   movieCast.innerHTML = `<strong>Starring:</strong> ${movie.starring.join(', ')}`;
   movieDirector.textContent = `Director: ${movie.director}`;
-  movieReleaseDate.textContent = `Release Date: ${new Date(movie.releaseDate).toLocaleDateString(localeString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }))}`;
+  movieReleaseDate.textContent = `Release Date: ${formattedReleaseDate}`;
   synopsisContainer.innerHTML = movie.synopsis
     .split('\n')
     .map(paragraph => `<p>${paragraph}</p>`)
