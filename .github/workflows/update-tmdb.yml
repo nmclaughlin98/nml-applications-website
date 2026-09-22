@@ -2,6 +2,8 @@ name: Update Movies JSON from TMDB
 
 on:
   push:
+    paths:
+      - 'website/assets/data/movie-ids.json' # Triggers only when this file is pushed/edited
   workflow_dispatch:                 # Allows manual runs from the GitHub UI if needed
 
 permissions:

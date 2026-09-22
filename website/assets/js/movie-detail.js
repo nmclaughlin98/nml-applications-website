@@ -22,7 +22,7 @@ async function loadMovieDetail() {
 
   document.title = `Blockbuster Theatre - ${movie.title}`;
   movieTitle.textContent = movie.title;
-  movieStill.src = `../${movie.still}` || 'assets/Images/logo.png';
+  movieStill.src = `${movie.still}` || 'assets/Images/logo.png';
   movieStill.alt = movie.title;
   movieRating.src = `../assets/Images/Ratings/${movie.rating}.png`;
   movieRating.alt = movie.rating;
