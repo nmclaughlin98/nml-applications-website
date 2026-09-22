@@ -650,25 +650,25 @@
     }
   },
   {
-    "slug": "one-flew-over-the-cuckoo-s-nest",
-    "title": "One Flew Over the Cuckoo's Nest",
-    "genre": "Drama",
+    "slug": "johnny-english-strikes-again",
+    "title": "Johnny English Strikes Again",
+    "genre": "Action",
     "rating": "PG",
-    "score": 8.4,
-    "runtime": 135,
-    "releaseDate": "1975-11-19",
+    "score": 6.3,
+    "runtime": 88,
+    "releaseDate": "2018-08-30",
     "visible": true,
     "topPick": false,
     "starring": [
-      "Jack Nicholson",
-      "Brad Dourif",
-      "Louise Fletcher"
+      "Rowan Atkinson",
+      "Olga Kurylenko",
+      "Ben Miller"
     ],
-    "director": "Miloš Forman",
-    "synopsis": "A petty criminal fakes insanity to serve his sentence in a mental ward rather than prison. He soon finds himself as a leader to the other patients—and an enemy to the cruel, domineering nurse who runs the ward.",
-    "still": "https://image.tmdb.org/t/p/w1280/uA8eSNAUUUyfHNIrG4h0zHxzt9W.jpg",
-    "trailer": "https://www.youtube-nocookie.com/embed/F4da9uRIg8c?rel=0",
-    "poster": "https://image.tmdb.org/t/p/w500/kjWsMh72V6d8KRLV4EOoSJLT1H7.jpg",
+    "director": "David Kerr",
+    "synopsis": "Disaster strikes when a criminal mastermind reveals the identities of all active undercover agents in Britain. The secret service can now rely on only one man - Johnny English. Currently teaching at a minor prep school, Johnny springs back into action to find the mysterious hacker. For this mission to succeed, he’ll need all of his skills - what few he has - as the man with yesterday’s analogue methods faces off against tomorrow’s digital technology.",
+    "still": "https://image.tmdb.org/t/p/w1280/qw6nuv56NW1JqzMoONlM84Iciwz.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/__c_SVavGF4?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/tCBxnZwLiY1BOKw3tH6AxHZdqPh.jpg",
     "showtimes": {
       "Monday": [
         "11:00",
@@ -715,25 +715,25 @@
     }
   },
   {
-    "slug": "polar",
-    "title": "Polar",
-    "genre": "Action",
-    "rating": "18",
-    "score": 6.4,
-    "runtime": 118,
-    "releaseDate": "2019-01-25",
+    "slug": "one-flew-over-the-cuckoo-s-nest",
+    "title": "One Flew Over the Cuckoo's Nest",
+    "genre": "Drama",
+    "rating": "PG",
+    "score": 8.4,
+    "runtime": 135,
+    "releaseDate": "1975-11-19",
     "visible": true,
     "topPick": false,
     "starring": [
-      "Mads Mikkelsen",
-      "Vanessa Hudgens",
-      "Katheryn Winnick"
+      "Jack Nicholson",
+      "Brad Dourif",
+      "Louise Fletcher"
     ],
-    "director": "Jonas Åkerlund",
-    "synopsis": "When a retiring assassin realizes that he is the target of a hit, he winds up back in the game going head to head with a gang of younger, ruthless killers.",
-    "still": "https://image.tmdb.org/t/p/w1280/lSCKo6QGJ88Gn3espNnvL87CinA.jpg",
-    "trailer": "https://www.youtube-nocookie.com/embed/oMHwRal-AR8?rel=0",
-    "poster": "https://image.tmdb.org/t/p/w500/qOBEpKVLl8Q9CZScbOcRRVISezV.jpg",
+    "director": "Miloš Forman",
+    "synopsis": "A petty criminal fakes insanity to serve his sentence in a mental ward rather than prison. He soon finds himself as a leader to the other patients—and an enemy to the cruel, domineering nurse who runs the ward.",
+    "still": "https://image.tmdb.org/t/p/w1280/uA8eSNAUUUyfHNIrG4h0zHxzt9W.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/F4da9uRIg8c?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/kjWsMh72V6d8KRLV4EOoSJLT1H7.jpg",
     "showtimes": {
       "Monday": [
         "11:00",
