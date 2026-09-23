@@ -12,7 +12,9 @@
   --bg-card-hover: rgba(30, 34, 52, 0.95);
 
   --accent-red: #ff334b;
+  --accent-red-transparent: rgba(255, 51, 75, 0.5);
   --accent-red-hover: #ff4d63;
+  --accent-red-hover-transparent: rgba(255, 77, 99, 0.5);
   --accent-red-dark: #b81427;
   --accent-glow: rgba(255, 51, 75, 0.35);
   --accent-gold: #fbbf24;
@@ -243,12 +245,18 @@ header.scrolled {
 .primary-nav .menu li a:hover {
   color: var(--text-primary);
   background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px) !important;
 }
 
 .primary-nav .menu li a.current {
   color: #fff;
   background: var(--accent-red);
   box-shadow: 0 4px 18px var(--accent-glow);
+  transition: all var(--transition-smooth);
+}
+
+.primary-nav .menu li a.current:hover {
+  background: var(--accent-red-hover-transparent);
 }
 
 /* Header Book Tickets CTA Button - Distinct Gold VIP Theme */
@@ -506,9 +514,9 @@ header.scrolled {
 }
 
 .carousel-control:hover {
-  background: var(--accent-red);
-  border-color: var(--accent-red);
+  background: var(--accent-red-transparent);
   box-shadow: 0 0 20px var(--accent-glow);
+  color: #fff;
 }
 
 .carousel-control.left {
@@ -692,7 +700,7 @@ section {
 
 .overlay-text {
   font-family: var(--font-heading);
-  font-size: 1.7rem;
+  font-size: 2.0rem;
   font-weight: 700;
   color: #fff;
   line-height: 1.25;
