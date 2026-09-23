@@ -1450,7 +1450,7 @@ section {
 
 .date-time-group {
   display: grid; 
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
@@ -1493,7 +1493,7 @@ fieldset.active {
 .form-group label {
   display: block;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -1538,6 +1538,10 @@ select option {
   margin-top: 8px;
 }
 
+.showtime-placeholder {
+  font-size: 1.0rem;
+}
+
 .time-chip {
   padding: 10px 20px;
   background: var(--bg-surface-elevated);
@@ -1575,13 +1579,13 @@ select option {
 }
 
 .ticket-info h4 {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: #fff;
   font-weight: 600;
 }
 
 .ticket-info span {
-  font-size: 0.85rem;
+  font-size: 0.80rem;
   color: var(--text-secondary);
 }
 
@@ -1589,6 +1593,10 @@ select option {
   display: flex;
   align-items: center;
   gap: 14px;
+}
+
+.ticket-counter strong {
+  font-size: 1.1rem;
 }
 
 .counter-btn {
@@ -1613,7 +1621,7 @@ select option {
 }
 
 .counter-val {
-  font-size: 1.15rem;
+  font-size: 1.0rem;
   font-weight: 700;
   width: 24px;
   text-align: center;
@@ -2677,7 +2685,6 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  max-width: 320px;
   width: 100%;
 }
 

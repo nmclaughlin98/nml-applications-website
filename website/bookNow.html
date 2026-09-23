@@ -2,476 +2,485 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Book cinema tickets online at Blockbuster Theatres. Select your film, choose luxury reserved seats, and receive your digital ticket pass instantly.">
-  <title>Blockbuster Theatres - Booking</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Book cinema tickets online at Blockbuster Theatres. Select your film, choose luxury reserved seats, and receive your digital ticket pass instantly.">
+    <title>Blockbuster Theatres - Booking</title>
 
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
 
-  <link rel="stylesheet" href="assets/stylesheets/main.css">
-  <link rel="stylesheet" href="assets/stylesheets/media-queries.css">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=chevron_left,chevron_right,check_circle,home" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/stylesheets/main.css">
+    <link rel="stylesheet" href="assets/stylesheets/media-queries.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=chevron_left,chevron_right,check_circle,home"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
+<!-- Header -->
+<header>
     <a class="header-box" href="index.html">
-      <img class="logo" src="assets/images/logo.png" alt="Blockbuster Theatres">
-      <span class="header-text">BLOCKBUSTER<br>THEATRE</span>
+        <img class="logo" src="assets/images/logo.png" alt="Blockbuster Theatres">
+        <span class="header-text">BLOCKBUSTER<br>THEATRE</span>
     </a>
 
     <nav class="nav primary-nav">
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="nowShowing.html">Now Showing</a></li>
-        <li><a href="comingSoon.html">Coming Soon</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a class="nav-cta-btn current" href="bookNow.html">Book Tickets</a></li>
-      </ul>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="nowShowing.html">Now Showing</a></li>
+            <li><a href="comingSoon.html">Coming Soon</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="nav-cta-btn current" href="bookNow.html">Book Tickets</a></li>
+        </ul>
     </nav>
 
     <div class="hamburger" aria-label="Toggle navigation">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
     </div>
-  </header>
+</header>
 
-  <div class="ham-overlay"></div>
+<div class="ham-overlay"></div>
 
-  <!-- Booking Interactive Section -->
-  <section class="booking-section">
+<!-- Booking Interactive Section -->
+<section class="booking-section">
     <div class="booking-title-block">
-      <h1>Book Your Tickets</h1>
-      <p>Reserve the best seats in the house with our interactive seat picker.</p>
+        <h1>Book Your Tickets</h1>
+        <p>Reserve the best seats in the house with our interactive seat picker.</p>
     </div>
 
     <!-- Step Progress Bar -->
     <ul id="progressbar">
-      <li class="active">Tickets</li>
-      <li>Select Seats</li>
-      <li>Guest Info</li>
-      <li>Payment</li>
-      <li>Confirm Pass</li>
+        <li class="active">Tickets</li>
+        <li>Select Seats</li>
+        <li>Guest Info</li>
+        <li>Payment</li>
+        <li>Confirm Pass</li>
     </ul>
 
     <!-- Multi-Step Booking Form -->
     <form id="myForm" class="booking-form" onsubmit="return false;">
 
-      <!-- STEP 1: Film & Tickets Selection -->
-      <fieldset class="active" style="display: block;">
-        <div class="step-header">
-          <h2>Step 1: Choose Film &amp; Tickets</h2>
-          <p>Select your movie, screening time, and quantity of tickets.</p>
-        </div>
-
-        <div class="form-group">
-          <label for="Movie">Select Film</label>
-          <select name="Movie" id="Movie" required>
-            <option value="Please Select" disabled selected>-- Choose a Feature Film --</option>
-          </select>
-        </div>
-
-        <div class= "date-time-group">
-          <div class="form-group">
-            <label for="Date">Day of Screening</label>
-            <select name="date" id="dateSelect">
-            </select>
-          </div>
-        </div>
-
-          <div class="form-group">
-            <label>Select Showtime</label>
-            <div class="showtime-chips">
-              <span class="showtime-placeholder">Select a film to see available showtimes.</span>
-            </div>
-            <input type="hidden" id="Time" name="Time" value="">
-          </div>
-        </div>
-
-        <div class="form-group" style="margin-top: 10px;">
-          <label>Select Ticket Types</label>
-
-          <!-- Adult Ticket -->
-          <div class="ticket-row">
-            <div class="ticket-info">
-              <h4>Standard Adult</h4>
-              <span>Age 15+ &bull; Full Admission</span>
-            </div>
-            <div class="ticket-counter">
-              <strong style="color: var(--accent-gold);">£9.50</strong>
-              <button type="button" class="counter-btn" data-type="adult" data-action="minus"
-                aria-label="Decrease adult tickets">&minus;</button>
-              <span class="counter-val" id="val-adult">1</span>
-              <button type="button" class="counter-btn" data-type="adult" data-action="plus"
-                aria-label="Increase adult tickets">+</button>
-            </div>
-          </div>
-
-          <!-- Child Ticket -->
-          <div class="ticket-row">
-            <div class="ticket-info">
-              <h4>Child Ticket</h4>
-              <span>Under 15 years &bull; Standard Admission</span>
-            </div>
-            <div class="ticket-counter">
-              <strong style="color: var(--accent-gold);">£6.00</strong>
-              <button type="button" class="counter-btn" data-type="child" data-action="minus"
-                aria-label="Decrease child tickets">&minus;</button>
-              <span class="counter-val" id="val-child">0</span>
-              <button type="button" class="counter-btn" data-type="child" data-action="plus"
-                aria-label="Increase child tickets">+</button>
-            </div>
-          </div>
-
-          <!-- Student Ticket -->
-          <div class="ticket-row">
-            <div class="ticket-info">
-              <h4>Student Ticket</h4>
-              <span>With valid Student ID</span>
-            </div>
-            <div class="ticket-counter">
-              <strong style="color: var(--accent-gold);">£7.50</strong>
-              <button type="button" class="counter-btn" data-type="student" data-action="minus"
-                aria-label="Decrease student tickets">&minus;</button>
-              <span class="counter-val" id="val-student">0</span>
-              <button type="button" class="counter-btn" data-type="student" data-action="plus"
-                aria-label="Increase student tickets">+</button>
-            </div>
-          </div>
-
-          <!-- Senior / OAP Ticket -->
-          <div class="ticket-row">
-            <div class="ticket-info">
-              <h4>Senior / OAP</h4>
-              <span>Age 60+</span>
-            </div>
-            <div class="ticket-counter">
-              <strong style="color: var(--accent-gold);">£7.00</strong>
-              <button type="button" class="counter-btn" data-type="oap" data-action="minus"
-                aria-label="Decrease senior tickets">&minus;</button>
-              <span class="counter-val" id="val-oap">0</span>
-              <button type="button" class="counter-btn" data-type="oap" data-action="plus"
-                aria-label="Increase senior tickets">+</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Live Subtotal Display Bar -->
-        <div class="booking-subtotal-bar">
-          <div>
-            <span>Selected: </span>
-            <strong id="booking-ticket-count" style="color: #fff; font-size: 1.1rem; margin-right: 12px;">1
-              Seat</strong>
-            <span>Total: </span>
-            <strong id="booking-subtotal-price">£9.50</strong>
-          </div>
-          <button type="button" class="form-button next" id="btn-step1-next">Select Seats</button>
-        </div>
-      </fieldset>
-
-      <!-- STEP 2: Interactive Seat Map Selection -->
-      <fieldset style="display: none;">
-        <div class="step-header">
-          <h2>Step 2: Reserve Your Seats</h2>
-          <p id="seat-selection-prompt">Please choose exactly 1 seat on the map below.</p>
-        </div>
-
-        <!-- Seating Plan & Curved Screen -->
-        <div class="seating-plan">
-          <div class="screen-container">
-            <div class="screen"></div>
-            <div class="screen-text">MAIN CINEMA SCREEN (CURVED)</div>
-          </div>
-
-          <!-- Legend -->
-          <div class="seat-legend">
-            <div class="legend-item">
-              <div class="legend-seat"></div>
-              <span>Available</span>
-            </div>
-            <div class="legend-item">
-              <div class="legend-seat booked-seat"></div>
-              <span>Booked</span>
-            </div>
-            <div class="legend-item">
-              <div class="legend-seat selected-seat"></div>
-              <span>Your Pick</span>
-            </div>
-            <div class="legend-item">
-              <div class="legend-seat seat-accessible"></div>
-              <span>Accessible</span>
-            </div>
-          </div>
-
-          <!-- Seat Grid Rows -->
-          <div class="seat-grid">
-            <!-- Row A (Accessible) -->
-            <div class="seat-row">
-              <span class="row-label">A</span>
-              <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
-                                                     class="seat-accessible-icon"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
-                                                     class="seat-accessible-icon"></div>
-              <div class="seat seat-spacer"></div>
-              <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
-                                                     class="seat-accessible-icon"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
-                                                     class="seat-accessible-icon"></div>
+        <!-- STEP 1: Film & Tickets Selection -->
+        <fieldset class="active" style="display: block;">
+            <div class="step-header">
+                <h2>Step 1: Choose Film &amp; Tickets</h2>
+                <p>Select your movie, screening time, and quantity of tickets.</p>
             </div>
 
-            <!-- Row B -->
-            <div class="seat-row">
-              <span class="row-label">B</span>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat"></div>
-              <div class="seat seat-spacer"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
+            <div class="form-group">
+                <label for="Movie">Select Film</label>
+                <select name="Movie" id="Movie" required>
+                    <option value="Please Select" disabled selected>-- Choose a Feature Film --</option>
+                </select>
             </div>
 
-            <!-- Row C -->
-            <div class="seat-row">
-              <span class="row-label">C</span>
-              <div class="seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat seat-spacer"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat"></div>
+            <div class="date-time-group">
+                <div class="form-group">
+                    <label for="Date">Day of Screening</label>
+                    <select name="date" id="dateSelect"></select>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Showtime</label>
+                    <div class="showtime-chips">
+                        <span class="showtime-placeholder">Select a film to see available showtimes.</span>
+                    </div>
+                    <input type="hidden" id="Time" name="Time" value="">
+                </div>
             </div>
 
-            <!-- Row D -->
-            <div class="seat-row">
-              <span class="row-label">D</span>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat seat-spacer"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
+            <div class="form-group" style="margin-top: 10px;">
+                <label>Select Ticket Types</label>
+
+                <!-- Adult Ticket -->
+                <div class="ticket-row">
+                    <div class="ticket-info">
+                        <h4>Standard Adult</h4>
+                        <span>Age 15+ &bull; Full Admission</span>
+                    </div>
+                    <div class="ticket-counter">
+                        <strong style="color: var(--accent-gold);">£9.50</strong>
+                        <button type="button" class="counter-btn" data-type="adult" data-action="minus"
+                                aria-label="Decrease adult tickets">&minus;
+                        </button>
+                        <span class="counter-val" id="val-adult">1</span>
+                        <button type="button" class="counter-btn" data-type="adult" data-action="plus"
+                                aria-label="Increase adult tickets">+
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Child Ticket -->
+                <div class="ticket-row">
+                    <div class="ticket-info">
+                        <h4>Child Ticket</h4>
+                        <span>Under 15 years &bull; Standard Admission</span>
+                    </div>
+                    <div class="ticket-counter">
+                        <strong style="color: var(--accent-gold);">£6.00</strong>
+                        <button type="button" class="counter-btn" data-type="child" data-action="minus"
+                                aria-label="Decrease child tickets">&minus;
+                        </button>
+                        <span class="counter-val" id="val-child">0</span>
+                        <button type="button" class="counter-btn" data-type="child" data-action="plus"
+                                aria-label="Increase child tickets">+
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Student Ticket -->
+                <div class="ticket-row">
+                    <div class="ticket-info">
+                        <h4>Student Ticket</h4>
+                        <span>With valid Student ID</span>
+                    </div>
+                    <div class="ticket-counter">
+                        <strong style="color: var(--accent-gold);">£7.50</strong>
+                        <button type="button" class="counter-btn" data-type="student" data-action="minus"
+                                aria-label="Decrease student tickets">&minus;
+                        </button>
+                        <span class="counter-val" id="val-student">0</span>
+                        <button type="button" class="counter-btn" data-type="student" data-action="plus"
+                                aria-label="Increase student tickets">+
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Senior / OAP Ticket -->
+                <div class="ticket-row">
+                    <div class="ticket-info">
+                        <h4>Senior / OAP</h4>
+                        <span>Age 60+</span>
+                    </div>
+                    <div class="ticket-counter">
+                        <strong style="color: var(--accent-gold);">£7.00</strong>
+                        <button type="button" class="counter-btn" data-type="oap" data-action="minus"
+                                aria-label="Decrease senior tickets">&minus;
+                        </button>
+                        <span class="counter-val" id="val-oap">0</span>
+                        <button type="button" class="counter-btn" data-type="oap" data-action="plus"
+                                aria-label="Increase senior tickets">+
+                        </button>
+                    </div>
+                </div>
             </div>
 
-            <!-- Row E -->
-            <div class="seat-row">
-              <span class="row-label">E</span>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat"></div>
-              <div class="seat seat-spacer"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
+            <!-- Live Subtotal Display Bar -->
+            <div class="booking-subtotal-bar">
+                <div class="subtotal-item">
+                    <span>Selected: </span>
+                    <strong id="booking-ticket-count" style="color: #fff; font-size: 1.1rem; margin-right: 12px;">1
+                        Seat</strong>
+                    <span>Total: </span>
+                    <strong id="booking-subtotal-price">£9.50</strong>
+                </div>
+                <div class="subtotal-item">
+                    <button type="button" class="form-button next" id="btn-step1-next">Select Seats</button>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- STEP 2: Interactive Seat Map Selection -->
+        <fieldset style="display: none;">
+            <div class="step-header">
+                <h2>Step 2: Reserve Your Seats</h2>
+                <p id="seat-selection-prompt">Please choose exactly 1 seat on the map below.</p>
             </div>
 
-            <!-- Row F -->
-            <div class="seat-row">
-              <span class="row-label">F</span>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat seat-spacer"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat"></div>
+            <!-- Seating Plan & Curved Screen -->
+            <div class="seating-plan">
+                <div class="screen-container">
+                    <div class="screen"></div>
+                    <div class="screen-text">MAIN CINEMA SCREEN (CURVED)</div>
+                </div>
+
+                <!-- Legend -->
+                <div class="seat-legend">
+                    <div class="legend-item">
+                        <div class="legend-seat"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-seat booked-seat"></div>
+                        <span>Booked</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-seat selected-seat"></div>
+                        <span>Your Pick</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-seat seat-accessible"></div>
+                        <span>Accessible</span>
+                    </div>
+                </div>
+
+                <!-- Seat Grid Rows -->
+                <div class="seat-grid">
+                    <!-- Row A (Accessible) -->
+                    <div class="seat-row">
+                        <span class="row-label">A</span>
+                        <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
+                                                               class="seat-accessible-icon"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
+                                                               class="seat-accessible-icon"></div>
+                        <div class="seat seat-spacer"></div>
+                        <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
+                                                               class="seat-accessible-icon"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
+                                                               class="seat-accessible-icon"></div>
+                    </div>
+
+                    <!-- Row B -->
+                    <div class="seat-row">
+                        <span class="row-label">B</span>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat seat-spacer"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+
+                    <!-- Row C -->
+                    <div class="seat-row">
+                        <span class="row-label">C</span>
+                        <div class="seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat seat-spacer"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat"></div>
+                    </div>
+
+                    <!-- Row D -->
+                    <div class="seat-row">
+                        <span class="row-label">D</span>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat seat-spacer"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+
+                    <!-- Row E -->
+                    <div class="seat-row">
+                        <span class="row-label">E</span>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat seat-spacer"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+
+                    <!-- Row F -->
+                    <div class="seat-row">
+                        <span class="row-label">F</span>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat seat-spacer"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat"></div>
+                    </div>
+
+                    <!-- Row G -->
+                    <div class="seat-row">
+                        <span class="row-label">G</span>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat seat-spacer"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat booked-seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+                </div>
+
+                <div class="selected-seats-badge">
+                    Selected Seats: <strong id="selected-seats-text">None selected yet</strong>
+                </div>
             </div>
 
-            <!-- Row G -->
-            <div class="seat-row">
-              <span class="row-label">G</span>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat"></div>
-              <div class="seat seat-spacer"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat booked-seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
+            <div class="form-actions">
+                <button type="button" class="form-button previous">Back</button>
+                <button type="button" class="form-button next">Continue to Guest Details</button>
             </div>
-          </div>
+        </fieldset>
 
-          <div class="selected-seats-badge">
-            Selected Seats: <strong id="selected-seats-text">None selected yet</strong>
-          </div>
-        </div>
-
-        <div class="form-actions">
-          <button type="button" class="form-button previous">Back</button>
-          <button type="button" class="form-button next">Continue to Guest Details</button>
-        </div>
-      </fieldset>
-
-      <!-- STEP 3: Customer Information -->
-      <fieldset style="display: none;">
-        <div class="step-header">
-          <h2>Step 3: Guest Details</h2>
-          <p>Where should we send your digital cinema boarding pass?</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-          <div class="form-group">
-            <label for="Fname">First Name</label>
-            <input type="text" id="Fname" placeholder="Jane" required>
-          </div>
-          <div class="form-group">
-            <label for="Sname">Surname</label>
-            <input type="text" id="Sname" placeholder="Doe" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="jane.doe@example.com" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone Number (Optional for SMS ticket)</label>
-          <input type="tel" id="phone" placeholder="+44 7123 456789">
-        </div>
-
-        <div class="form-actions">
-          <button type="button" class="form-button previous">Back</button>
-          <button type="button" class="form-button next">Continue to Payment</button>
-        </div>
-      </fieldset>
-
-      <!-- STEP 4: Live Payment Preview -->
-      <fieldset style="display: none;">
-        <div class="step-header">
-          <h2>Step 4: Secure Payment</h2>
-          <p>Enter payment details or pick an express checkout option.</p>
-        </div>
-
-        <!-- Interactive Virtual Credit Card Graphic -->
-        <div class="card-preview-container">
-          <div class="credit-card-mockup">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="card-chip"></div>
-              <div style="font-family: var(--font-display); font-size: 1.1rem; color: #fff;">VISA</div>
+        <!-- STEP 3: Customer Information -->
+        <fieldset style="display: none;">
+            <div class="step-header">
+                <h2>Step 3: Guest Details</h2>
+                <p>Where should we send your digital cinema boarding pass?</p>
             </div>
-            <div class="card-number-display" id="mockup-card-number">•••• •••• •••• ••••</div>
-            <div class="card-meta-row">
-              <div class="card-holder-display">
-                CARDHOLDER
-                <span id="mockup-card-holder">YOUR NAME</span>
-              </div>
-              <div class="card-expiry-display">
-                EXPIRES
-                <span id="mockup-card-expiry">MM/YY</span>
-              </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                    <label for="Fname">First Name</label>
+                    <input type="text" id="Fname" placeholder="Jane" required>
+                </div>
+                <div class="form-group">
+                    <label for="Sname">Surname</label>
+                    <input type="text" id="Sname" placeholder="Doe" required>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Express Checkout Chips -->
-        <div class="payment-methods-grid">
-          <div class="payment-chip active">Credit / Debit Card</div>
-          <div class="payment-chip">ApplePay</div>
-          <div class="payment-chip">GooglePay</div>
-        </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="jane.doe@example.com" required>
+            </div>
 
-        <div class="form-group">
-          <label for="card-number-input">Card Number</label>
-          <input type="text" id="card-number-input" maxlength="19" placeholder="4532 •••• •••• 8910" required>
-        </div>
+            <div class="form-group">
+                <label for="phone">Phone Number (Optional for SMS ticket)</label>
+                <input type="tel" id="phone" placeholder="+44 7123 456789">
+            </div>
 
-        <div class="form-group">
-          <label for="card-holder-input">Cardholder Name</label>
-          <input type="text" id="card-holder-input" placeholder="JANE DOE" required>
-        </div>
+            <div class="form-actions">
+                <button type="button" class="form-button previous">Back</button>
+                <button type="button" class="form-button next">Continue to Payment</button>
+            </div>
+        </fieldset>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-          <div class="form-group">
-            <label for="card-expiry-input">Expiration (MM/YY)</label>
-            <input type="text" id="card-expiry-input" maxlength="5" placeholder="12/28" required>
-          </div>
-          <div class="form-group">
-            <label for="card-cvv">Security Code (CVV)</label>
-            <input type="text" id="card-cvv" maxlength="4" placeholder="123" required>
-          </div>
-        </div>
+        <!-- STEP 4: Live Payment Preview -->
+        <fieldset style="display: none;">
+            <div class="step-header">
+                <h2>Step 4: Secure Payment</h2>
+                <p>Enter payment details or pick an express checkout option.</p>
+            </div>
 
-        <div class="form-actions">
-          <button type="button" class="form-button previous">Back</button>
-          <button type="button" class="form-button next finish-step" id="btn-confirm-payment">Confirm Booking</button>
-        </div>
-      </fieldset>
+            <!-- Interactive Virtual Credit Card Graphic -->
+            <div class="card-preview-container">
+                <div class="credit-card-mockup">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="card-chip"></div>
+                        <div style="font-family: var(--font-display); font-size: 1.1rem; color: #fff;">VISA</div>
+                    </div>
+                    <div class="card-number-display" id="mockup-card-number">•••• •••• •••• ••••</div>
+                    <div class="card-meta-row">
+                        <div class="card-holder-display">
+                            CARDHOLDER
+                            <span id="mockup-card-holder">YOUR NAME</span>
+                        </div>
+                        <div class="card-expiry-display">
+                            EXPIRES
+                            <span id="mockup-card-expiry">MM/YY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <!-- STEP 5: Digital Cinema Boarding Pass / Ticket -->
-      <fieldset style="display: none;">
-        <div class="step-header">
-          <h2>Booking Confirmed!</h2>
-          <p>Your seats are locked in. Present this digital ticket or QR code upon arrival.</p>
-        </div>
+            <!-- Express Checkout Chips -->
+            <div class="payment-methods-grid">
+                <div class="payment-chip active">Credit / Debit Card</div>
+                <div class="payment-chip">ApplePay</div>
+                <div class="payment-chip">GooglePay</div>
+            </div>
 
-        <div id="digital-ticket-container">
-          <!-- Populated dynamically by scripts.js -->
-        </div>
-      </fieldset>
+            <div class="form-group">
+                <label for="card-number-input">Card Number</label>
+                <input type="text" id="card-number-input" maxlength="19" placeholder="4532 •••• •••• 8910" required>
+            </div>
+
+            <div class="form-group">
+                <label for="card-holder-input">Cardholder Name</label>
+                <input type="text" id="card-holder-input" placeholder="JANE DOE" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                    <label for="card-expiry-input">Expiration (MM/YY)</label>
+                    <input type="text" id="card-expiry-input" maxlength="5" placeholder="12/28" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-cvv">Security Code (CVV)</label>
+                    <input type="text" id="card-cvv" maxlength="4" placeholder="123" required>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="form-button previous">Back</button>
+                <button type="button" class="form-button next finish-step" id="btn-confirm-payment">Confirm Booking
+                </button>
+            </div>
+        </fieldset>
+
+        <!-- STEP 5: Digital Cinema Boarding Pass / Ticket -->
+        <fieldset style="display: none;">
+            <div class="step-header">
+                <h2>Booking Confirmed!</h2>
+                <p>Your seats are locked in. Present this digital ticket or QR code upon arrival.</p>
+            </div>
+
+            <div id="digital-ticket-container">
+                <!-- Populated dynamically by scripts.js -->
+            </div>
+        </fieldset>
 
     </form>
-  </section>
+</section>
 
-  <!-- Back to Top Button -->
-  <div class="back-to-top" id="back-to-top" aria-label="Back to top">
+<!-- Back to Top Button -->
+<div class="back-to-top" id="back-to-top" aria-label="Back to top">
     <svg viewBox="0 0 24 24">
-      <polyline points="18 15 12 9 6 15"></polyline>
+        <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
-  </div>
+</div>
 
-  <!-- Footer -->
-  <footer>
+<!-- Footer -->
+<footer>
     <small>&copy; 2026 Blockbuster Theatre</small>
     <nav class="secondary-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="nowShowing.html">Now Showing</a></li>
-        <li><a href="comingSoon.html">Coming Soon</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="nowShowing.html">Now Showing</a></li>
+            <li><a href="comingSoon.html">Coming Soon</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
     </nav>
-  </footer>
+</footer>
 
-  <script src="assets/js/scripts.js"></script>
+<script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
