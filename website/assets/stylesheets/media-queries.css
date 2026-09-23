@@ -160,6 +160,11 @@
 		height: 25px;
 	}
 	
+	.legend-item {
+  gap: 4px;
+  font-size: 0.7rem;
+}
+	
 	.legend-seat {
 		width: 18px;
 		height: 18px;
@@ -220,14 +225,25 @@
 	}
 	
 	.step-header h2 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
+.step-header p {
+  font-size: 1.2rem;
+}
+
+.date-time-group {
+  display: block; 
+}
 	
 	.seating-plan {
 		padding-left: 5px;
 		padding-right: 5px;
 		}
+		
+		.seat-legend {
+			column-gap: 18px;
+			}
 
 	.seat {
 		width: 22px;
@@ -246,6 +262,10 @@
 	.form-actions .form-button .wallet-badge-btn {
 		width: 100%;
 	}
+	
+	.ticket-counter {
+		gap: 10px;
+		}
 
 	.ticket-details-grid {
 		grid-template-columns: 1fr;
