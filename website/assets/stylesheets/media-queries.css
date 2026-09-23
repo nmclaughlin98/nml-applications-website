@@ -133,7 +133,7 @@
 		gap: 8px;
 	}
 
-	.carousel-caption .hero-actions .button .wallet-badge-btn {
+	.carousel-caption .hero-actions {
 		padding: 9px 14px;
 		font-size: 0.78rem;
 		border-radius: var(--radius-sm);
@@ -230,7 +230,7 @@
 		grid-template-columns: 1fr;
 	}
 
-	.carousel-caption .hero-actions .button .wallet-badge-btn {
+	.carousel-caption .hero-actions .button {
 		padding: 8px 11px;
 		font-size: 0.72rem;
 	}
@@ -273,6 +273,10 @@
 		transform: translateY(0) !important;
 		pointer-events: auto !important;
 	}
+	
+	.form-group {
+		width: 100%
+		}
 
 	.hamburger {
 		display: flex;
