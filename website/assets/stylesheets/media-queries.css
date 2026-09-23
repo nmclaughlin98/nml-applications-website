@@ -145,14 +145,24 @@
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 	}
+	
+	.seating-plan {
+		padding-left: 10px;
+		padding-right: 10px;
+		}
 
 	.seat-row {
 		gap: 5px;
 	}
 
-	.seat, .legend-seat {
-		width: 22px;
-		height: 22px;
+	.seat {
+		width: 25px;
+		height: 25px;
+	}
+	
+	.legend-seat {
+		width: 18px;
+		height: 18px;
 	}
 	
 	.seat-accessible-icon {
@@ -193,7 +203,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: flex-end;
-		gap: 16px;
+		gap: 12px;
 	}
 }
 
@@ -208,15 +218,25 @@
 	.carousel-control {
 		display: none;
 	}
+	
+	.step-header h2 {
+  font-size: 1.4rem;
+}
 
-	.seat, .legend-seat {
-		width: 18px;
-		height: 18px;
-		border-radius: 4px 4px 2px 2px;
+	
+	.seating-plan {
+		padding-left: 5px;
+		padding-right: 5px;
+		}
+
+	.seat {
+		width: 22px;
+		height: 22px;
 	}
-
-	.row-label {
-		display: none;
+	
+	.legend-seat {
+		width: 16px;
+		height: 16px;
 	}
 
 	.form-actions {
