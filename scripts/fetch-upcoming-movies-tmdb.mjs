@@ -53,9 +53,9 @@ async function fetchMovieData(item) {
         starring: data.credits?.cast?.slice(0, 5).map(actor => actor.name) || [],
         director: directorObj ? directorObj.name : 'Unknown',
         synopsis: data.overview,
-        still: data.backdrop_path ? `https://image.tmdb.org/t/p/w1280${data.backdrop_path}` : null,
+        still: data.backdrop_path ? `https://image.tmdb.org/t/p/w1920${data.backdrop_path}` : null,
         trailer: trailerObj ? `https://www.youtube-nocookie.com/embed/${trailerObj.key}?rel=0` : null,
-        poster: data.poster_path ? `https://image.tmdb.org/t/p/w500${data.poster_path}` : null,
+        poster: data.poster_path ? `https://image.tmdb.org/t/p/w1280${data.poster_path}` : null,
         showtimes: item.showtimes || defaultShowtimes
     };
 }
