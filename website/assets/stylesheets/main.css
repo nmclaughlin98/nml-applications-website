@@ -118,6 +118,7 @@ a {
   color: inherit;
   text-decoration: none;
   transition: color var(--transition);
+  touch-action: manipulation;
 }
 
 a:hover {
@@ -136,6 +137,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+  touch-action: manipulation;
 }
 
 /* Headings */
@@ -214,6 +216,7 @@ header.scrolled {
   display: flex;
   align-items: center;
   gap: 12px;
+  touch-action: manipulation;
 }
 
 .logo {
@@ -252,6 +255,7 @@ header.scrolled {
 .primary-nav {
   display: flex;
   align-items: center;
+  touch-action: manipulation;
 }
 
 .primary-nav .menu {
@@ -310,6 +314,7 @@ header.scrolled {
   transition: all var(--transition) !important;
   cursor: pointer !important;
   margin-left: 6px !important;
+  touch-action: manipulation;
 }
 
 .nav-cta-btn:hover {
@@ -342,6 +347,7 @@ header.scrolled {
   border: 1px solid var(--border-subtle);
   z-index: 1001;
   transition: background var(--transition);
+  touch-action: manipulation;
 }
 
 .hamburger:hover {
@@ -507,6 +513,7 @@ header.scrolled {
   display: flex;
   gap: 10px;
   z-index: 15;
+  touch-action: manipulation;
 }
 
 .carousel-indicators li {
@@ -542,6 +549,7 @@ header.scrolled {
   z-index: 20;
   cursor: pointer;
   transition: all var(--transition);
+  touch-action: manipulation;
 }
 
 .carousel-control:hover {
@@ -583,6 +591,7 @@ header.scrolled {
   text-align: center;
   box-shadow: var(--shadow-sm);
   user-select: none;
+  touch-action: manipulation;
 }
 
 .previous::before {
@@ -612,6 +621,7 @@ header.scrolled {
 .button-no-gap {
   gap: 0 !important;
   padding: 12px 20px !important;
+  touch-action: manipulation;
 }
 
 .btn-primary,
@@ -620,6 +630,7 @@ header.scrolled {
   background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-dark) 100%);
   color: #fff !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
+  touch-action: manipulation;
 }
 
 .btn-primary:hover,
@@ -657,6 +668,7 @@ header.scrolled {
   justify-content: center;
   overflow: hidden;
   transition: transform 0.15s ease, opacity 0.15s ease;
+  touch-action: manipulation;
 }
 
 .wallet-badge-btn:hover {
@@ -754,6 +766,7 @@ section {
   aspect-ratio: 2 / 3;
   object-fit: cover;
   transition: transform var(--transition-smooth), filter var(--transition-smooth);
+  touch-action: manipulation;
 }
 
 .poster-column:hover .poster {
@@ -776,6 +789,7 @@ section {
   transition: background 0.7s ease;
   z-index: 2;
   pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .poster-column:hover .overlay {
@@ -1041,6 +1055,7 @@ section {
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: all var(--transition);
+  touch-action: manipulation;
 }
 
 .genre-tab:hover,
@@ -1098,6 +1113,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  touch-action: manipulation;
 }
 
 .timetable-toolbar {
@@ -1106,6 +1122,7 @@ section {
   justify-content: space-between;
   gap: 14px;
   flex-wrap: wrap;
+  touch-action: manipulation;
 }
 
 .day-tabs {
@@ -1145,11 +1162,13 @@ section {
   width: 100%;
   margin: 0 auto 0 0;
   flex: 1 1 320px;
+  touch-action: manipulation;
 }
 
 .print-pdf-btn {
   white-space: nowrap;
   margin-left: auto;
+  touch-action: manipulation;
 }
 
 .filter-bar .search-input {
@@ -1264,6 +1283,7 @@ section {
   letter-spacing: 0.04em;
   text-align: center;
   transition: all var(--transition);
+  touch-action: manipulation;
 }
 
 .showtime-btn:hover {
@@ -1446,6 +1466,7 @@ section {
   box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
+  touch-action: manipulation;
 }
 
 .date-time-group {
@@ -1515,6 +1536,7 @@ textarea {
   font-size: 1rem;
   outline: none;
   transition: all var(--transition);
+  touch-action: manipulation;
 }
 
 .form-control:focus,
@@ -1552,6 +1574,7 @@ select option {
   color: var(--text-secondary);
   cursor: pointer;
   transition: all var(--transition);
+  touch-action: manipulation;
 }
 
 .time-chip:hover {
@@ -1613,6 +1636,7 @@ select option {
   justify-content: center;
   cursor: pointer;
   transition: all var(--transition);
+  touch-action: manipulation;
 }
 
 .counter-btn:hover {
@@ -1657,6 +1681,7 @@ select option {
   border: 1px solid var(--border-subtle);
   max-width: 1000px;
   overflow-x: auto;
+  touch-action: manipulation;
 }
 
 /* Curved Screen with Ambient Glow */
@@ -2199,6 +2224,7 @@ select option {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 28px;
+  touch-action: manipulation;
 }
 
 .showtimes-box h2 {
@@ -2234,6 +2260,7 @@ select option {
   font-weight: 600;
   color: var(--text-secondary);
   transition: all var(--transition);
+  touch-action: manipulation;
 }
 
 .day-time-btn:hover {
@@ -2269,6 +2296,7 @@ select option {
   align-items: center;
   margin-bottom: 12px;
   transition: all var(--transition);
+  touch-action: manipulation;
 }
 
 .accordion:hover {
@@ -2411,6 +2439,7 @@ select option {
   cursor: pointer;
   z-index: 1;
   transition: color var(--transition);
+  touch-action: manipulation;
 }
 
 #trailer-iframe {
@@ -2448,6 +2477,7 @@ select option {
   transform: translateY(16px);
   transition: all var(--transition);
   box-shadow: var(--shadow-md);
+  touch-action: manipulation;
 }
 
 .back-to-top.visible {
