@@ -1343,6 +1343,7 @@ section {
   max-width: 960px;
   margin: 0 auto;
   padding: 40px 20px 80px 20px;
+  touch-action: manipulation;
 }
 
 .booking-title-block {
