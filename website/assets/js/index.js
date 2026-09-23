@@ -28,6 +28,7 @@ async function loadMovieSection(sectionKey, containerId) {
     const movies = await response.json();
     const config = SECTION_CONFIG[sectionKey];
     const sectionMovies = config ? config.getMovies(movies, config) : [];
+
     renderMovieSection(container, sectionMovies);
   } catch (error) {
     console.error(error);
