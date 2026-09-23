@@ -1,7 +1,7 @@
 const SECTION_CONFIG = {
   newReleases: {
     label: 'New Releases',
-    limit: 5,
+    limit: 6,
     getMovies: (movies, config) => movies
       .filter(movie => movie.visible !== false)
       .sort((a, b) => new Date(b.releaseDate || 0) - new Date(a.releaseDate || 0))
@@ -9,7 +9,7 @@ const SECTION_CONFIG = {
   },
   topPicks: {
     label: 'Top Picks',
-    limit: 5,
+    limit: 6,
     getMovies: (movies, config) => movies
       .filter(movie => movie.visible !== false)
       .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
