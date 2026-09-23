@@ -91,7 +91,7 @@
       "Kareem Abdul-Jabbar",
       "Lloyd Bridges"
     ],
-    "director": "Jim Abrahams",
+    "director": "Jerry Zucker",
     "synopsis": "An ex-fighter pilot is forced to take over the controls of an airliner when the flight crew succumbs to food poisoning.",
     "still": "https://image.tmdb.org/t/p/w1280/wQyvrsNSTzFVEGgarZbFkFyIciy.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/JWNBROLN8Oc?rel=0",
@@ -235,7 +235,7 @@
       "Chris Hemsworth",
       "Scarlett Johansson"
     ],
-    "director": "Anthony Russo",
+    "director": "Joe Russo",
     "synopsis": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
     "still": "https://image.tmdb.org/t/p/w1280/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/L2NAh3CIdig?rel=0",
@@ -307,7 +307,7 @@
       "Josh Brolin",
       "Mark Ruffalo"
     ],
-    "director": "Joe Russo",
+    "director": "Anthony Russo",
     "synopsis": "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
     "still": "https://image.tmdb.org/t/p/w1280/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/QwievZ1Tx-8?rel=0",
@@ -859,6 +859,78 @@
     }
   },
   {
+    "slug": "inside-out",
+    "movieId": 150540,
+    "title": "Inside Out",
+    "genres": [
+      "Animation",
+      "Family",
+      "Adventure"
+    ],
+    "genre": "Animation",
+    "rating": "U",
+    "score": 7.9,
+    "runtime": 95,
+    "releaseDate": "2015-11-23T00:00:00.000Z",
+    "visible": true,
+    "starring": [
+      "Amy Poehler",
+      "Phyllis Smith",
+      "Richard Kind",
+      "Bill Hader",
+      "Lewis Black"
+    ],
+    "director": "Pete Docter",
+    "synopsis": "When 11-year-old Riley moves to a new city, her Emotions team up to help her through the transition. Joy, Fear, Anger, Disgust and Sadness work together, but when Joy and Sadness get lost, they must journey through unfamiliar places to get back home.",
+    "still": "https://image.tmdb.org/t/p/w1280/jJKZaTBNenlFclQyjrnvzkRmvWE.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/1HFv47QHWJU?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
     "slug": "johnny-english-strikes-again",
     "movieId": 463272,
     "title": "Johnny English Strikes Again",
@@ -957,6 +1029,78 @@
     "still": "https://image.tmdb.org/t/p/w1280/4HWAQu28e2yaWrtupFPGFkdNU7V.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/qOg3AoRc4nI?rel=0",
     "poster": "https://image.tmdb.org/t/p/w500/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
+    "showtimes": {
+      "Monday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Tuesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Wednesday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Thursday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Friday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Saturday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ],
+      "Sunday": [
+        "11:00",
+        "13:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  },
+  {
+    "slug": "minions-monsters",
+    "movieId": 1315772,
+    "title": "Minions & Monsters",
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Comedy"
+    ],
+    "genre": "Adventure",
+    "rating": "U",
+    "score": 7.6,
+    "runtime": 90,
+    "releaseDate": "2026-07-01T00:00:00.000Z",
+    "visible": true,
+    "starring": [
+      "Pierre Coffin",
+      "Trey Parker",
+      "Christoph Waltz",
+      "Allison Janney",
+      "Jesse Eisenberg"
+    ],
+    "director": "Pierre Coffin",
+    "synopsis": "This is the rambunctious, ridiculous and totally true story of how the Minions conquered Hollywood, became movie stars, lost everything, unleashed monsters onto the world and then banded together to try and save the planet from the mayhem they had just created.",
+    "still": "https://image.tmdb.org/t/p/w1280/kkcwhgSFd81QDlXo8ytrpHPQjhy.jpg",
+    "trailer": "https://www.youtube-nocookie.com/embed/V-O-uBaHk3c?rel=0",
+    "poster": "https://image.tmdb.org/t/p/w500/4LwvU9SZc8QQzW1X1FAPhNbXnEU.jpg",
     "showtimes": {
       "Monday": [
         "11:00",
@@ -1524,7 +1668,7 @@
     ],
     "director": "Zach Cregger",
     "synopsis": "Medical courier Bryan unwittingly finds himself fighting for survival as one fateful, horrifying night collapses around him in chaos.",
-    "still": "https://image.tmdb.org/t/p/w1280/1CIaRYKf3zg2Xyce1CSfCMg2Vfw.jpg",
+    "still": "https://image.tmdb.org/t/p/w1280/3icyRAqgakNcQn6aDVz9libFmBA.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/mNd1gb19A-c?rel=0",
     "poster": "https://image.tmdb.org/t/p/w500/i7UyjfPio0VFHB9rBUZSFyhOoM8.jpg",
     "showtimes": {
@@ -2383,7 +2527,7 @@
     ],
     "director": "Christopher Nolan",
     "synopsis": "Odysseus, the legendary King of Ithaca, embarks on a long and perilous journey home following the Trojan War. Throughout his voyage, he is forced to confront the whims of gods, mythological monsters, and trials that stretch both his cunning and his humanity to the breaking point.",
-    "still": "https://image.tmdb.org/t/p/w1280/RMXG8myu1aGlNUsRjtxzmpdMK0.jpg",
+    "still": "https://image.tmdb.org/t/p/w1280/iuylzRSllrGn7YB322kwKoOVMcq.jpg",
     "trailer": "https://www.youtube-nocookie.com/embed/AyIZ9tiiN8I?rel=0",
     "poster": "https://image.tmdb.org/t/p/w500/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
     "showtimes": {
