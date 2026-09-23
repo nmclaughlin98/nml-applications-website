@@ -84,6 +84,26 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.material-icons-outlined {
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-icons-outlined.md-18 {
+  font-size: 18px;
+}
+
+.material-icons-outlined.md-24 {
+  font-size: 24px;
+}
+
+.material-icons-outlined.md-36 {
+  font-size: 36px;
+}
+
+.material-icons-outlined.md-48 {
+  font-size: 48px;
+}
+
 body.noScroll {
   overflow: hidden;
 }
@@ -123,6 +143,17 @@ h1,
 h2,
 h3,
 h4 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.h3-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   font-family: var(--font-heading);
   color: var(--text-primary);
   font-weight: 700;
@@ -517,6 +548,7 @@ header.scrolled {
   background: var(--accent-red-transparent);
   box-shadow: 0 0 20px var(--accent-glow);
   color: #fff;
+  transform: translateY(-50%) scale(1.2);
 }
 
 .carousel-control.left {
@@ -537,7 +569,7 @@ header.scrolled {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 5px;
   padding: 12px 26px;
   font-family: var(--font-heading);
   font-weight: 700;
@@ -551,6 +583,35 @@ header.scrolled {
   text-align: center;
   box-shadow: var(--shadow-sm);
   user-select: none;
+}
+
+.previous::before {
+  content: '\e5cb';
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.2rem;
+}
+
+.previous.home::before {
+  content: '\e88a';
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.2rem;
+}
+
+.next::after {
+  content: '\e5cc';
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.2rem;
+}
+
+.next.finish-step::after {
+  content: '\e86c';
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.2rem;
+}
+
+.button-no-gap {
+  gap: 0 !important;
+  padding: 12px 20px !important;
 }
 
 .btn-primary,
@@ -582,6 +643,32 @@ header.scrolled {
   background: rgba(255, 255, 255, 0.16);
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
+}
+
+.wallet-badge-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px; /* Smooth corners around the badge */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.wallet-badge-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.wallet-badge-btn img {
+  height: 48px; /* Standard badge height — adjust as needed */
+  width: auto;
+  display: block;
+  pointer-events: none; /* Prevents image click target issues */
 }
 
 /* ==========================================================================
@@ -723,7 +810,8 @@ section {
 }
 
 .runtime::before {
-  content: '⏱';
+  font-family: 'Material Symbols Outlined';
+  content: '\f725';
   font-size: 0.9rem;
 }
 
@@ -1025,6 +1113,7 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  margin: 15px 0;
 }
 
 .day-tab {
@@ -1552,7 +1641,7 @@ select option {
   background: rgba(10, 12, 18, 0.7);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  max-width: 780px;
+  max-width: 1000px;
   overflow-x: auto;
 }
 
@@ -1623,8 +1712,8 @@ select option {
 }
 
 .seat {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   background: #2a2f45;
   border-radius: 8px 8px 4px 4px;
   cursor: pointer;
@@ -1635,7 +1724,7 @@ select option {
   justify-content: center;
 }
 
-.seat:hover:not(.bookedSeat):not(.seat-spacer) {
+.seat:hover:not(.booked-seat):not(.seat-spacer) {
   background: #3e4668;
   transform: scale(1.15);
 }
@@ -1646,16 +1735,16 @@ select option {
   transform: scale(1.15);
 }
 
-.seat.bookedSeat {
+.seat.booked-seat {
   background: #181922;
   cursor: not-allowed;
   opacity: 0.45;
 }
 
-.seat.bookedSeat::after {
+.seat.booked-seat::after {
   content: '×';
   color: #64748b;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .seat.seat-accessible {
@@ -1663,10 +1752,10 @@ select option {
 }
 
 .seat-accessible-icon {
-  width: 14px;
-  height: 14px;
+  width: 25px;
+  height: 25px;
   object-fit: contain;
-  opacity: 0.8;
+  opacity: 1.0;
 }
 
 .seat-spacer {
@@ -1675,29 +1764,29 @@ select option {
 }
 
 /* Legend items */
-.test-seat {
-  width: 20px;
-  height: 20px;
+.legend-seat {
+  width: 25px;
+  height: 25px;
   border-radius: 5px;
   background: #2a2f45;
 }
 
-.test-seat.bookedSeatTest {
+.legend-seat.booked-seat {
   background: #181922;
   opacity: 0.5;
 }
 
-.test-seat.selected-seatTest {
+.legend-seat.selected-seat {
   background: var(--accent-red);
 }
 
-.test-seat.seat-accessibleTest {
+.legend-seat.seat-accessible {
   background: #1e3a5f;
 }
 
 /* Selected Seats Badge summary */
 .selected-seats-badge {
-  margin-top: 20px;
+  margin-top: 30px;
   text-align: center;
   color: var(--text-secondary);
   font-size: 0.95rem;

@@ -63,7 +63,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Action/spiderman-brand-new-day.jpg",
-    "ratingImage": "assets/Images/Ratings/12A.png"
+    "ratingImage": "assets/images/ratings/12A.png"
   },
   {
     "slug": "the-odyssey",
@@ -122,7 +122,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Action/the-odyssey.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "avengers-infinity-war",
@@ -188,7 +188,7 @@
       ]
     },
     "poster": "assets/Images/Posters/infinity-war.jpg",
-    "ratingImage": "assets/Images/Ratings/12A.png"
+    "ratingImage": "assets/images/ratings/12A.png"
   },
   {
     "slug": "spider-man-homecoming",
@@ -254,7 +254,7 @@
       ]
     },
     "poster": "assets/Images/Posters/spiderman.jpg",
-    "ratingImage": "assets/Images/Ratings/12.png"
+    "ratingImage": "assets/images/ratings/12.png"
   },
   {
     "slug": "deadpool-2",
@@ -319,7 +319,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Action/Deadpool_2_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "star-wars-the-last-jedi",
@@ -384,7 +384,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Action/The_Last_Jedi_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/12.png"
+    "ratingImage": "assets/images/ratings/12.png"
   },
   {
     "slug": "spectre",
@@ -449,7 +449,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Action/007_Spectre_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/12A.png"
+    "ratingImage": "assets/images/ratings/12A.png"
   },
   {
     "slug": "elf",
@@ -514,7 +514,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Kids/Elf_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/PG.png"
+    "ratingImage": "assets/images/ratings/PG.png"
   },
   {
     "slug": "johnny-english-strikes-again",
@@ -579,7 +579,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Comedy/johnny-english.jpg",
-    "ratingImage": "assets/Images/Ratings/PG.png"
+    "ratingImage": "assets/images/ratings/PG.png"
   },
   {
     "slug": "the-grinch",
@@ -644,7 +644,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Comedy/the-grinch.jpg",
-    "ratingImage": "assets/Images/Ratings/PG.png"
+    "ratingImage": "assets/images/ratings/PG.png"
   },
   {
     "slug": "nobodys-fool",
@@ -709,7 +709,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Comedy/nobodys-fool.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "ralph-breaks-the-internet",
@@ -774,7 +774,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Comedy/wreck-it-ralph.jpg",
-    "ratingImage": "assets/Images/Ratings/PG.png"
+    "ratingImage": "assets/images/ratings/PG.png"
   },
   {
     "slug": "bohemian-rhapsody",
@@ -839,7 +839,7 @@
       ]
     },
     "poster": "assets/Images/Posters/bohemian-rhapsody.jpg",
-    "ratingImage": "assets/Images/Ratings/12A.png"
+    "ratingImage": "assets/images/ratings/12A.png"
   },
   {
     "slug": "127-hours",
@@ -904,7 +904,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Biographical/127_Hours_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "the-wolf-of-wall-street",
@@ -969,7 +969,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Biographical/The_Wolf_Of_Wall_Street_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/18.png"
+    "ratingImage": "assets/images/ratings/18.png"
   },
   {
     "slug": "steve-jobs",
@@ -1034,7 +1034,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Biographical/Steve_Jobs_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "i-tonya",
@@ -1099,7 +1099,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Biographical/I_Tonya_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "the-shining",
@@ -1156,7 +1156,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Horror/The_Shining_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "the-exorcist",
@@ -1213,7 +1213,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Horror/The_Exorcist_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/18.png"
+    "ratingImage": "assets/images/ratings/18.png"
   },
   {
     "slug": "the-conjuring",
@@ -1270,7 +1270,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Horror/The_Conjuring_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "poltergeist",
@@ -1327,7 +1327,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Horror/Poltergeist_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "the-ring",
@@ -1384,7 +1384,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Horror/The_Ring_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "toy-story",
@@ -1449,7 +1449,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Kids/Toy_Story_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/PG.png"
+    "ratingImage": "assets/images/ratings/PG.png"
   },
   {
     "slug": "the-lion-king",
@@ -1514,7 +1514,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Kids/The_Lion_King_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/PG.png"
+    "ratingImage": "assets/images/ratings/PG.png"
   },
   {
     "slug": "aladdin",
@@ -1579,7 +1579,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Kids/Aladdin_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/PG.png"
+    "ratingImage": "assets/images/ratings/PG.png"
   },
   {
     "slug": "e-t-the-extra-terrestrial",
@@ -1644,7 +1644,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Kids/E.T_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/PG.png"
+    "ratingImage": "assets/images/ratings/PG.png"
   },
   {
     "slug": "the-godfather",
@@ -1709,7 +1709,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Classics/The_Godfather_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "pulp-fiction",
@@ -1774,7 +1774,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Classics/Pulp_Fiction_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/18.png"
+    "ratingImage": "assets/images/ratings/18.png"
   },
   {
     "slug": "forrest-gump",
@@ -1839,7 +1839,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Classics/Forrest_Gump_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/12.png"
+    "ratingImage": "assets/images/ratings/12.png"
   },
   {
     "slug": "one-flew-over-the-cuckoos-nest",
@@ -1904,7 +1904,7 @@
       ]
     },
     "poster": "assets/Images/Posters/Classics/One_Flew_Over_The_Cuckoos_Nest_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/15.png"
+    "ratingImage": "assets/images/ratings/15.png"
   },
   {
     "slug": "raging-bull",
@@ -1969,6 +1969,6 @@
       ]
     },
     "poster": "assets/Images/Posters/Classics/Raging_Bull_Poster.jpg",
-    "ratingImage": "assets/Images/Ratings/18.png"
+    "ratingImage": "assets/images/ratings/18.png"
   }
 ]

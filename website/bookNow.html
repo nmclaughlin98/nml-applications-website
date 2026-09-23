@@ -8,17 +8,21 @@
     content="Book cinema tickets online at Blockbuster Theatres. Select your film, choose luxury reserved seats, and receive your digital ticket pass instantly.">
   <title>Blockbuster Theatres - Booking</title>
 
-  <link rel="icon" type="image/png" href="assets/Images/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 
   <link rel="stylesheet" href="assets/stylesheets/main.css">
   <link rel="stylesheet" href="assets/stylesheets/media-queries.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=chevron_left,chevron_right,check_circle,home" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 </head>
 
 <body>
   <!-- Header -->
   <header>
     <a class="header-box" href="index.html">
-      <img class="logo" src="assets/Images/logo.png" alt="Blockbuster Theatres">
+      <img class="logo" src="assets/images/logo.png" alt="Blockbuster Theatres">
       <span class="header-text">BLOCKBUSTER<br>THEATRE</span>
     </a>
 
@@ -188,19 +192,19 @@
           <!-- Legend -->
           <div class="seat-legend">
             <div class="legend-item">
-              <div class="test-seat"></div>
+              <div class="legend-seat"></div>
               <span>Available</span>
             </div>
             <div class="legend-item">
-              <div class="test-seat bookedSeatTest"></div>
+              <div class="legend-seat booked-seat"></div>
               <span>Booked</span>
             </div>
             <div class="legend-item">
-              <div class="test-seat selected-seatTest"></div>
+              <div class="legend-seat selected-seat"></div>
               <span>Your Pick</span>
             </div>
             <div class="legend-item">
-              <div class="test-seat seat-accessibleTest"></div>
+              <div class="legend-seat seat-accessible"></div>
               <span>Accessible</span>
             </div>
           </div>
@@ -210,21 +214,21 @@
             <!-- Row A (Accessible) -->
             <div class="seat-row">
               <span class="row-label">A</span>
-              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
-                  class="seat-accessible-icon"></div>
+              <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
+                                                     class="seat-accessible-icon"></div>
               <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
-              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
-                  class="seat-accessible-icon"></div>
+              <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
+                                                     class="seat-accessible-icon"></div>
               <div class="seat seat-spacer"></div>
-              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
-                  class="seat-accessible-icon"></div>
+              <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
+                                                     class="seat-accessible-icon"></div>
               <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
-              <div class="seat seat-accessible"><img src="assets/Images/Icons/accessible.png" alt="Accessible"
-                  class="seat-accessible-icon"></div>
+              <div class="seat seat-accessible"><img src="assets/images/icons/accessible.png" alt="Accessible"
+                                                     class="seat-accessible-icon"></div>
             </div>
 
             <!-- Row B -->
@@ -233,7 +237,7 @@
               <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
-              <div class="seat bookedSeat"></div>
+              <div class="seat booked-seat"></div>
               <div class="seat"></div>
               <div class="seat seat-spacer"></div>
               <div class="seat"></div>
@@ -247,15 +251,15 @@
             <div class="seat-row">
               <span class="row-label">C</span>
               <div class="seat"></div>
-              <div class="seat bookedSeat"></div>
-              <div class="seat bookedSeat"></div>
+              <div class="seat booked-seat"></div>
+              <div class="seat booked-seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat seat-spacer"></div>
               <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
-              <div class="seat bookedSeat"></div>
+              <div class="seat booked-seat"></div>
               <div class="seat"></div>
             </div>
 
@@ -268,8 +272,8 @@
               <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat seat-spacer"></div>
-              <div class="seat bookedSeat"></div>
-              <div class="seat bookedSeat"></div>
+              <div class="seat booked-seat"></div>
+              <div class="seat booked-seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
@@ -280,13 +284,13 @@
               <span class="row-label">E</span>
               <div class="seat"></div>
               <div class="seat"></div>
-              <div class="seat bookedSeat"></div>
-              <div class="seat bookedSeat"></div>
+              <div class="seat booked-seat"></div>
+              <div class="seat booked-seat"></div>
               <div class="seat"></div>
               <div class="seat seat-spacer"></div>
               <div class="seat"></div>
               <div class="seat"></div>
-              <div class="seat bookedSeat"></div>
+              <div class="seat booked-seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
             </div>
@@ -302,8 +306,8 @@
               <div class="seat seat-spacer"></div>
               <div class="seat"></div>
               <div class="seat"></div>
-              <div class="seat bookedSeat"></div>
-              <div class="seat bookedSeat"></div>
+              <div class="seat booked-seat"></div>
+              <div class="seat booked-seat"></div>
               <div class="seat"></div>
             </div>
 
@@ -312,13 +316,13 @@
               <span class="row-label">G</span>
               <div class="seat"></div>
               <div class="seat"></div>
-              <div class="seat bookedSeat"></div>
-              <div class="seat bookedSeat"></div>
+              <div class="seat booked-seat"></div>
+              <div class="seat booked-seat"></div>
               <div class="seat"></div>
               <div class="seat seat-spacer"></div>
               <div class="seat"></div>
               <div class="seat"></div>
-              <div class="seat bookedSeat"></div>
+              <div class="seat booked-seat"></div>
               <div class="seat"></div>
               <div class="seat"></div>
             </div>
@@ -330,8 +334,8 @@
         </div>
 
         <div class="form-actions">
-          <button type="button" class="form-button previous">&larr; Back</button>
-          <button type="button" class="form-button next">Continue to Guest Details &rarr;</button>
+          <button type="button" class="form-button previous">Back</button>
+          <button type="button" class="form-button next">Continue to Guest Details</button>
         </div>
       </fieldset>
 
@@ -364,8 +368,8 @@
         </div>
 
         <div class="form-actions">
-          <button type="button" class="form-button previous">&larr; Back</button>
-          <button type="button" class="form-button next">Continue to Payment &rarr;</button>
+          <button type="button" class="form-button previous">Back</button>
+          <button type="button" class="form-button next">Continue to Payment</button>
         </div>
       </fieldset>
 
@@ -426,9 +430,8 @@
         </div>
 
         <div class="form-actions">
-          <button type="button" class="form-button previous">&larr; Back</button>
-          <button type="button" class="form-button next" id="btn-confirm-payment">Confirm &amp; Generate Pass
-            &rarr;</button>
+          <button type="button" class="form-button previous">Back</button>
+          <button type="button" class="form-button next finish-step" id="btn-confirm-payment">Confirm Booking</button>
         </div>
       </fieldset>
 

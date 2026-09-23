@@ -29,7 +29,7 @@ async function loadMovieDetail() {
   movieTitle.textContent = movie.title;
   movieStill.src = `${movie.still}` || 'assets/Images/logo.png';
   movieStill.alt = movie.title;
-  movieRating.src = `../assets/Images/Ratings/${movie.rating}.png`;
+  movieRating.src = `../assets/images/ratings/${movie.rating}.png`;
   movieRating.alt = movie.rating;
   movieRuntime.textContent = `Run Time: ${movie.runtime} mins`;
   movieCast.innerHTML = `<strong>Starring:</strong> ${movie.starring.join(', ')}`;

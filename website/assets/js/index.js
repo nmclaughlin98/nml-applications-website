@@ -41,7 +41,7 @@ function renderMovieSection(container, movies) {
   container.innerHTML = movies.map(movie => {
     const safeTitle = encodeURIComponent(movie.title);
     const detailSlug = encodeURIComponent(movie.slug || movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
-    const ratingImage = `../assets/Images/Ratings/${movie.rating}.png` || 'assets/Images/Ratings/tbc.png';
+    const ratingImage = `assets/images/ratings/${movie.rating}.png` || 'assets/images/ratings/tbc.png';
 
 
     return `

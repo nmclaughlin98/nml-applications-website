@@ -8,17 +8,19 @@
     content="Learn about Blockbuster Theatre, our cutting-edge cinema tech (IMAX, Dolby Atmos), accessibility features, opening hours, and box office contact.">
   <title>Blockbuster Theatres - About &amp; FAQs</title>
 
-  <link rel="icon" type="image/png" href="assets/Images/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 
   <link rel="stylesheet" href="assets/stylesheets/main.css">
   <link rel="stylesheet" href="assets/stylesheets/media-queries.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=send,location_on" />
 </head>
 
 <body>
   <!-- Header -->
   <header>
     <a class="header-box" href="index.html">
-      <img class="logo" src="assets/Images/logo.png" alt="Blockbuster Theatres">
+      <img class="logo" src="assets/images/logo.png" alt="Blockbuster Theatres">
       <span class="header-text">BLOCKBUSTER<br>THEATRE</span>
     </a>
 
@@ -43,7 +45,7 @@
 
   <!-- Hero Cinema Still -->
   <div class="movie-hero-backdrop">
-    <img class="still" src="assets/Images/Stills/theatre.jpg" alt="Blockbuster Theatre Auditorium">
+    <img class="still" src="assets/images/stills/theatre.jpg" alt="Blockbuster Theatre Auditorium">
     <div class="movie-hero-content">
       <h1>Experience Cinema In Full Glory</h1>
       <div class="movie-meta-bar">
@@ -150,13 +152,18 @@
               <textarea name="message" id="message" rows="4" placeholder="How can we help?" required></textarea>
             </div>
 
-            <button type="submit" class="button" style="width: 100%; margin-top: 10px;">Send Message &rarr;</button>
+            <button type="submit" class="button" style="width: 100%; margin-top: 10px;">Send Message
+              <span class="material-symbols-outlined">send</span>
+            </button>
           </form>
         </div>
 
         <div
           style="margin-top: 24px; padding: 24px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
-          <h3 style="margin-bottom: 10px; color: #fff;">📍 Box Office Location</h3>
+          <h3 class="h3-with-icon" style="margin-bottom: 10px; color: #fff;">
+            <span class="material-symbols-outlined">location_on</span>
+            Box Office Location
+          </h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
             Blockbuster Theatre Complex<br>
             Cinema Way, Strand Road<br>
