@@ -307,6 +307,10 @@
         margin-top: 25px;
         margin-bottom: 10px;
     }
+    
+    .rating {
+        height: 30px;
+    }
 
 }
 
