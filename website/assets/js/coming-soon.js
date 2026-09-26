@@ -1,12 +1,17 @@
+const MOVIES_API_URL = 'https://x0gtvekr3d.execute-api.eu-west-2.amazonaws.com/movies';
+
 async function loadComingSoonMovies() {
   const container = document.getElementById('coming-soon-list');
   if (!container) return;
 
   try {
-    const response = await fetch('assets/data/upcoming-movies.json');
+    const response = await fetch(MOVIES_API_URL);
     if (!response.ok) throw new Error('Unable to load upcoming movie data');
 
-    const movies = await response.json();
+    const data = await response.json();
+    if (!Array.isArray(data.movies)) throw new Error('Invalid movie list response');
+
+    const movies = data.movies.filter(movie => movie.isComingSoon === true);
     renderComingSoonMovies(container, movies);
   } catch (error) {
     console.error(error);

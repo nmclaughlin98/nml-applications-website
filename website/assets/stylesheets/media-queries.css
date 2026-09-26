@@ -243,10 +243,6 @@
         display: none;
     }
 
-    .carousel-caption.movie {
-        padding: 10px;
-    }
-
     .poster-column .overlay .button,
     .poster-column .overlay button,
     .poster-column .overlay .btn-secondary {
