@@ -17,6 +17,10 @@ async function loadMovieDetail() {
   }
 
   const releaseDate = new Date(movie.releaseDate);
+  const directors = (Array.isArray(movie.director) ? movie.director : String(movie.director || 'Unknown').split(','))
+    .map(director => director.trim())
+    .filter(Boolean);
+  const directorLabel = directors.length === 1 ? 'Director' : 'Directors';
 
   const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
   const formattedReleaseDate = releaseDate.toLocaleDateString('en-GB', dateOptions);
@@ -41,7 +45,7 @@ async function loadMovieDetail() {
   movieRating.alt = movie.rating;
   movieRuntime.textContent = `Run Time: ${movie.runtime} mins`;
   movieCast.innerHTML = `<strong>Starring:</strong> ${movie.starring.join(', ')}`;
-  movieDirector.textContent = `Director: ${movie.director}`;
+  movieDirector.textContent = `${directorLabel}: ${directors.join(', ') || 'Unknown'}`;
   movieReleaseDate.textContent = `Release Date: ${formattedReleaseDate}`;
   synopsisContainer.innerHTML = movie.synopsis
     .split('\n')
