@@ -43,10 +43,10 @@ async function loadMovieDetail() {
   movieStill.alt = movie.title;
   movieRating.src = `../assets/images/ratings/${movie.rating}.png`;
   movieRating.alt = movie.rating;
-  movieRuntime.textContent = `Run Time: ${movie.runtime} mins`;
+  movieRuntime.innerHTML = `<strong>Run Time:</strong> ${movie.runtime} mins`;
   movieCast.innerHTML = `<strong>Starring:</strong> ${movie.starring.join(', ')}`;
-  movieDirector.textContent = `${directorLabel}: ${directors.join(', ') || 'Unknown'}`;
-  movieReleaseDate.textContent = `Release Date: ${formattedReleaseDate}`;
+  movieDirector.innerHTML = `<strong>${directorLabel}:</strong> ${directors.join(', ') || 'Unknown'}`;
+  movieReleaseDate.innerHTML = `<strong>Release Date:</strong> ${formattedReleaseDate}`;
   synopsisContainer.innerHTML = movie.synopsis
     .split('\n')
     .map(paragraph => `<p>${paragraph}</p>`)
