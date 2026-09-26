@@ -580,10 +580,10 @@ header.scrolled {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  padding: 12px 26px;
+  padding: 12px 20px;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   border-radius: var(--radius-md);

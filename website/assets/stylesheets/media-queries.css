@@ -28,6 +28,14 @@
         height: 34px;
         line-height: 32px;
     }
+
+    .logo {
+        height: 45px;
+    }
+
+    .header-text {
+        font-size: 1.1rem;
+    }
 }
 
 /* Mobile Devices (768px and down) */
@@ -242,8 +250,8 @@
     .poster-column .overlay .button,
     .poster-column .overlay button,
     .poster-column .overlay .btn-secondary {
-        font-size: 0.95rem;
-        height: 2rem;
+        font-size: 1.0rem;
+        height: 2.6rem;
     }
 
     .step-header h2 {
@@ -295,11 +303,6 @@
         grid-template-columns: 1fr;
     }
 
-    .carousel-caption .hero-actions .button {
-        padding: 8px 11px;
-        font-size: 0.72rem;
-    }
-
     /* Live Booking Subtotal summary */
     .booking-subtotal-bar {
         box-sizing: border-box;
@@ -323,7 +326,7 @@
     }
     
     .rating {
-        height: 20px;
+        height: 35px;
     }
 
 }
@@ -380,7 +383,14 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
+    .carousel-caption .hero-actions .button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 650px) {
 
     .poster-section,
     .grid {
@@ -393,7 +403,7 @@
     }
 
     .overlay-text {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .payment-methods-grid {
@@ -403,6 +413,12 @@
     footer {
         flex-direction: column;
         text-align: center;
+    }
+
+    .btn,
+    .button,
+    .form-button {
+        font-size: 1.0rem;
     }
 }
 
