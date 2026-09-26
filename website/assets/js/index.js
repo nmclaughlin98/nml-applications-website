@@ -17,15 +17,30 @@ const SECTION_CONFIG = {
   }
 };
 
+const MOVIES_API_URL = 'https://x0gtvekr3d.execute-api.eu-west-2.amazonaws.com/movies';
+let moviesRequest;
+
+async function fetchMovies() {
+  if (!moviesRequest) {
+    moviesRequest = fetch(MOVIES_API_URL).then(async response => {
+      if (!response.ok) throw new Error('Unable to load movie data');
+
+      const data = await response.json();
+      if (!Array.isArray(data.movies)) throw new Error('Invalid movie list response');
+
+      return data.movies.filter(movie => movie.visible !== false && movie.isComingSoon !== true);
+    });
+  }
+
+  return moviesRequest;
+}
+
 async function loadMovieSection(sectionKey, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
   try {
-    const response = await fetch('assets/data/movies.json');
-    if (!response.ok) throw new Error(`Unable to load ${sectionKey} data`);
-
-    const movies = await response.json();
+    const movies = await fetchMovies();
     const config = SECTION_CONFIG[sectionKey];
     const sectionMovies = config ? config.getMovies(movies, config) : [];
 
@@ -40,7 +55,7 @@ async function loadMovieSection(sectionKey, containerId) {
 function renderMovieSection(container, movies) {
   container.innerHTML = movies.map(movie => {
     const safeTitle = encodeURIComponent(movie.title);
-    const detailSlug = encodeURIComponent(movie.slug || movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
+    const detailId = encodeURIComponent(movie.movieId ?? movie.slug ?? movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
     const ratingImage = `assets/images/ratings/${movie.rating}.png` || 'assets/images/ratings/tbc.png';
 
 
@@ -52,7 +67,7 @@ function renderMovieSection(container, movies) {
           <div class="runtime">${movie.runtime || 0} mins</div>
           <img class="rating" src="${ratingImage}" alt="${movie.rating || 'Rating'}">
           <a class="button" href="bookNow.html?movie=${safeTitle}">Book Now</a>
-          <a class="button" href="templates/movie-detail.html?movie=${detailSlug}">More Info</a>
+          <a class="button" href="templates/movie-detail.html?movie=${detailId}">More Info</a>
         </div>
       </div>
     `;

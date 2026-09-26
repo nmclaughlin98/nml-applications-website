@@ -1,8 +1,16 @@
 async function loadMovieDetail() {
   const params = new URLSearchParams(window.location.search);
-  const requestedSlug = params.get('movie') || 'deadpool-2';
+  const requestedMovie = params.get('movie') || 'deadpool-2';
 
-  const movie = await fetchMovieData(requestedSlug);
+  let movie;
+  try {
+    movie = await fetchMovieData(requestedMovie);
+  } catch (error) {
+    console.error(error);
+    document.getElementById('movie-title').textContent = 'Movie details are temporarily unavailable';
+    return;
+  }
+
   if (!movie) {
     document.getElementById('movie-title').textContent = 'Movie not found';
     return;
@@ -79,21 +87,28 @@ async function loadMovieDetail() {
     : `../bookNow.html?movie=${encodeURIComponent(movie.title)}`;
 }
 
-async function fetchMovieData(slug) {
-  try {
-    const response = await fetch('../assets/data/movies.json');
-    if (!response.ok) throw new Error('Unable to load movie data');
+async function fetchMovieData(identifier) {
+  const movieId = /^\d+$/.test(identifier)
+    ? identifier
+    : await findMovieIdBySlug(identifier);
+  if (!movieId) return null;
 
-    const movies = await response.json();
-    return movies.find(movie => movie.slug === slug);
-  } catch (error) {
-    if (window.MOVIES_DATA) {
-      return window.MOVIES_DATA.find(movie => movie.slug === slug);
-    }
+  const response = await fetch(`https://x0gtvekr3d.execute-api.eu-west-2.amazonaws.com/movies/${encodeURIComponent(movieId)}`);
+  if (response.status === 404) return null;
+  if (!response.ok) throw new Error('Unable to load movie data');
 
-    console.error(error);
-    return null;
-  }
+  return response.json();
+}
+
+async function findMovieIdBySlug(slug) {
+  const response = await fetch('https://x0gtvekr3d.execute-api.eu-west-2.amazonaws.com/movies');
+  if (!response.ok) throw new Error('Unable to load movie data');
+
+  const data = await response.json();
+  if (!Array.isArray(data.movies)) throw new Error('Invalid movie list response');
+
+  const movie = data.movies.find(item => item.slug === slug);
+  return movie?.movieId ? String(movie.movieId) : null;
 }
 
 document.addEventListener('DOMContentLoaded', loadMovieDetail);

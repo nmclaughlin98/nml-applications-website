@@ -1,4 +1,5 @@
 let allMovies = [];
+const MOVIES_API_URL = 'https://x0gtvekr3d.execute-api.eu-west-2.amazonaws.com/movies';
 
 function sortMovies(movies, sortValue) {
   const sorted = [...movies];
@@ -88,7 +89,7 @@ function renderMovies(container, movies) {
   container.innerHTML = movies.map(movie => {
     const genreKeys = getMovieGenreKeys(movie);
     const safeTitle = encodeURIComponent(movie.title);
-    const detailSlug = encodeURIComponent(movie.slug || movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
+    const detailId = encodeURIComponent(movie.movieId ?? movie.slug ?? movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
     const ratingImage = `assets/images/ratings/${movie.rating}.png` || 'assets/images/ratings/tbc.png';
 
     return `
@@ -99,7 +100,7 @@ function renderMovies(container, movies) {
           <div class="runtime">${movie.runtime || 0} mins</div>
           <img class="rating" src="${ratingImage}" alt="${movie.rating || 'Rating'}">
           <a class="button" href="bookNow.html?movie=${safeTitle}">Book Now</a>
-          <a class="button" href="templates/movie-detail.html?movie=${detailSlug}">More Info</a>
+          <a class="button" href="templates/movie-detail.html?movie=${detailId}">More Info</a>
         </div>
       </div>
     `;
@@ -132,7 +133,7 @@ function setupNowShowingControls(container) {
 }
 
 function renderNowShowingMovies(container, movies) {
-  allMovies = movies.filter(movie => movie.visible !== false);
+  allMovies = movies.filter(movie => movie.visible !== false && movie.isComingSoon !== true);
   setupNowShowingControls(container);
   applySortAndFilters(container);
 }
@@ -142,10 +143,13 @@ async function loadNowShowingMovies() {
   if (!container) return;
 
   try {
-    const response = await fetch('assets/data/movies.json');
+    const response = await fetch(MOVIES_API_URL);
     if (!response.ok) throw new Error('Unable to load now showing data');
 
-    const movies = await response.json();
+    const data = await response.json();
+    if (!Array.isArray(data.movies)) throw new Error('Invalid now showing response');
+
+    const movies = data.movies;
     renderNowShowingMovies(container, movies);
   } catch (error) {
     console.error(error);
