@@ -203,12 +203,11 @@
 
     .carousel-inner,
     .carousel-inner .item {
-        height: 430px;
+        height: 400px;
     }
 
     .carousel-caption {
         bottom: 40px;
-        max-height: 100%;
         max-width: 80%;
     }
 
@@ -220,13 +219,6 @@
         padding: 9px 14px;
         font-size: 0.78rem;
         border-radius: var(--radius-sm);
-    }
-
-    .carousel-caption p {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
 
     .seating-plan {
@@ -269,9 +261,11 @@
 
     .carousel-caption.movie p,
     .col-no-border.col-2-3 p,
-    .carousel-caption {
+    .carousel-caption p {
         line-height: 1.5;
         margin-bottom: 10px;
+        font-size: clamp(1.0rem, 4vw, 2rem);
+        -webkit-line-clamp: 3;
     }
 
     .runtime-movies,
@@ -325,7 +319,6 @@
 
     footer {
         flex-direction: column;
-        text-align: center;
     }
 
     .btn,
