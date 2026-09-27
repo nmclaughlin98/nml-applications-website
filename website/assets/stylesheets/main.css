@@ -77,11 +77,13 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
-  min-height: 100vh;
   overflow-x: hidden;
   padding-top: 80px;
   /* Offset for fixed header */
   -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .material-icons-outlined {
@@ -688,6 +690,10 @@ header.scrolled {
 /* ==========================================================================
    Section Layouts & Headers
    ========================================================================== */
+
+main {
+  flex: 1;
+}
 
 section {
   padding: clamp(36px, 6vw, 70px) clamp(16px, 5vw, 60px);

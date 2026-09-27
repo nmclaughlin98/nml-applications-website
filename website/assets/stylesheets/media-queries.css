@@ -381,8 +381,8 @@
 
 @media (max-width: 550px) {
     .carousel-caption .hero-actions .button {
-        padding: 8px 15px;
-        font-size: 0.9rem;
+        padding: 8px 9px;
+        font-size: 0.95rem;
     }
 }
 

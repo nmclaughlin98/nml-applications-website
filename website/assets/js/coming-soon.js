@@ -55,7 +55,6 @@ function renderComingSoonMovies(container, movies) {
           <div class="release-date">${getComingSoonReleaseLabel(movie)}</div>
           <div class="overlay-text"></div>
           <p id="${countdownId}" data-countdown="${countdownTarget || ''}">Loading countdown...</p>
-          <button class="button btn-secondary" style="margin-top: 8px;" onclick="showToast('Reminder set for ${movie.title}! We will notify you when advance tickets drop.')">Remind Me</button>
           <button class="button" data-trailer="${movie.trailer || ''}" type="button">Teaser Trailer</button>
         </div>
       </div>
