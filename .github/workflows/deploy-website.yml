@@ -36,6 +36,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+      - name: Create runtime configuration
+        env:
+          API_REQUEST_URL: ${{ vars.API_REQUEST_URL }}
+        run: |
+          node --input-type=commonjs -e '
+            const fs = require("node:fs");
+            const value = process.env.API_REQUEST_URL;
+            if (!value) {
+              console.error("Set the API_REQUEST_URL GitHub Actions repository variable.");
+              process.exit(1);
+            }
+            fs.writeFileSync(
+              "website/assets/js/runtime-config.js",
+              "window.APP_CONFIG = Object.freeze({ moviesApiUrl: " + JSON.stringify(value) + " });\n"
+            );
+          '
       - name: Setup Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact

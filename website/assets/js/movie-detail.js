@@ -97,7 +97,7 @@ async function fetchMovieData(identifier) {
     : await findMovieIdBySlug(identifier);
   if (!movieId) return null;
 
-  const response = await fetch(`https://y02g06phsb.execute-api.eu-west-2.amazonaws.com/movies/${encodeURIComponent(movieId)}`);
+  const response = await fetch(`${window.APP_CONFIG.moviesApiUrl}/${encodeURIComponent(movieId)}`);
   if (response.status === 404) return null;
   if (!response.ok) throw new Error('Unable to load movie data');
 
@@ -105,7 +105,7 @@ async function fetchMovieData(identifier) {
 }
 
 async function findMovieIdBySlug(slug) {
-  const response = await fetch('https://y02g06phsb.execute-api.eu-west-2.amazonaws.com/movies');
+  const response = await fetch(window.APP_CONFIG.moviesApiUrl);
   if (!response.ok) throw new Error('Unable to load movie data');
 
   const data = await response.json();

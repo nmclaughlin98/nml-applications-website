@@ -1,11 +1,9 @@
-const MOVIES_API_URL = 'https://y02g06phsb.execute-api.eu-west-2.amazonaws.com/movies';
-
 async function loadComingSoonMovies() {
   const container = document.getElementById('coming-soon-list');
   if (!container) return;
 
   try {
-    const response = await fetch(MOVIES_API_URL);
+    const response = await fetch(window.APP_CONFIG.moviesApiUrl);
     if (!response.ok) throw new Error('Unable to load upcoming movie data');
 
     const data = await response.json();
