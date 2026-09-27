@@ -345,6 +345,7 @@
         border-bottom: 1px solid var(--border-subtle);
         padding: 24px 20px;
         z-index: 999;
+        overflow: scroll;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
         opacity: 0;
         visibility: hidden;
@@ -364,7 +365,7 @@
     .primary-nav .menu {
         flex-direction: column;
         width: 100%;
-        gap: 12px;
+        gap: 12px
     }
 
     .primary-nav .menu li a {
