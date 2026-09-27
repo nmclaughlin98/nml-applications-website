@@ -338,31 +338,25 @@
         grid-template-columns: 1fr;
     }
 
-    .primary-nav {
+      .primary-nav.open {
         display: flex;
-        position: fixed;
-        left: 0;
-        right: 0;
-        border-bottom: 1px solid var(--border-subtle);
-        padding: 24px;
-        box-shadow: var(--shadow-lg);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-50px);
-        pointer-events: none;
-        transition: opacity var(--transition-smooth), transform var(--transition), visibility var(--transition-slow);
-    }
-
-    .primary-nav.open {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 12px;
         opacity: 1 !important;
         visibility: visible !important;
         transform: translateY(0) !important;
         pointer-events: auto !important;
+    }
+
+    .primary-nav .menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .primary-nav .menu li a {
+        width: 100%;
+        text-align: center;
+        padding: 14px 30px;
+        font-size: 1.05rem;
     }
 
     .ticket-row {
