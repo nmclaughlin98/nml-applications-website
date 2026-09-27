@@ -100,7 +100,7 @@ function renderHeroCarousel(carousel, movies) {
 
   inner.innerHTML = movies.map((movie, index) => {
     const detailId = encodeURIComponent(movie.movieId ?? movie.slug ?? movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
-    const image = movie.still || movie.poster || 'assets/images/logo.png';
+    const image = movie.largeStill || movie.still || movie.poster || 'assets/images/logo.png';
     const description = getCarouselDescription(movie);
     const showtime = getCarouselShowtime(movie);
     const bookHref = `bookNow.html?movie=${encodeURIComponent(movie.title)}${showtime ? `&time=${encodeURIComponent(showtime)}` : ''}`;
