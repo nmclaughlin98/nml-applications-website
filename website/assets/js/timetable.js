@@ -49,7 +49,11 @@ function renderTimetable() {
         ? timetableMovies.filter(movie => movie.visible !== false)
         : [];
 
-    visibleMovies.forEach(movie => {
+    visibleMovies.sort((a, b) => (a.title || 'Untitled movie').localeCompare(
+        b.title || 'Untitled movie',
+        undefined,
+        { sensitivity: 'base' }
+    )).forEach(movie => {
         const title = movie.title || 'Untitled movie';
         if (searchVal && !title.toLowerCase().includes(searchVal)) return;
 
