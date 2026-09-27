@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BLOCKBUSTER THEATRE - RESPONSIVE TWEAKS & UTILITIES
+   Responsive Breakpoints & Fluid Mobile Layouts
    ========================================================================== */
 
 /* Ultra-wide Displays (1920px+) */
@@ -14,6 +14,16 @@
     .carousel-inner,
     .carousel-inner .item {
         height: 700px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .logo {
+        height: 45px;
+    }
+
+    .header-text {
+        font-size: 1.1rem;
     }
 }
 
@@ -38,10 +48,115 @@
     }
 }
 
+@media (max-width: 900px) {
+
+    .coming-soon-release-date {
+        font-size: 1.2rem
+    }
+
+    .poster-column .overlay p[id] {
+        font-size: 1.0rem;
+        padding: 6px 7px;
+    }
+
+    .primary-nav {
+        display: flex;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--glass-bg);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 24px 20px;
+        z-index: 999;
+        overflow: scroll;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-52px);
+        pointer-events: none;
+        transition: opacity var(--transition-smooth), transform var(--transition-smooth), visibility var(--transition-smooth);
+    }
+
+    .primary-nav.open {
+        display: flex;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+    }
+
+    .primary-nav .menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px
+    }
+
+    .primary-nav .menu li a {
+        width: 100%;
+        text-align: center;
+        padding: 12px 23px;
+        font-size: 1.05rem;
+    }
+
+    .primary-nav .menu li a.current {
+        box-shadow: 0 10px 22px var(--accent-glow);
+    }
+
+    .nav-cta-btn {
+        font-size: 1.05rem;
+        padding: 12px 23px !important;
+    }
+
+    .movie-body-layout,
+    .about-grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ticket-row {
+        padding: 16px 10px;
+    }
+
+    .form-group {
+        font-size: 1.25rem;
+        width: 100%
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .movie-page {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 860px) {
+    .poster-section,
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 16px;
+    }
+
+    .poster-column .overlay {
+        padding: 12px;
+    }
+
+    .overlay-text {
+        font-size: 1.4rem;
+    }
+}
+
 /* Mobile Devices (768px and down) */
 @media (max-width: 768px) {
     body {
         padding-top: 70px;
+    }
+
+    .coming-soon-release-date {
+        font-size: 1.0rem
     }
 
     header {
@@ -73,55 +188,6 @@
 
     .showtimes-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .primary-nav {
-        display: flex;
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--glass-bg);
-        backdrop-filter: blur(1px);
-        -webkit-backdrop-filter: blur(1px);
-        border-bottom: 1px solid var(--border-subtle);
-        padding: 24px 20px;
-        z-index: 999;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-52px);
-        pointer-events: none;
-        transition: opacity var(--transition-smooth), transform var(--transition-smooth), visibility var(--transition-smooth);
-    }
-
-    .primary-nav.open {
-        display: flex;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateY(0) !important;
-        pointer-events: auto !important;
-    }
-
-    .primary-nav .menu {
-        flex-direction: column;
-        width: 100%;
-        gap: 12px;
-    }
-
-    .primary-nav .menu li a {
-        width: 100%;
-        text-align: center;
-        padding: 14px 30px;
-        font-size: 1.05rem;
-    }
-
-    .primary-nav .menu li a.current {
-        box-shadow: 0 10px 22px var(--accent-glow);
-    }
-
-    .nav-cta-btn {
-        padding: 14px 30px !important;
     }
 
     .hamburger {
@@ -220,6 +286,49 @@
         align-items: flex-end;
         gap: 12px;
     }
+
+    .poster-section,
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 16px;
+    }
+
+    .poster-column .overlay {
+        padding: 12px;
+    }
+
+    .overlay-text {
+        font-size: 1.4rem;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .poster-column .overlay p[id] {
+        font-size: 0.9rem;
+        padding: 6px 7px;
+    }
+
+    .payment-methods-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn,
+    .button,
+    .form-button {
+        font-size: 1.0rem;
+    }
+}
+
+.carousel-caption .hero-actions .button {
+    padding: 10px 10px;
+    font-size: 0.95rem;
 }
 
 /* Small Phones (480px and down) */
@@ -315,132 +424,10 @@
         margin-top: 25px;
         margin-bottom: 10px;
     }
-    
+
     .rating {
         height: 35px;
     }
 
 }
 
-/* ==========================================================================
-   Responsive Breakpoints & Fluid Mobile Layouts
-   ========================================================================== */
-
-@media (max-width: 900px) {
-
-   .cominng-soon-release-date {
-      font-size: 1.3rem
-   }
-
-   .poster-column .overlay p[id] {
-     font-size: 1.0rem;
-      padding: 6px 7px;
-   }
-
-   .primary-nav {
-        display: flex;
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--glass-bg);
-        backdrop-filter: blur(1px);
-        -webkit-backdrop-filter: blur(1px);
-        border-bottom: 1px solid var(--border-subtle);
-        padding: 24px 20px;
-        z-index: 999;
-        overflow: scroll;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-52px);
-        pointer-events: none;
-        transition: opacity var(--transition-smooth), transform var(--transition-smooth), visibility var(--transition-smooth);
-    }
-
-    .primary-nav.open {
-        display: flex;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateY(0) !important;
-        pointer-events: auto !important;
-    }
-
-    .primary-nav .menu {
-        flex-direction: column;
-        width: 100%;
-        gap: 12px
-    }
-
-    .primary-nav .menu li a {
-        width: 100%;
-        text-align: center;
-        padding: 14px 30px;
-        font-size: 1.05rem;
-    }
-
-    .primary-nav .menu li a.current {
-        box-shadow: 0 10px 22px var(--accent-glow);
-    }
-
-    .nav-cta-btn {
-        padding: 14px 30px !important;
-    }
-
-    .movie-body-layout,
-    .about-grid-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .ticket-row {
-        padding: 16px 10px;
-    }
-
-    .form-group {
-        font-size: 1.25rem;
-        width: 100%
-    }
-
-    .hamburger {
-        display: flex;
-    }
-}
-
-@media (max-width: 550px) {
-    .carousel-caption .hero-actions .button {
-        padding: 8px 9px;
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 650px) {
-
-    .poster-section,
-    .grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 16px;
-    }
-
-    .poster-column .overlay {
-        padding: 12px;
-    }
-
-    .overlay-text {
-        font-size: 1.6rem;
-    }
-
-    .payment-methods-grid {
-        grid-template-columns: 1fr;
-    }
-
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .btn,
-    .button,
-    .form-button {
-        font-size: 1.0rem;
-    }
-}
