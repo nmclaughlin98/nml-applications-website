@@ -326,11 +326,12 @@
     .form-button {
         font-size: 1.0rem;
     }
-}
 
-.carousel-caption .hero-actions .button {
-    padding: 10px 10px;
-    font-size: 0.95rem;
+    .carousel-caption .hero-actions .button {
+        padding: 10px 10px;
+        font-size: 0.95rem;
+    }
+
 }
 
 /* Small Phones (480px and down) */
