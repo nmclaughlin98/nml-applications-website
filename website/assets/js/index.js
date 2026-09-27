@@ -65,7 +65,6 @@ function renderMovieSection(container, movies) {
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>
           <div class="runtime">${movie.runtime || 0} mins</div>
-          <img class="rating" src="${ratingImage}" alt="${movie.rating || 'Rating'}">
           <a class="button" href="bookNow.html?movie=${safeTitle}">Book Now</a>
           <a class="button" href="templates/movie-detail.html?movie=${detailId}">More Info</a>
         </div>
