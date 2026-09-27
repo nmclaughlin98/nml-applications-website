@@ -333,6 +333,15 @@
 
 @media (max-width: 900px) {
 
+   .cominng-soon-release-date {
+      font-size: 1.3rem
+   }
+
+   .poster-column .overlay p[id] {
+     font-size: 1.0rem;
+      padding: 6px 7px;
+   }
+
    .primary-nav {
         display: flex;
         position: fixed;
