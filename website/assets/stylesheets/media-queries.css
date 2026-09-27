@@ -149,7 +149,7 @@
 
     .carousel-caption p {
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
@@ -199,7 +199,7 @@
 
     .carousel-caption.movie p,
     .col-no-border.col-2-3 p {
-        font-size: 16px;
+        font-size: 12px;
         line-height: 1.65;
         margin-bottom: 10px;
     }
@@ -333,9 +333,24 @@
 
 @media (max-width: 900px) {
 
-    .movie-body-layout,
-    .about-grid-layout {
-        grid-template-columns: 1fr;
+   .primary-nav {
+        display: flex;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--glass-bg);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 24px 20px;
+        z-index: 999;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-52px);
+        pointer-events: none;
+        transition: opacity var(--transition-smooth), transform var(--transition-smooth), visibility var(--transition-smooth);
     }
 
     .primary-nav.open {
@@ -357,6 +372,19 @@
         text-align: center;
         padding: 14px 30px;
         font-size: 1.05rem;
+    }
+
+    .primary-nav .menu li a.current {
+        box-shadow: 0 10px 22px var(--accent-glow);
+    }
+
+    .nav-cta-btn {
+        padding: 14px 30px !important;
+    }
+
+    .movie-body-layout,
+    .about-grid-layout {
+        grid-template-columns: 1fr;
     }
 
     .ticket-row {
