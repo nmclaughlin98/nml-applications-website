@@ -1,6 +1,6 @@
 let timetableMovies = [];
 let selectedDay = 'Monday';
-const MOVIES_API_URL = 'https://y02g06phsb.execute-api.eu-west-2.amazonaws.com';
+const MOVIES_API_URL = 'https://y02g06phsb.execute-api.eu-west-2.amazonaws.com/movies';
 
 function getMovieGenre(movie) {
     if (Array.isArray(movie.genres) && movie.genres.length) {

@@ -17,7 +17,7 @@ const SECTION_CONFIG = {
   }
 };
 
-const MOVIES_API_URL = 'https://y02g06phsb.execute-api.eu-west-2.amazonaws.com';
+const MOVIES_API_URL = 'https://y02g06phsb.execute-api.eu-west-2.amazonaws.com/movies';
 let allMoviesRequest;
 
 async function fetchAllMovies() {

@@ -1,4 +1,4 @@
-const MOVIES_API_URL = 'https://y02g06phsb.execute-api.eu-west-2.amazonaws.com';
+const MOVIES_API_URL = 'https://y02g06phsb.execute-api.eu-west-2.amazonaws.com/movies';
 
 async function loadComingSoonMovies() {
   const container = document.getElementById('coming-soon-list');
