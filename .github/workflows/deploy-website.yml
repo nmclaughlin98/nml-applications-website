@@ -8,6 +8,11 @@ on:
     types:
       - completed
 
+  # Automatically deploy whenever changes are merged/pushed to main
+  push:
+    branches:
+      - main
+
   # Allows manual triggers directly from the Actions tab
   workflow_dispatch:
 
