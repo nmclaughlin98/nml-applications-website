@@ -46,41 +46,21 @@ function renderComingSoonMovies(container, movies) {
   container.innerHTML = upcomingMovies.map((movie, index) => {
     const countdownId = `countdown-${index}`;
     const countdownTarget = getComingSoonCountdownTarget(movie);
+    const detailId = encodeURIComponent(movie.movieId ?? movie.slug ?? movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
+
 
     return `
       <div class="poster-column">
         <img class="poster" src="${movie.poster || 'assets/Images/logo.png'}" alt="${movie.title}">
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>
-          <div class="release-date"><p id="${countdownId}" data-countdown="${countdownTarget || ''}">Loading countdown...</p></div>
-          <div class="overlay-text"></div>
+          <div class="overlay-text coming-soon-release-date">${getComingSoonReleaseLabel(movie)}</div>
+          <p id="${countdownId}" data-countdown="${countdownTarget || ''}">Loading countdown...</p>
           <a class="button" href="templates/movie-detail.html?movie=${detailId}">More Info</a>
         </div>
       </div>
     `;
   }).join('');
-
-  document.querySelectorAll('#coming-soon-list [data-trailer]').forEach(trigger => {
-    trigger.addEventListener('click', (event) => {
-      event.preventDefault();
-      const url = trigger.getAttribute('data-trailer');
-      if (!url) return;
-
-      if (typeof openTrailer === 'function') {
-        openTrailer(url);
-        return;
-      }
-
-      const modal = document.getElementById('trailer-modal');
-      const iframe = document.getElementById('trailer-iframe');
-      if (!modal || !iframe) return;
-
-      const embedUrl = url.includes('autoplay=1') ? url : (url.includes('?') ? `${url}&autoplay=1` : `${url}?autoplay=1`);
-      iframe.src = embedUrl;
-      modal.classList.add('open');
-      document.body.classList.add('noScroll');
-    });
-  });
 
   initComingSoonCountdowns();
 }
@@ -108,13 +88,14 @@ function initComingSoonCountdowns() {
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
 
-      el.textContent = `${days}d ${hours}h ${minutes}m remaining`;
+      el.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     });
   };
 
   updateCountdowns();
-  setInterval(updateCountdowns, 60000);
+  setInterval(updateCountdowns, 1000);
 }
 
 document.addEventListener('DOMContentLoaded', loadComingSoonMovies);
