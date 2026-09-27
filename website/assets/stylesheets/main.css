@@ -467,7 +467,7 @@ header.scrolled {
   bottom: 60px;
   left: clamp(20px, 6vw, 80px);
   right: clamp(20px, 6vw, 80px);
-  max-width: 750px;
+  max-width: 1200px;
   z-index: 10;
   text-align: left;
   padding: 0;
@@ -498,7 +498,7 @@ header.scrolled {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 24px;
-  max-width: 620px;
+  max-width: 1200px
 }
 
 .carousel-caption .hero-actions {
