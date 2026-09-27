@@ -1,5 +1,4 @@
 let allMovies = [];
-const MOVIES_API_URL = 'https://y02g06phsb.execute-api.eu-west-2.amazonaws.com/movies';
 
 function sortMovies(movies, sortValue) {
   const sorted = [...movies];
@@ -142,7 +141,7 @@ async function loadNowShowingMovies() {
   if (!container) return;
 
   try {
-    const response = await fetch(MOVIES_API_URL);
+    const response = await fetch(window.APP_CONFIG.moviesApiUrl);
     if (!response.ok) throw new Error('Unable to load now showing data');
 
     const data = await response.json();

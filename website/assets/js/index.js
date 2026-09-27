@@ -17,12 +17,11 @@ const SECTION_CONFIG = {
   }
 };
 
-const MOVIES_API_URL = 'https://y02g06phsb.execute-api.eu-west-2.amazonaws.com/movies';
 let allMoviesRequest;
 
 async function fetchAllMovies() {
   if (!allMoviesRequest) {
-    allMoviesRequest = fetch(MOVIES_API_URL).then(async response => {
+    allMoviesRequest = fetch(window.APP_CONFIG.moviesApiUrl).then(async response => {
       if (!response.ok) throw new Error('Unable to load movie data');
 
       const data = await response.json();
