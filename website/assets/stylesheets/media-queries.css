@@ -192,15 +192,11 @@
         line-height: 1.2;
     }
 
-    .carousel-caption.movie h1 {
-        font-size: clamp(2.8rem, 8vw, 4rem);
-        line-height: 1.2;
-    }
-
     .carousel-caption.movie p,
-    .col-no-border.col-2-3 p {
+    .col-no-border.col-2-3 p,
+    .carousel-caption {
         font-size: 12px;
-        line-height: 1.65;
+        line-height: 1.5;
         margin-bottom: 10px;
     }
 
@@ -447,11 +443,5 @@
     .button,
     .form-button {
         font-size: 1.0rem;
-    }
-}
-
-@media (max-width: 900px) {
-    .movie-page {
-        grid-template-columns: 1fr;
     }
 }
