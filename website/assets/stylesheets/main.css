@@ -462,10 +462,10 @@ header.scrolled {
 
 .carousel-caption {
   position: absolute;
-  left: 88px;
-  right: 88px;
-  max-width: 42rem;
-  bottom: 56px;
+  bottom: 60px;
+  left: clamp(20px, 6vw, 80px);
+  right: clamp(20px, 6vw, 80px);
+  max-width: 1200px;
   z-index: 10;
   text-align: left;
   padding: 0;
