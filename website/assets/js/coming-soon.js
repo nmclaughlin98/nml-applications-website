@@ -36,7 +36,17 @@ function getComingSoonReleaseLabel(movie) {
 }
 
 function renderComingSoonMovies(container, movies) {
-  const upcomingMovies = Array.isArray(movies) ? movies.filter(movie => movie.visible !== false) : [];
+  const upcomingMovies = Array.isArray(movies)
+    ? movies
+      .filter(movie => movie.visible !== false)
+      .sort((a, b) => {
+        const aDate = getComingSoonCountdownTarget(a);
+        const bDate = getComingSoonCountdownTarget(b);
+        const aTarget = aDate ? new Date(aDate).getTime() : NaN;
+        const bTarget = bDate ? new Date(bDate).getTime() : NaN;
+        return (Number.isNaN(aTarget) ? Infinity : aTarget) - (Number.isNaN(bTarget) ? Infinity : bTarget);
+      })
+    : [];
 
   if (!upcomingMovies.length) {
     container.innerHTML = '<p>No upcoming movies available.</p>';
