@@ -56,7 +56,7 @@ function renderComingSoonMovies(container, movies) {
           <div class="overlay-text">${movie.title}</div>
           <div class="overlay-text coming-soon-release-date">${getComingSoonReleaseLabel(movie)}</div>
           <p id="${countdownId}" data-countdown="${countdownTarget || ''}">Loading countdown...</p>
-          <a class="button" href="templates/movie-detail.html?movie=${detailId}">More Info</a>
+          <a class="button" href="templates/movie-detail-coming-soon.html?movie=${detailId}">More Info</a>
         </div>
       </div>
     `;
