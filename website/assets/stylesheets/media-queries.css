@@ -17,13 +17,13 @@
     }
 }
 
-@media (min-width: 1400px) {
+@media (max-width: 1400px) {
     .logo {
-        height: 45px;
+        height: 54px;
     }
 
     .header-text {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -141,11 +141,18 @@
     }
 
     .poster-column .overlay {
-        padding: 12px;
+        padding: 15px;
     }
 
     .overlay-text {
         font-size: 1.4rem;
+    }
+
+    .poster-column:hover .overlay .button,
+    .poster-column:hover .overlay button,
+    .poster-column:hover .overlay .btn-secondary {
+        padding: 7px;
+        font-size: 1.0rem;
     }
 }
 
@@ -196,11 +203,13 @@
 
     .carousel-inner,
     .carousel-inner .item {
-        height: 480px;
+        height: 430px;
     }
 
     .carousel-caption {
         bottom: 40px;
+        max-height: 100%;
+        max-width: 80%;
     }
 
     .carousel-caption .hero-actions {
