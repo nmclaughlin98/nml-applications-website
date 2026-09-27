@@ -422,7 +422,7 @@ async function populateMovieSelect() {
     if (!movieSelect) return;
 
     try {
-        const response = await fetch('https://x0gtvekr3d.execute-api.eu-west-2.amazonaws.com/movies');
+        const response = await fetch('https://y02g06phsb.execute-api.eu-west-2.amazonaws.com/movies');
         if (!response.ok) throw new Error('Unable to load movie list');
 
         const data = await response.json();

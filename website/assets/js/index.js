@@ -17,22 +17,27 @@ const SECTION_CONFIG = {
   }
 };
 
-const MOVIES_API_URL = 'https://x0gtvekr3d.execute-api.eu-west-2.amazonaws.com/movies';
-let moviesRequest;
+const MOVIES_API_URL = 'https://y02g06phsb.execute-api.eu-west-2.amazonaws.com/movies';
+let allMoviesRequest;
 
-async function fetchMovies() {
-  if (!moviesRequest) {
-    moviesRequest = fetch(MOVIES_API_URL).then(async response => {
+async function fetchAllMovies() {
+  if (!allMoviesRequest) {
+    allMoviesRequest = fetch(MOVIES_API_URL).then(async response => {
       if (!response.ok) throw new Error('Unable to load movie data');
 
       const data = await response.json();
       if (!Array.isArray(data.movies)) throw new Error('Invalid movie list response');
 
-      return data.movies.filter(movie => movie.visible !== false && movie.isComingSoon !== true);
+      return data.movies;
     });
   }
 
-  return moviesRequest;
+  return allMoviesRequest;
+}
+
+async function fetchMovies() {
+  const movies = await fetchAllMovies();
+  return movies.filter(movie => movie.visible !== false && movie.isComingSoon !== true);
 }
 
 async function loadMovieSection(sectionKey, containerId) {
@@ -73,8 +78,79 @@ function renderMovieSection(container, movies) {
   }).join('');
 }
 
+function getCarouselDescription(movie) {
+  if (!movie.synopsis) return '';
+  return movie.synopsis.split('\n').find(paragraph => paragraph.trim()) || '';
+}
+
+function getCarouselShowtime(movie) {
+  const showtimes = movie.showtimes || {};
+  for (const day of Object.keys(showtimes)) {
+    const times = showtimes[day];
+    if (Array.isArray(times) && times.length) return times[0];
+  }
+
+  return null;
+}
+
+function renderHeroCarousel(carousel, movies) {
+  const inner = carousel.querySelector('.carousel-inner');
+  const indicators = carousel.querySelector('.carousel-indicators');
+  if (!inner || !movies.length) return;
+
+  inner.innerHTML = movies.map((movie, index) => {
+    const detailId = encodeURIComponent(movie.movieId ?? movie.slug ?? movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
+    const image = movie.largeStill || movie.still || movie.poster || 'assets/images/logo.png';
+    const description = getCarouselDescription(movie);
+    const showtime = getCarouselShowtime(movie);
+    const bookHref = `bookNow.html?movie=${encodeURIComponent(movie.title)}${showtime ? `&time=${encodeURIComponent(showtime)}` : ''}`;
+    const trailerButton = movie.trailer
+      ? `<button class="button btn-secondary" data-trailer="${movie.trailer}">Watch Trailer</button>`
+      : '';
+
+    return `
+      <div class="item ${index === 0 ? 'active' : ''}">
+        <img src="${image}" alt="${movie.title}">
+        <div class="carousel-caption">
+          <h2>${movie.title}</h2>
+          <p>${description}</p>
+          <div class="hero-actions">
+            <a class="button" href="${bookHref}">Book Tickets</a>
+            ${trailerButton}
+            <a class="button btn-glass" href="templates/movie-detail.html?movie=${detailId}">More Info</a>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  if (indicators) {
+    indicators.innerHTML = movies.map((_, index) => `<li class="${index === 0 ? 'active' : ''}"></li>`).join('');
+  }
+}
+
+async function loadHeroCarousel() {
+  const carousel = document.getElementById('picturecarousel');
+  if (!carousel) return;
+
+  try {
+    const allMovies = await fetchAllMovies();
+    const carouselMovies = allMovies.filter(movie => movie.visible !== false && movie.isCarousel === true);
+
+    if (!carouselMovies.length) return;
+
+    renderHeroCarousel(carousel, carouselMovies);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    window.initHeroCarousel?.();
+    window.initTrailerModal?.();
+  }
+}
+
 async function loadHomeSections() {
   await Promise.all([
+    loadHeroCarousel(),
     loadMovieSection('newReleases', 'new-releases-list'),
     loadMovieSection('topPicks', 'top-picks-list')
   ]);
