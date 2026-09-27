@@ -52,10 +52,9 @@ function renderComingSoonMovies(container, movies) {
         <img class="poster" src="${movie.poster || 'assets/Images/logo.png'}" alt="${movie.title}">
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>
-          <div class="release-date">${getComingSoonReleaseLabel(movie)}</div>
+          <div class="release-date"><p id="${countdownId}" data-countdown="${countdownTarget || ''}">Loading countdown...</p></div>
           <div class="overlay-text"></div>
-          <p id="${countdownId}" data-countdown="${countdownTarget || ''}">Loading countdown...</p>
-          <button class="button" data-trailer="${movie.trailer || ''}" type="button">Teaser Trailer</button>
+          <a class="button" href="templates/movie-detail.html?movie=${detailId}">More Info</a>
         </div>
       </div>
     `;
