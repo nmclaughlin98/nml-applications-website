@@ -462,10 +462,10 @@ header.scrolled {
 
 .carousel-caption {
   position: absolute;
-  bottom: 60px;
-  left: clamp(20px, 6vw, 80px);
-  right: clamp(20px, 6vw, 80px);
-  max-width: 1200px;
+  left: 88px;
+  right: 88px;
+  max-width: 42rem;
+  bottom: 56px;
   z-index: 10;
   text-align: left;
   padding: 0;
@@ -492,11 +492,15 @@ header.scrolled {
 }
 
 .carousel-caption p {
+  max-width: 38rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
   font-size: clamp(1rem, 1.5vw, 1.15rem);
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 24px;
-  max-width: 1200px
 }
 
 .carousel-caption .hero-actions {

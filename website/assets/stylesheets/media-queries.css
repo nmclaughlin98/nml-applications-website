@@ -262,10 +262,12 @@
     .carousel-caption.movie p,
     .col-no-border.col-2-3 p,
     .carousel-caption p {
-        line-height: 1.5;
-        margin-bottom: 10px;
-        font-size: clamp(1.0rem, 4vw, 2rem);
-        -webkit-line-clamp: 3;
+       font-size: 0.95rem;
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
     }
 
     .runtime-movies,
@@ -332,6 +334,57 @@
         font-size: 0.95rem;
     }
 
+}
+
+/* Phones in landscape
+   iPhone 16 Pro Max landscape is ~956×440 CSS pixels. That is wider than the
+   768px breakpoint, so the hero would otherwise keep the desktop 600px height
+   — taller than the screen. Tie the slide to the short viewport instead. */
+@media (orientation: landscape) and (max-height: 500px) {
+    .carousel-inner,
+    .carousel-inner .item {
+        height: min(260px, calc(100svh - 90px));
+    }
+
+    .carousel-caption {
+        bottom: 28px;
+        left: 72px;
+        right: 72px;
+        max-width: 36rem;
+    }
+
+    .carousel-caption h2 {
+        font-size: clamp(1.35rem, 6vh, 2rem);
+        margin-bottom: 6px;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .carousel-caption .hero-actions {
+        gap: 8px;
+    }
+
+    .carousel-caption .hero-actions .button {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .carousel-indicators {
+        bottom: 10px;
+    }
+
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* Small Phones (480px and down) */
