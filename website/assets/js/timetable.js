@@ -1,5 +1,6 @@
 let timetableMovies = [];
 let selectedDay = 'Monday';
+const MOVIES_API_URL = 'https://x0gtvekr3d.execute-api.eu-west-2.amazonaws.com/movies';
 
 function getMovieGenre(movie) {
     if (Array.isArray(movie.genres) && movie.genres.length) {
@@ -22,10 +23,13 @@ async function loadTimetableMovies() {
     if (!container) return;
 
     try {
-        const response = await fetch('assets/data/movies.json');
+        const response = await fetch(MOVIES_API_URL);
         if (!response.ok) throw new Error('Unable to load timetable data');
 
-        timetableMovies = await response.json();
+        const data = await response.json();
+        if (!Array.isArray(data.movies)) throw new Error('Invalid movie list response');
+
+        timetableMovies = data.movies.filter(movie => movie.isComingSoon !== true);
         renderTimetable();
     } catch (error) {
         console.error(error);

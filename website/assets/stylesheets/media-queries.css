@@ -28,6 +28,14 @@
         height: 34px;
         line-height: 32px;
     }
+
+    .logo {
+        height: 45px;
+    }
+
+    .header-text {
+        font-size: 1.1rem;
+    }
 }
 
 /* Mobile Devices (768px and down) */
@@ -181,12 +189,19 @@
 
     .carousel-caption.movie h1 {
         font-size: clamp(2.8rem, 8vw, 4rem);
+        line-height: 1.2;
+    }
+
+    .carousel-caption.movie h1 {
+        font-size: clamp(2.8rem, 8vw, 4rem);
+        line-height: 1.2;
     }
 
     .carousel-caption.movie p,
     .col-no-border.col-2-3 p {
         font-size: 16px;
         line-height: 1.65;
+        margin-bottom: 10px;
     }
 
     .runtime-movies,
@@ -228,8 +243,11 @@
         display: none;
     }
 
-    .carousel-caption.movie {
-        padding: 10px;
+    .poster-column .overlay .button,
+    .poster-column .overlay button,
+    .poster-column .overlay .btn-secondary {
+        font-size: 1.0rem;
+        height: 2.6rem;
     }
 
     .step-header h2 {
@@ -281,11 +299,6 @@
         grid-template-columns: 1fr;
     }
 
-    .carousel-caption .hero-actions .button {
-        padding: 8px 11px;
-        font-size: 0.72rem;
-    }
-
     /* Live Booking Subtotal summary */
     .booking-subtotal-bar {
         box-sizing: border-box;
@@ -309,7 +322,7 @@
     }
     
     .rating {
-        height: 30px;
+        height: 35px;
     }
 
 }
@@ -366,7 +379,14 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
+    .carousel-caption .hero-actions .button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 650px) {
 
     .poster-section,
     .grid {
@@ -379,7 +399,7 @@
     }
 
     .overlay-text {
-        font-size: 1.25rem;
+        font-size: 1.6rem;
     }
 
     .payment-methods-grid {
@@ -389,6 +409,12 @@
     footer {
         flex-direction: column;
         text-align: center;
+    }
+
+    .btn,
+    .button,
+    .form-button {
+        font-size: 1.0rem;
     }
 }
 
