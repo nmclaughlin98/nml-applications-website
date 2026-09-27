@@ -73,7 +73,7 @@ nml-applications-website/
 
 Because this is a static website, you can open the HTML files directly in a browser, or serve the project locally using a simple web server.
 
-The movie API URL is supplied to GitHub Pages at deployment time. Add a GitHub Actions repository variable named `API_REQUEST_URL` with the full API endpoint ending in `/movies` and no trailing slash. This value is included in the public site, so it must not contain credentials or other secrets. To run locally, create the ignored `website/assets/js/runtime-config.js` with `window.APP_CONFIG = Object.freeze({ moviesApiUrl: "YOUR_API_URL/movies" });`.
+The movie API URL is supplied to GitHub Pages at deployment time. Set `API_REQUEST_URL` in GitHub Actions as a repository variable (or repository secret). The deploy workflow prefers the variable and falls back to the secret. Use the full API endpoint ending in `/movies` with no trailing slash. This value is included in the public site, so it must not contain credentials or other secrets. To run locally, create the ignored `website/assets/js/runtime-config.js` with `window.APP_CONFIG = Object.freeze({ moviesApiUrl: "YOUR_API_URL/movies" });`.
 
 Example:
 
