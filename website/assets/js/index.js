@@ -65,7 +65,7 @@ function renderMovieSection(container, movies) {
 
     return `
       <div class="poster-column">
-        <img class="poster" src="${movie.poster || 'assets/Images/logo.png'}" alt="${movie.title}">
+        <img class="poster" src="${movie.poster || 'assets/Images/logo-hi-res.png'}" alt="${movie.title}">
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>
           <div class="runtime">${movie.runtime || 0} mins</div>
@@ -99,7 +99,7 @@ function renderHeroCarousel(carousel, movies) {
 
   inner.innerHTML = movies.map((movie, index) => {
     const detailId = encodeURIComponent(movie.movieId ?? movie.slug ?? movie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
-    const image = movie.largeStill || movie.still || movie.poster || 'assets/images/logo.png';
+    const image = movie.largeStill || movie.still || movie.poster || 'assets/images/logo-hi-res.png';
     const description = getCarouselDescription(movie);
     const showtime = getCarouselShowtime(movie);
     const bookHref = `bookNow.html?movie=${encodeURIComponent(movie.title)}${showtime ? `&time=${encodeURIComponent(showtime)}` : ''}`;

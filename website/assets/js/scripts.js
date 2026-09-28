@@ -914,8 +914,8 @@ async function initBookingWizard() {
             colorPreset: 'dark',
             expirationDays: 2,
             color: '#9d243b',
-            logoURL: new URL('assets/Images/logo.png', document.baseURI).href,
-            iconURL: new URL('assets/Images/logo.png', document.baseURI).href,
+            logoURL: new URL('assets/Images/logo-hi-res.png', document.baseURI).href,
+            iconURL: new URL('assets/Images/logo-hi-res.png', document.baseURI).href,
             primaryFields: [{label: 'Movie', value: bookingState.movie}],
             secondaryFields: [
                 {label: 'Date', value: bookingState.date},

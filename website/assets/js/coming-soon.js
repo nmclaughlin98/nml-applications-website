@@ -59,11 +59,16 @@ function renderComingSoonMovies(container, movies) {
 
     return `
       <div class="poster-column">
-        <img class="poster" src="${movie.poster || 'assets/Images/logo.png'}" alt="${movie.title}">
+        <img class="poster" src="${movie.poster || 'assets/Images/logo-hi-res.png'}" alt="${movie.title}">
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>
           <div class="overlay-text coming-soon-release-date">${getComingSoonReleaseLabel(movie)}</div>
-          <p id="${countdownId}" data-countdown="${countdownTarget || ''}">Loading countdown...</p>
+          <div id="${countdownId}" class="countdown-timer" data-countdown="${countdownTarget || ''}" role="timer" aria-label="Time until release">
+            <span class="countdown-unit"><span class="countdown-value" data-countdown-days>--</span><span class="countdown-label">Days</span></span>
+            <span class="countdown-unit"><span class="countdown-value" data-countdown-hours>--</span><span class="countdown-label">Hours</span></span>
+            <span class="countdown-unit"><span class="countdown-value" data-countdown-minutes>--</span><span class="countdown-label">Minutes</span></span>
+            <span class="countdown-unit"><span class="countdown-value" data-countdown-seconds>--</span><span class="countdown-label">Seconds</span></span>
+          </div>
           <a class="button" href="templates/movie-detail-coming-soon.html?movie=${detailId}">More Info</a>
         </div>
       </div>
@@ -74,36 +79,50 @@ function renderComingSoonMovies(container, movies) {
 }
 
 function initComingSoonCountdowns() {
-  const countdownEls = document.querySelectorAll('[data-countdown]');
+  const countdownEls = document.querySelectorAll('.countdown-timer[data-countdown]');
   if (!countdownEls.length) return;
 
   const updateCountdowns = () => {
+    let hasFutureCountdown = false;
+
     countdownEls.forEach(el => {
       const target = new Date(el.getAttribute('data-countdown'));
       if (Number.isNaN(target.getTime())) {
+        el.classList.add('is-unavailable');
+        el.setAttribute('aria-label', 'Release date coming soon');
         el.textContent = 'Release date coming soon';
         return;
       }
 
-      const now = new Date();
-      const diff = target - now;
+      const diff = target.getTime() - Date.now();
 
       if (diff <= 0) {
+        el.classList.add('is-live');
+        el.setAttribute('aria-label', 'Now showing');
         el.textContent = 'Now showing';
         return;
       }
 
+      hasFutureCountdown = true;
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
 
-      el.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      el.querySelector('[data-countdown-days]').textContent = String(days);
+      el.querySelector('[data-countdown-hours]').textContent = String(hours).padStart(2, '0');
+      el.querySelector('[data-countdown-minutes]').textContent = String(minutes).padStart(2, '0');
+      el.querySelector('[data-countdown-seconds]').textContent = String(seconds).padStart(2, '0');
     });
+
+    return hasFutureCountdown;
   };
 
-  updateCountdowns();
-  setInterval(updateCountdowns, 1000);
+  if (updateCountdowns()) {
+    const intervalId = setInterval(() => {
+      if (!updateCountdowns()) clearInterval(intervalId);
+    }, 1000);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', loadComingSoonMovies);
