@@ -47,7 +47,7 @@
   --shadow-lg: 0 20px 45px -10px rgba(0, 0, 0, 0.8);
   --shadow-glow: 0 0 30px var(--accent-glow);
 
-  --transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-line: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-line-2: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -473,7 +473,7 @@ header {
 
 .carousel-caption {
   position: absolute;
-  bottom: 60px;
+  bottom: 50px;
   left: clamp(20px, 6vw, 80px);
   right: clamp(20px, 6vw, 80px);
   max-width: 1200px;
@@ -822,7 +822,7 @@ section {
 
 .overlay-text {
   font-family: var(--font-heading);
-  font-size: 2.0rem;
+  font-size: clamp(2.2rem, 8vw, 2.1rem);
   font-weight: 700;
   color: #fff;
   line-height: 1.25;
@@ -1526,7 +1526,8 @@ section {
   content: '✓';
   background: var(--accent-green);
   border-color: var(--accent-green);
-  color: #000;
+  color: #053523;
+  box-shadow: 0 0 10px var(--accent-green);
 }
 
 /* Fieldsets / Steps Container */
@@ -1567,14 +1568,14 @@ fieldset.active {
 
 .step-header h2 {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #fff;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .step-header p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
 }
 
 /* Form Controls & Inputs */
@@ -1797,6 +1798,7 @@ select option {
   align-items: center;
   gap: 8px;
   font-size: 0.85rem;
+  font-weight: 500;
   color: var(--text-secondary);
 }
 
@@ -1823,8 +1825,8 @@ select option {
 }
 
 .seat {
-  width: 40px;
-  height: 40px;
+  width: clamp(25px, 4vw, 40px);
+  height: clamp(25px, 4vw, 40px);
   background: #2a2f45;
   border-radius: 8px 8px 4px 4px;
   cursor: pointer;
@@ -1863,8 +1865,8 @@ select option {
 }
 
 .seat-accessible-icon {
-  width: 25px;
-  height: 25px;
+  width: clamp(25px, 4vw, 25px);
+  height: clamp(25px, 4vw, 25px);
   object-fit: contain;
   opacity: 1.0;
 }
@@ -1876,8 +1878,8 @@ select option {
 
 /* Legend items */
 .legend-seat {
-  width: 25px;
-  height: 25px;
+  width: clamp(25px, 4vw, 40px);
+  height: clamp(25px, 4vw, 40px);
   border-radius: 5px;
   background: #2a2f45;
 }
@@ -2580,7 +2582,7 @@ select option {
 .carousel.movie {
   position: relative;
   width: 100%;
-  min-height: 460px;
+  min-height: 65vh;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
@@ -2627,8 +2629,8 @@ select option {
   font-size: clamp(34px, 5vw, 67px);
   text-transform: uppercase;
   color: #fff;
-  line-height: 1.5;
-  margin-bottom: 15px;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 .carousel-caption.movie .rating-container {
@@ -2650,7 +2652,7 @@ select option {
 .runtime-movies {
   display: inline-block;
   vertical-align: middle;
-  font-size: 16px;
+  font-size: clamp(1rem, 1.5vw, 1rem);
   color: var(--text-secondary);
   font-weight: 500;
 }
@@ -2739,7 +2741,7 @@ iframe.trailer {
 .day-of-week {
   font-weight: 700;
   color: #fff;
-  font-size: 15px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   margin-top: 10px;
   display: block;
 }
@@ -2757,7 +2759,7 @@ iframe.trailer {
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  font-size: 14px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   font-weight: 600;
   color: var(--text-secondary);
   cursor: pointer;
@@ -2850,10 +2852,9 @@ footer {
   border-top: 1px solid var(--border-subtle);
   padding: 40px clamp(16px, 5vw, 60px);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
 }
 
 footer small {
