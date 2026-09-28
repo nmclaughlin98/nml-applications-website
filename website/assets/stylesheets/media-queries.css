@@ -78,7 +78,6 @@
         border-bottom: 1px solid var(--border-subtle);
         padding: 24px 20px;
         z-index: 999;
-        overflow: scroll;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
         opacity: 0;
         visibility: hidden;
@@ -165,6 +164,10 @@
         padding-top: 70px;
     }
 
+    .carousel-control {
+        display: none;
+    }
+
     .coming-soon-release-date {
         font-size: 1.0rem
     }
@@ -219,8 +222,7 @@
     }
 
     .carousel-caption .hero-actions {
-        padding: 9px 14px;
-        font-size: 0.78rem;
+        font-size: clamp(0.8rem, 2vw, 1.0rem);
         border-radius: var(--radius-sm);
     }
 
