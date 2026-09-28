@@ -1,6 +1,9 @@
+import '../fonts/Oswald-Regular-normal.js?v=2';
+import '../fonts/Oswald-Bold-bold.js?v=2';
+
 async function loadPdfLogoDataUrl() {
     try {
-        const response = await fetch('assets/Images/logo.png');
+        const response = await fetch('assets/images/logo/png/logo-180.png');
         if (!response.ok) return null;
 
         const blob = await response.blob();
@@ -60,7 +63,7 @@ window.generateTimetablePdf = async function () {
         });
 
         const titleLines = pdf.splitTextToSize(title, 360);
-        const meta = genre ? `${genre} • 2D / 4K Laser` : '2D / 4K Laser';
+        const meta = genre ? `${genre}` : '2D / 4K Laser';
         const blockHeight = 26 + (titleLines.length * 16) + 18 + 14 + (showtimes.length * 13) + (showtimes.length * 4) + 10;
 
         if (y + blockHeight > 760) {
@@ -68,19 +71,22 @@ window.generateTimetablePdf = async function () {
             y = 50;
         }
 
-        pdf.setFont('helvetica', 'bold');
-        pdf.setFontSize(13);
+        pdf.setFont('Oswald-Bold', 'bold');
+        pdf.setFontSize(16);
+        pdf.setTextColor('#B31E35');
         pdf.text(titleLines, margin, y);
         y += titleLines.length * 16;
 
         pdf.setFont('helvetica', 'normal');
         pdf.setFontSize(10);
+        pdf.setTextColor('#000000');
         pdf.text(meta, margin, y);
         y += 18;
 
         pdf.setFont('helvetica', 'bold');
         pdf.setFontSize(9.5);
         pdf.text('Showtimes', margin, y);
+        pdf.setTextColor('#000000');
         y += 14;
 
         showtimes.forEach(({ time, screen }) => {

@@ -93,7 +93,7 @@ function renderMovies(container, movies) {
 
     return `
       <div class="poster-column" data-genre="${genreKeys.join(' ')}">
-        <img class="poster" src="${movie.poster || 'assets/Images/logo.png'}" alt="${movie.title}">
+        <img class="poster" src="${movie.poster || 'assets/Images/logo-hi-res.png'}" alt="${movie.title}">
         <div class="overlay">
           <div class="overlay-text">${movie.title}</div>
           <div class="runtime">${movie.runtime || 0} mins</div>

@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-      - name: Create runtime configuration
+      - name: Create site configuration
         env:
           MOVIES_API_URL: ${{ vars.MOVIES_API_URL || secrets.MOVIES_API_URL }}
         run: |
@@ -48,7 +48,7 @@ jobs:
               process.exit(1);
             }
             fs.writeFileSync(
-              "website/assets/js/runtime-config.js",
+              "website/assets/js/config.js",
               "window.APP_CONFIG = Object.freeze({ moviesApiUrl: " + JSON.stringify(value) + " });\n"
             );
           '

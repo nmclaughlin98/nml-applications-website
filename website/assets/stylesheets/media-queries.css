@@ -54,9 +54,16 @@
         font-size: 1.2rem
     }
 
-    .poster-column .overlay p[id] {
+    .countdown-timer {
         font-size: 1.0rem;
-        padding: 6px 7px;
+    }
+
+    .countdown-unit {
+        padding: 6px 2px 5px;
+    }
+
+    .countdown-label {
+        font-size: 0.48rem;
     }
 
     .primary-nav {
@@ -310,9 +317,12 @@
 
 @media (max-width: 650px) {
 
-    .poster-column .overlay p[id] {
-        font-size: 0.9rem;
-        padding: 6px 7px;
+    .countdown-timer {
+        gap: 3px;
+    }
+
+    .countdown-value {
+        font-size: 1rem;
     }
 
     .payment-methods-grid {
@@ -486,4 +496,3 @@
     }
 
 }
-

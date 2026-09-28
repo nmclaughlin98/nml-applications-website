@@ -2,85 +2,90 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Exciting blockbuster movies coming soon to Blockbuster Theatres. Set reminders and watch the latest teaser trailers.">
-  <title>Blockbuster Theatres - Coming Soon</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Exciting blockbuster movies coming soon to Blockbuster Theatres. Set reminders and watch the latest teaser trailers.">
+    <title>Blockbuster Theatres - Coming Soon</title>
 
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
 
-  <link rel="stylesheet" href="assets/stylesheets/main.css">
-  <link rel="stylesheet" href="assets/stylesheets/media-queries.css">
+    <link rel="stylesheet" href="assets/stylesheets/main.css">
+    <link rel="stylesheet" href="assets/stylesheets/media-queries.css">
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
+<!-- Header -->
+<header>
     <a class="header-box" href="index.html">
-      <img class="logo" src="assets/images/logo.png" alt="Blockbuster Theatres">
-      <span class="header-text">BLOCKBUSTER<br>THEATRE</span>
+        <picture>
+            <source srcset="assets/images/logo/logo-60.webp 1x, assets/images/logo/logo-120.webp 2x, assets/images/logo/logo-180.webp 3x"
+                    type="image/webp">
+            <img src="assets/images/logo/png/logo-120.png" alt="bb-logo" class="logo">
+        </picture>
+        <span class="header-text">BLOCKBUSTER<br>THEATRE</span>
     </a>
 
     <nav class="nav primary-nav">
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="nowShowing.html">Now Showing</a></li>
-        <li><a class="current" href="comingSoon.html">Coming Soon</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a class="nav-cta-btn" href="bookNow.html">Book Tickets</a></li>
-      </ul>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="nowShowing.html">Now Showing</a></li>
+            <li><a class="current" href="comingSoon.html">Coming Soon</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="nav-cta-btn" href="bookNow.html">Book Tickets</a></li>
+        </ul>
     </nav>
 
     <div class="hamburger" aria-label="Toggle navigation">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
     </div>
-  </header>
+</header>
 
-  <div class="ham-overlay"></div>
+<div class="ham-overlay"></div>
 
-  <main>
-  <!-- Coming Soon Section -->
-  <section class="movie-poster">
-    <div class="section-header">
-      <div>
-        <h1>Coming Soon</h1>
-        <p style="color: var(--text-secondary); margin-top: 6px;">Get a sneak peek at the most anticipated big-screen
-          blockbusters arriving soon. Set reminders so you never miss advance tickets!</p>
-      </div>
-    </div>
+<main>
+    <!-- Coming Soon Section -->
+    <section class="movie-poster">
+        <div class="section-header">
+            <div>
+                <h1>Coming Soon</h1>
+                <p style="color: var(--text-secondary); margin-top: 6px;">Get a sneak peek at the most anticipated
+                    big-screen
+                    blockbusters arriving soon. Set reminders so you never miss advance tickets!</p>
+            </div>
+        </div>
 
-    <!-- Movie Grid -->
-    <div id="coming-soon-list" class="poster-section"></div>
-  </section>
+        <!-- Movie Grid -->
+        <div id="coming-soon-list" class="poster-section"></div>
+    </section>
 
-  </main>
+</main>
 
-  <!-- Back to Top Button -->
-  <div class="back-to-top" id="back-to-top" aria-label="Back to top">
+<!-- Back to Top Button -->
+<div class="back-to-top" id="back-to-top" aria-label="Back to top">
     <svg viewBox="0 0 24 24">
-      <polyline points="18 15 12 9 6 15"></polyline>
+        <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
-  </div>
+</div>
 
-  <!-- Footer -->
-  <footer>
+<!-- Footer -->
+<footer>
     <small>&copy; 2026 Blockbuster Theatre</small>
     <nav class="secondary-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="nowShowing.html">Now Showing</a></li>
-        <li><a href="comingSoon.html">Coming Soon</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="nowShowing.html">Now Showing</a></li>
+            <li><a href="comingSoon.html">Coming Soon</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
     </nav>
-  </footer>
+</footer>
 
-  <script src="assets/js/runtime-config.js"></script>
-  <script src="assets/js/scripts.js"></script>
-  <script src="assets/js/coming-soon.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/coming-soon.js"></script>
 </body>
 
 </html>
