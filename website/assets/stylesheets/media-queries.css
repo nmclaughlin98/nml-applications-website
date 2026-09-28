@@ -25,6 +25,10 @@
     .header-text {
         font-size: 1.3rem;
     }
+
+    .carousel-caption p {
+        max-width: 100%;
+    }
 }
 
 /* Tablets & Small Laptops (1024px and down) */
@@ -214,16 +218,14 @@
 
     .carousel-caption {
         bottom: 40px;
-        max-width: 80%;
-    }
-
-    .carousel-caption .hero-actions {
-        gap: 8px;
+        max-width: 90%;
     }
 
     .carousel-caption .hero-actions {
         font-size: clamp(0.8rem, 2vw, 1.0rem);
         border-radius: var(--radius-sm);
+        gap: 8px;
+        max-width: 100%;
     }
 
     .seating-plan {
