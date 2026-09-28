@@ -788,7 +788,7 @@ async function initBookingWizard() {
             // Step 2 Validation (Seat count)
             if (currentStep === 1) {
                 if (bookingState.selectedSeats.length < bookingState.totalTickets) {
-                    showToast(`Please pick all ${bookingState.totalTickets} seat${bookingState.totalTickets > 1 ? 's' : ''} to continue.`);
+                    showToast(`Please pick all seats to continue.`);
                     return;
                 }
             }
