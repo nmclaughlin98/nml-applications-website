@@ -12,6 +12,8 @@ async function loadMovieDetail() {
       return;
     }
 
+    const isComingSoonMovie = movie.isComingSoon;
+
     const releaseDate = new Date(movie.releaseDate);
     const directors = (Array.isArray(movie.director) ? movie.director : String(movie.director || 'Unknown').split(','))
       .map(director => director.trim())
@@ -56,35 +58,37 @@ async function loadMovieDetail() {
 
     const selectedTime = new URLSearchParams(window.location.search).get('time');
 
-    showtimeContainer.innerHTML = Object.entries(movie.showtimes || {})
-      .map(([day, times]) => {
-        const list = times.map(time => {
-          const isSelected = selectedTime && time === selectedTime;
-          return `<li class="show-time ${isSelected ? 'active' : ''}" data-time="${time}">${time}</li>`;
-        }).join('');
-        return `
+    if (!isComingSoonMovie) {
+      showtimeContainer.innerHTML = Object.entries(movie.showtimes || {})
+          .map(([day, times]) => {
+            const list = times.map(time => {
+              const isSelected = selectedTime && time === selectedTime;
+              return `<li class="show-time ${isSelected ? 'active' : ''}" data-time="${time}">${time}</li>`;
+            }).join('');
+            return `
           <li class="day-of-week">${day} </li>
           <div class="show-time-list">${list}</div><br>
           <hr>
         `;
-      })
-      .join('');
+          })
+          .join('');
 
-    const showTimeItems = document.querySelectorAll('.show-time');
-    showTimeItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const time = item.getAttribute('data-time');
-        showTimeItems.forEach(link => link.classList.toggle('active', link === item));
-        const currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.set('time', time);
-        window.history.replaceState({}, '', currentUrl);
-        bookLink.href = `../bookNow.html?movie=${encodeURIComponent(movie.title)}&time=${encodeURIComponent(time)}`;
+      const showTimeItems = document.querySelectorAll('.show-time');
+      showTimeItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const time = item.getAttribute('data-time');
+          showTimeItems.forEach(link => link.classList.toggle('active', link === item));
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('time', time);
+          window.history.replaceState({}, '', currentUrl);
+          bookLink.href = `../bookNow.html?movie=${encodeURIComponent(movie.title)}&time=${encodeURIComponent(time)}`;
+        });
       });
-    });
 
-    bookLink.href = selectedTime
-      ? `../bookNow.html?movie=${encodeURIComponent(movie.title)}&time=${encodeURIComponent(selectedTime)}`
-      : `../bookNow.html?movie=${encodeURIComponent(movie.title)}`;
+      bookLink.href = selectedTime
+          ? `../bookNow.html?movie=${encodeURIComponent(movie.title)}&time=${encodeURIComponent(selectedTime)}`
+          : `../bookNow.html?movie=${encodeURIComponent(movie.title)}`;
+    }
   } catch (error) {
     console.error(error);
     document.getElementById('movie-title').textContent = 'Movie details are temporarily unavailable';
