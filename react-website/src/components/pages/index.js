@@ -1,0 +1,8 @@
+export { About } from './About';
+export { Booking } from './Booking';
+export { ComingSoon } from './ComingSoon';
+export { Detail } from './Detail';
+export { Home } from './Home';
+export { NowShowing } from './NowShowing';
+export { Timetable } from './Timetable';
+export { useMovies } from './useMovies';

@@ -1,10 +1,10 @@
 # Sample workflow for building and deploying a static site to GitHub Pages
-name: Deploy website
+name: Deploy react-website
 
 on:
   # Listens for the completion of the TMDB update workflow
   workflow_run:
-    workflows: ["Update Movies JSON from TMDB"] # Must match the exact `name:` inside update-tmdb.yml
+    workflows: [ "Update Movies JSON from TMDB" ] # Must match the exact `name:` inside update-tmdb.yml
     types:
       - completed
 
@@ -36,28 +36,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-      - name: Create site configuration
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: react-website/package-lock.json
+      - name: Install dependencies
+        working-directory: react-website
+        run: npm ci
+      - name: Build React site
         env:
-          MOVIES_API_URL: ${{ vars.MOVIES_API_URL || secrets.MOVIES_API_URL }}
+          VITE_MOVIES_API_URL: ${{ vars.MOVIES_API_URL || secrets.MOVIES_API_URL }}
+        working-directory: react-website
         run: |
-          node --input-type=commonjs -e '
-            const fs = require("node:fs");
-            const value = process.env.MOVIES_API_URL;
-            if (!value) {
-              console.error("Set the MOVIES_API_URL GitHub Actions repository variable or secret.");
-              process.exit(1);
-            }
-            fs.writeFileSync(
-              "website/assets/js/config.js",
-              "window.APP_CONFIG = Object.freeze({ moviesApiUrl: " + JSON.stringify(value) + " });\n"
-            );
-          '
+          if [ -z "$VITE_MOVIES_API_URL" ]; then
+            echo "Set the MOVIES_API_URL GitHub Actions repository variable or secret."
+            exit 1
+          fi
+          npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: ./website
+          path: ./react-website/dist
 
   # Deployment job
   deploy:
