@@ -8,9 +8,19 @@ const links = [
   ['About', './about.html', 'about'],
 ];
 
+// Helper to blur element on tap/click to strip sticky hover states on mobile
+function handleBlurClick(e, callback) {
+  e.currentTarget.blur();
+  if (callback) callback(e);
+}
+
 function Brand({ onClick }) {
   return (
-    <a className="header-box" href="./index.html" onClick={onClick}>
+    <a 
+      className="header-box" 
+      href="./index.html" 
+      onClick={(e) => handleBlurClick(e, onClick)}
+    >
       <picture>
         <source
           srcSet={`${asset('assets/images/logo/logo-60.webp')} 1x, ${asset('assets/images/logo/logo-120.webp')} 2x, ${asset('assets/images/logo/logo-180.webp')} 3x`}
@@ -29,10 +39,24 @@ function Navigation({ current, open, onNavigate }) {
       <ul className="menu">
         {links.map(([label, href, key]) => (
           <li key={key}>
-            <a className={current === key ? 'current' : ''} href={href} onClick={onNavigate}>{label}</a>
+            <a 
+              className={current === key ? 'current' : ''} 
+              href={href} 
+              onClick={(e) => handleBlurClick(e, onNavigate)}
+            >
+              {label}
+            </a>
           </li>
         ))}
-        <li><a className={`nav-cta-btn ${current === 'booking' ? 'current' : ''}`} href="./bookNow.html" onClick={onNavigate}>Book Tickets</a></li>
+        <li>
+          <a 
+            className={`nav-cta-btn ${current === 'booking' ? 'current' : ''}`} 
+            href="./bookNow.html" 
+            onClick={(e) => handleBlurClick(e, onNavigate)}
+          >
+            Book Tickets
+          </a>
+        </li>
       </ul>
     </nav>
   );
@@ -40,7 +64,11 @@ function Navigation({ current, open, onNavigate }) {
 
 function MenuButton({ open, onClick }) {
   return (
-    <button className="hamburger" aria-label="Toggle navigation" onClick={onClick}>
+    <button 
+      className="hamburger" 
+      aria-label="Toggle navigation" 
+      onClick={(e) => handleBlurClick(e, onClick)}
+    >
       <span className={`line ${open ? 'transition' : ''}`} />
       <span className={`line ${open ? 'transition' : ''}`} />
       <span className={`line ${open ? 'transition' : ''}`} />
