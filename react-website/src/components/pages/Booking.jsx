@@ -1,5 +1,6 @@
-import { useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { Layout, asset } from '../shared';
+import { Toast } from '../shared/Toast';
 import { useMovies } from './useMovies';
 
 const ticketTypes = [
@@ -134,9 +135,15 @@ function TicketSelection({
         ))}
       </div>
       <div className="booking-subtotal-bar">
-        <div className="subtotal-item">
-          <span>Selected: </span><strong>{totalTickets} Seat{totalTickets === 1 ? '' : 's'}</strong>
-          <span>Total: </span><strong>£{totalPrice.toFixed(2)}</strong>
+        <div className="subtotal-item booking-subtotal-values">
+          <div className="subtotal-metric">
+            <span>Selected</span>
+            <strong>{totalTickets} Seat{totalTickets === 1 ? '' : 's'}</strong>
+          </div>
+          <div className="subtotal-metric">
+            <span>Total</span>
+            <strong>£{totalPrice.toFixed(2)}</strong>
+          </div>
         </div>
         <div className="subtotal-item">
           <button type="button" className="form-button next" onClick={onContinue}>Select Seats</button>
@@ -271,7 +278,7 @@ export function Booking() {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [customer, setCustomer] = useState({ firstName: '', surname: '', email: '', phone: '' });
   const [bookingRef, setBookingRef] = useState('');
-  const [validationMessage, setValidationMessage] = useState('');
+  const [toastMessage, setToastMessage] = useState('');
   const formRef = useRef(null);
   const dates = useMemo(() => createUpcomingDates(), []);
   const params = useMemo(() => new URLSearchParams(window.location.search), []);
@@ -314,7 +321,10 @@ export function Booking() {
   }
 
   function changeTicketCount(type, amount) {
-    if (amount > 0 && totalTickets >= 10) return;
+    if (amount > 0 && totalTickets >= 10) {
+      setToastMessage('You can book a maximum of 10 tickets.');
+      return;
+    }
     if (amount < 0 && tickets[type] === 0) return;
 
     const nextTickets = { ...tickets, [type]: Math.max(0, tickets[type] + amount) };
@@ -325,11 +335,15 @@ export function Booking() {
   }
 
   function toggleSeat(seatId) {
-    setSelectedSeats((current) => {
-      if (current.includes(seatId)) return current.filter((seat) => seat !== seatId);
-      if (current.length >= totalTickets) return current;
-      return [...current, seatId];
-    });
+    if (selectedSeats.includes(seatId)) {
+      setSelectedSeats((current) => current.filter((seat) => seat !== seatId));
+      return;
+    }
+    if (selectedSeats.length >= totalTickets) {
+      setToastMessage(`You can select up to ${totalTickets} seat${totalTickets === 1 ? '' : 's'}.`);
+      return;
+    }
+    setSelectedSeats((current) => [...current, seatId]);
   }
 
   function updateCustomer(field, value) {
@@ -337,7 +351,7 @@ export function Booking() {
   }
 
   function goToStep(nextStep) {
-    setValidationMessage('');
+    setToastMessage('');
     setStep(nextStep);
     window.requestAnimationFrame(() => {
       document.getElementById('progressbar')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -346,11 +360,11 @@ export function Booking() {
 
   function continueFromTickets() {
     if (!selectedMovie) {
-      setValidationMessage('Please select a movie to continue.');
+      setToastMessage('Please select a movie to proceed.');
       return;
     }
     if (!time || !movieTimes.includes(time)) {
-      setValidationMessage('Please select an available showtime to continue.');
+      setToastMessage('Please select an available showtime to proceed.');
       return;
     }
     goToStep(1);
@@ -358,7 +372,7 @@ export function Booking() {
 
   function continueFromSeats() {
     if (selectedSeats.length !== totalTickets) {
-      setValidationMessage(`Please select exactly ${totalTickets} seat${totalTickets === 1 ? '' : 's'} to continue.`);
+      setToastMessage('Please pick all seats to continue.');
       return;
     }
     goToStep(2);
@@ -366,10 +380,11 @@ export function Booking() {
 
   function continueFromGuestDetails() {
     const fieldset = formRef.current?.querySelector('[data-step="2"]');
-    const invalidInput = [...(fieldset?.querySelectorAll('input[required]') || [])]
-      .find((input) => !input.checkValidity());
+    const requiredInputs = [...(fieldset?.querySelectorAll('input[required]') || [])];
+    const invalidInput = requiredInputs.find((input) => !input.value.trim() || !input.checkValidity());
     if (invalidInput) {
-      invalidInput.reportValidity();
+      setToastMessage('Please fill in your name and email address with a valid email.');
+      invalidInput.focus();
       return;
     }
     goToStep(3);
@@ -380,6 +395,8 @@ export function Booking() {
     goToStep(4);
   }
 
+  const dismissToast = useCallback(() => setToastMessage(''), []);
+
   return (
     <Layout current="booking">
       <section className="booking-section">
@@ -389,7 +406,6 @@ export function Booking() {
         </div>
         <ProgressBar currentStep={step} />
         <form className="booking-form" ref={formRef} onSubmit={(event) => event.preventDefault()}>
-          {validationMessage && <p className="form-notice" role="alert">{validationMessage}</p>}
           {loading && <p role="status">Loading available movies...</p>}
           {step === 0 && (
             <TicketSelection
@@ -440,6 +456,7 @@ export function Booking() {
             />
           )}
         </form>
+        <Toast message={toastMessage} onDismiss={dismissToast} />
       </section>
     </Layout>
   );

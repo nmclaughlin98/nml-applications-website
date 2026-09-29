@@ -53,10 +53,6 @@
 }
 
 @media (min-width: 966px) and (max-width: 1024px) {
-    .primary-nav .menu {
-        gap: 2px;
-    }
-
     .nav-cta-btn {
         margin-left: 0 !important;
     }
@@ -169,6 +165,17 @@
 
     .movie-page {
         grid-template-columns: 1fr;
+    }
+
+    .about-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .date-time-group,
+    .guest-name-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 }
 
@@ -593,6 +600,12 @@
         box-sizing: border-box;
         display: block;
         width: 100%;
+    }
+
+    .booking-subtotal-bar .booking-subtotal-values {
+        display: flex;
+        justify-content: center;
+        gap: 8px 20px;
     }
 
     .subtotal-item button {

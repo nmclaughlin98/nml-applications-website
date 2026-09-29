@@ -441,7 +441,7 @@ header {
     visibility: hidden;
     z-index: 1;
     transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 1s cubic-bezier(0.4, 0, 0.2, 1);
+        visibility 1s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: opacity, transform;
 }
 
@@ -471,10 +471,10 @@ header {
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom,
-    rgba(12, 13, 18, 0.2) 0%,
-    rgba(12, 13, 18, 0.5) 50%,
-    rgba(12, 13, 18, 0.95) 90%,
-    var(--bg-main) 100%);
+            rgba(12, 13, 18, 0.2) 0%,
+            rgba(12, 13, 18, 0.5) 50%,
+            rgba(12, 13, 18, 0.95) 90%,
+            var(--bg-main) 100%);
     pointer-events: none;
 }
 
@@ -491,7 +491,7 @@ header {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
 }
 
 .carousel-inner .item.active .hero-caption {
@@ -743,9 +743,9 @@ section {
 
 .section-header h1,
 .section-header h2,
-.poster-section > h1,
-.offers > h1,
-.genre > h1 {
+.poster-section>h1,
+.offers>h1,
+.genre>h1 {
     font-family: var(--font-display);
     font-size: clamp(2rem, 3.5vw, 3rem);
     text-transform: uppercase;
@@ -757,9 +757,9 @@ section {
 }
 
 .section-header h1::before,
-.poster-section > h1::before,
-.offers > h1::before,
-.genre > h1::before {
+.poster-section>h1::before,
+.offers>h1::before,
+.genre>h1::before {
     content: '';
     display: inline-block;
     width: 6px;
@@ -821,9 +821,9 @@ section {
     justify-content: flex-end;
     padding: 20px;
     background: linear-gradient(to top,
-    rgba(10, 11, 15, 0.95) 0%,
-    rgba(10, 11, 15, 0.6) 35%,
-    transparent 65%);
+            rgba(10, 11, 15, 0.95) 0%,
+            rgba(10, 11, 15, 0.6) 35%,
+            transparent 65%);
     transition: background 0.7s ease;
     z-index: 2;
     pointer-events: auto;
@@ -832,9 +832,9 @@ section {
 
 .poster-column:hover .overlay {
     background: linear-gradient(to top,
-    rgba(10, 11, 15, 0.98) 0%,
-    rgba(10, 11, 15, 0.85) 55%,
-    rgba(10, 11, 15, 0.4) 100%);
+            rgba(10, 11, 15, 0.98) 0%,
+            rgba(10, 11, 15, 0.85) 55%,
+            rgba(10, 11, 15, 0.4) 100%);
 }
 
 .overlay-text {
@@ -852,8 +852,8 @@ section {
 }
 
 .runtime {
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 550;
     color: var(--text-secondary);
     display: flex;
     align-items: center;
@@ -862,9 +862,9 @@ section {
 }
 
 .runtime::before {
-    font-family: 'Material Symbols Outlined', serif;
-    content: '\f725';
-    font-size: 0.9rem;
+    font-family: 'Material Symbols Outlined';
+    content: 'clock_loader_20';
+    font-size: 0.95rem;
 }
 
 .rating {
@@ -911,11 +911,11 @@ section {
     overflow: hidden;
     border-width: 0;
     transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    margin 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    padding 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    border-width 0.3s ease;
+        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        margin 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        padding 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        border-width 0.3s ease;
 }
 
 .poster-column:hover .overlay .button,
@@ -1757,12 +1757,30 @@ select option {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+}
+
+.booking-subtotal-values {
+    font-family: var(--font-display);
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+}
+
+.subtotal-metric {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.subtotal-metric>span {
+    color: var(--text-secondary);
+    font-weight: 500;
 }
 
 .booking-subtotal-bar strong {
     color: var(--accent-red);
-    font-size: 1.4rem;
 }
 
 /* ==========================================================================
@@ -2187,14 +2205,14 @@ select option {
     height: 40px;
     width: 80%;
     background: repeating-linear-gradient(90deg,
-    #fff 0px,
-    #fff 2px,
-    transparent 2px,
-    transparent 5px,
-    #fff 5px,
-    #fff 8px,
-    transparent 8px,
-    transparent 10px);
+            #fff 0px,
+            #fff 2px,
+            transparent 2px,
+            transparent 5px,
+            #fff 5px,
+            #fff 8px,
+            transparent 8px,
+            transparent 10px);
 }
 
 .ticket-booking-ref {
@@ -2236,10 +2254,10 @@ select option {
     inset: 0;
     z-index: 1;
     background: linear-gradient(to bottom,
-    rgba(12, 13, 18, 0.2) 0%,
-    rgba(12, 13, 18, 0.5) 50%,
-    rgba(12, 13, 18, 0.95) 90%,
-    var(--bg-main) 100%);
+            rgba(12, 13, 18, 0.2) 0%,
+            rgba(12, 13, 18, 0.5) 50%,
+            rgba(12, 13, 18, 0.95) 90%,
+            var(--bg-main) 100%);
     pointer-events: none;
 }
 
@@ -2629,9 +2647,9 @@ select option {
     inset: 0;
     z-index: 1;
     background: linear-gradient(to bottom,
-    rgba(12, 13, 18, 0.2) 0%,
-    rgba(12, 13, 18, 0.7) 60%,
-    var(--bg-main) 100%);
+            rgba(12, 13, 18, 0.2) 0%,
+            rgba(12, 13, 18, 0.7) 60%,
+            var(--bg-main) 100%);
     pointer-events: none;
 }
 
@@ -2699,7 +2717,7 @@ select option {
     margin: 0 auto;
 }
 
-.movie-page > * {
+.movie-page>* {
     min-width: 0;
 }
 
@@ -3043,17 +3061,4 @@ button.seat {
 
 .demo-payment-notice p {
     margin: 0;
-}
-
-@media (max-width: 768px) {
-    .about-grid-layout {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    .date-time-group,
-    .guest-name-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
 }
