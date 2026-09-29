@@ -4,6 +4,7 @@ name: Deploy react-website
 on:
   # Listens for the completion of the TMDB update workflow
   workflow_run:
+    workflows: [ "Update Movies JSON from TMDB" ] # Must match the exact `name:` inside update-tmdb.yml
     types:
       - completed
 
