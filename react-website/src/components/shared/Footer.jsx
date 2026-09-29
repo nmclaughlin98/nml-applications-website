@@ -11,7 +11,7 @@ export function Footer() {
             <nav className="nav secondary-nav">
                 <ul>{links.map(([label, href]) => <li key={label}><a href={href}>{label}</a></li>)}</ul>
             </nav>
-            <small>&copy; 2026 Blockbuster Theatre</small>
+            <small>&copy; {new Date().getFullYear()} Blockbuster Theatre</small>
         </footer>
     );
 }

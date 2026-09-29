@@ -1,5 +1,6 @@
 import { MovieGrid } from '../movies';
 import { Layout } from '../shared';
+import { PageLoader } from '../shared/PageLoader';
 import { useMovies } from './useMovies';
 
 export function ComingSoon() {
@@ -7,6 +8,14 @@ export function ComingSoon() {
   const upcoming = movies
     .filter((movie) => movie.visible !== false && movie.isComingSoon === true)
     .sort((a, b) => new Date(a.countdownTarget || a.releaseDate || 0) - new Date(b.countdownTarget || b.releaseDate || 0));
+
+  if (loading) {
+    return (
+      <Layout current="coming" loading>
+        <PageLoader label="Loading coming soon movies" />
+      </Layout>
+    );
+  }
 
   return (
     <Layout current="coming">
@@ -19,11 +28,9 @@ export function ComingSoon() {
             </p>
           </div>
         </div>
-        {loading
-          ? <p>Loading movies...</p>
-          : error
-            ? <p>Coming soon movies are temporarily unavailable.</p>
-            : <MovieGrid movies={upcoming} comingSoon />}
+        {error
+          ? <p>Coming soon movies are temporarily unavailable.</p>
+          : <MovieGrid movies={upcoming} comingSoon />}
       </section>
     </Layout>
   );

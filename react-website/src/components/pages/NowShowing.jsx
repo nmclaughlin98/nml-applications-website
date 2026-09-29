@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { MovieGrid } from '../movies';
 import { Layout } from '../shared';
+import { PageLoader } from '../shared/PageLoader';
 import { useMovies } from './useMovies';
 
 const genres = ['all', 'action', 'animation', 'biographical', 'classics', 'comedy', 'drama', 'horror', 'kids', 'thriller'];
@@ -73,6 +74,14 @@ export function NowShowing() {
     });
   }, [movies, search, sort, genre]);
 
+  if (loading) {
+    return (
+      <Layout current="now" loading>
+        <PageLoader label="Loading now showing movies" />
+      </Layout>
+    );
+  }
+
   return (
     <Layout current="now">
       <section className="movie-poster">
@@ -93,11 +102,9 @@ export function NowShowing() {
           onSort={setSort}
           onGenre={setGenre}
         />
-        {loading
-          ? <p>Loading movies...</p>
-          : error
-            ? <p>Movie listings are temporarily unavailable.</p>
-            : <MovieGrid movies={filtered} />}
+        {error
+          ? <p>Movie listings are temporarily unavailable.</p>
+          : <MovieGrid movies={filtered} />}
       </section>
     </Layout>
   );

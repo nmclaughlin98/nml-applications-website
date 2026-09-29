@@ -1,6 +1,7 @@
-import {useEffect, useState} from 'react';
-import {asset, Layout} from '../shared';
-import {useMovies} from './useMovies';
+import { useEffect, useState } from 'react';
+import { asset, Layout } from '../shared';
+import { PageLoader } from '../shared/PageLoader';
+import { useMovieDetail } from './useMovieDetail';
 
 function formatPeople(people) {
     if (Array.isArray(people))
@@ -15,10 +16,10 @@ function formatReleaseDate(value) {
 
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return String(value);
-    return date.toLocaleDateString('en-GB', {day: '2-digit', month: '2-digit', year: 'numeric'});
+    return date.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
 }
 
-function MovieHero({movie}) {
+function MovieHero({ movie }) {
     const directors = formatPeople(movie.director);
     const cast = formatPeople(movie.starring);
     const rating = typeof movie.rating === 'string' ? movie.rating.toUpperCase() : '';
@@ -30,14 +31,15 @@ function MovieHero({movie}) {
                 src={movie.still || movie.largeStill || movie.poster || asset('assets/images/logo/png/logo-full.png')}
                 alt=""
             />
-            <div className="carousel-caption movie">
+            <div className="movie-detail-caption">
                 <h1>{movie.title}</h1>
                 <div className="rating-container">
                     {rating && (
                         <img className="rating-movies" src={asset(`assets/images/ratings/${rating}.svg`)}
-                             alt={`${rating} age rating`}/>
+                            alt={`${rating} age rating`} />
                     )}
-                    <div className="runtime-movies"><strong>Run Time:</strong> {movie.runtime || 'TBD'} mins</div>
+                    <div className="runtime-movies"><strong>Run
+                        Time:</strong> {movie.runtime ? `${movie.runtime} mins` : 'TBD'}</div>
                 </div>
                 <p>
                     <strong>{directors.length === 1 ? 'Director' : 'Directors'}:</strong> {directors.join(', ') || 'Unknown'}
@@ -49,7 +51,7 @@ function MovieHero({movie}) {
     );
 }
 
-function ShowtimeSchedule({movie, selectedTime, onSelectTime, bookingHref}) {
+function ShowtimeSchedule({ movie, selectedTime, onSelectTime, bookingHref }) {
     const showtimes = Object.entries(movie.showtimes || {});
 
     return (
@@ -71,7 +73,7 @@ function ShowtimeSchedule({movie, selectedTime, onSelectTime, bookingHref}) {
                             </button>
                         ))}
                     </div>
-                    <hr/>
+                    <hr />
                 </div>
             )) : <p>No showtimes available.</p>}
             <a className="form-button" href={bookingHref}>Book Now</a>
@@ -79,7 +81,7 @@ function ShowtimeSchedule({movie, selectedTime, onSelectTime, bookingHref}) {
     );
 }
 
-function MovieContent({movie, comingSoon}) {
+function MovieContent({ movie, comingSoon }) {
     const [selectedTime, setSelectedTime] = useState(
         () => new URLSearchParams(window.location.search).get('time') || '',
     );
@@ -102,27 +104,34 @@ function MovieContent({movie, comingSoon}) {
 
     return (
         <>
-            <MovieHero movie={movie}/>
+            <MovieHero movie={movie} />
             <section className="movie-page">
                 <div className="col-no-border col-2-3">
                     <h2>Synopsis</h2>
                     <div id="movie-synopsis">
                         {synopsis.length > 0
-                            ? synopsis.map((paragraph, index) => <p key={`${index}-${paragraph}`}>{paragraph}</p>)
+                            ? synopsis.map((paragraph, index) => <p
+                                key={`${index}-${paragraph}`}>{paragraph}</p>)
                             : <p>Synopsis unavailable.</p>}
                     </div>
-                    {movie.trailer && (
-                        <section className="ca" aria-label={`${movie.title} trailer`}>
+                    <section className="ca" aria-label={`${movie.title} ${movie.trailer ? 'trailer' : 'still'}`}>
+                        {movie.trailer ? (
                             <iframe
-                                className="trailer"
+                                className="trailer-media"
                                 src={movie.trailer}
                                 title={`${movie.title} trailer`}
                                 referrerPolicy="strict-origin-when-cross-origin"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                             />
-                        </section>
-                    )}
+                        ) : (
+                            <img
+                                className="trailer-media trailer-still"
+                                src={movie.still || movie.largeStill || movie.poster || asset('assets/images/logo/png/logo-full.png')}
+                                alt={`${movie.title} still`}
+                            />
+                        )}
+                    </section>
                 </div>
                 {!comingSoon && (
                     <ShowtimeSchedule
@@ -137,21 +146,23 @@ function MovieContent({movie, comingSoon}) {
     );
 }
 
-export function Detail({comingSoon = false}) {
-    const {movies, loading, error} = useMovies();
+export function Detail({ comingSoon = false }) {
     const id = new URLSearchParams(window.location.search).get('movie') || '';
-    const movie = movies.find(
-        (item) => String(item.movieId ?? item.slug ?? item.title).toLowerCase() === id.toLowerCase(),
-    ) || movies.find((item) => item.title.toLowerCase() === id.toLowerCase());
+    const { movie, loading, error } = useMovieDetail(id);
+
+    if (loading) {
+        return (
+            <Layout loading>
+                <PageLoader label="Loading movie details" />
+            </Layout>
+        );
+    }
 
     return (
         <Layout>
-            <div className="movie-detail-loading">
-                {loading && <span className="loader" role="status" aria-label="Loading movie details"/>}
-                {error || (!loading && !movie)
-                    ? <p role="alert">Movie details are temporarily unavailable.</p>
-                    : movie && <MovieContent movie={movie} comingSoon={comingSoon}/>}
-            </div>
+            {error || !movie
+                ? <p role="alert">Movie details are temporarily unavailable.</p>
+                : <MovieContent movie={movie} comingSoon={comingSoon} />}
         </Layout>
     );
 }

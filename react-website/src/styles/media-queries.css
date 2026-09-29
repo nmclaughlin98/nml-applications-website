@@ -26,7 +26,7 @@
         font-size: 1.3rem;
     }
 
-    .carousel-caption p {
+    .hero-caption p {
         max-width: 100%;
     }
 }
@@ -52,7 +52,17 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (min-width: 966px) and (max-width: 1024px) {
+    .primary-nav .menu {
+        gap: 2px;
+    }
+
+    .nav-cta-btn {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 965px) {
 
     .coming-soon-release-date {
         font-size: 1.2rem
@@ -80,28 +90,46 @@
         backdrop-filter: blur(1px);
         -webkit-backdrop-filter: blur(1px);
         border-bottom: 1px solid var(--border-subtle);
-        padding: 24px 20px;
+        padding: 0 20px;
         z-index: 999;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
         visibility: hidden;
-        transform: translateY(-52px);
         pointer-events: none;
-        transition: opacity var(--transition-smooth), transform var(--transition-smooth), visibility var(--transition-smooth);
+        transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        padding 0.35s ease,
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0s linear 0.35s;
     }
 
     .primary-nav.open {
         display: flex;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateY(0) !important;
+        max-height: min(360px, calc(100svh - 70px));
+        overflow-y: auto;
+        padding: 24px 20px;
+        visibility: visible;
+        transform: translateY(0);
         pointer-events: auto !important;
+        transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        padding 0.35s ease,
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0s;
     }
 
     .primary-nav .menu {
         flex-direction: column;
         width: 100%;
         gap: 10px
+    }
+
+    .primary-nav .menu li {
+        opacity: 0;
+        transition: opacity 0.1s ease;
+    }
+
+    .primary-nav.open .menu li {
+        opacity: 1;
     }
 
     .primary-nav .menu li a {
@@ -152,13 +180,6 @@
 
     .overlay-text {
         font-size: 1.4rem;
-    }
-
-    .poster-column:hover .overlay .button,
-    .poster-column:hover .overlay button,
-    .poster-column:hover .overlay .btn-secondary {
-        padding: 7px;
-        font-size: 1.0rem;
     }
 }
 
@@ -216,12 +237,12 @@
         height: 400px;
     }
 
-    .carousel-caption {
+    .hero-caption {
         bottom: 40px;
         max-width: 90%;
     }
 
-    .carousel-caption .hero-actions {
+    .hero-caption .hero-actions {
         font-size: clamp(0.8rem, 2vw, 1.0rem);
         border-radius: var(--radius-sm);
         gap: 8px;
@@ -256,19 +277,34 @@
         padding: 20px 14px;
     }
 
-    .carousel-caption.movie h1 {
+    .movie-detail-caption h1 {
         font-size: clamp(2.2rem, 8vw, 2rem);
         line-height: 1.2;
     }
 
-    .carousel-caption.movie p,
-    .col-no-border.col-2-3 p,
-    .carousel-caption p {
-      line-height: 1.45;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      overflow: hidden;
+    .movie-detail-caption p {
+        line-height: 1.45;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+
+    .col-no-border.col-2-3 p {
+        line-height: 1.45;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+
+    .hero-caption p {
+        font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+        line-height: 1.45;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
     }
 
     .runtime-movies,
@@ -311,6 +347,11 @@
 
 @media (max-width: 650px) {
 
+    .primary-nav .menu li a {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+    }
+
     .countdown-timer {
         gap: 3px;
     }
@@ -333,17 +374,13 @@
         font-size: 1.0rem;
     }
 
-    .carousel-caption .hero-actions .button {
+    .hero-caption .hero-actions .button {
         padding: 10px 10px;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
 
 }
 
-/* Phones in landscape
-   iPhone 16 Pro Max landscape is ~956×440 CSS pixels. That is wider than the
-   768px breakpoint, so the hero would otherwise keep the desktop 600px height
-   — taller than the screen. Tie the slide to the short viewport instead. */
 @media (orientation: landscape) and (max-height: 500px) {
 
     .primary-nav {
@@ -351,47 +388,49 @@
     }
 
     .primary-nav .menu {
-        gap: 7px
+        gap: 13px;
     }
 
     .primary-nav .menu li a {
-        padding: 12px 15px;
+        padding: 12px 18px;
+        font-size: 0.95rem;
     }
 
     body {
         padding-top: 60px;
     }
+
     .carousel-inner,
     .carousel-inner .item {
         height: min(312px, calc((100svh - 90px) * 1.2));
     }
 
-    .carousel-caption {
+    .hero-caption {
         bottom: 28px;
         left: 62px;
         right: 60px;
     }
 
-    .carousel-caption h2 {
+    .hero-caption h2 {
         font-size: clamp(2.5rem, 6vh, 2rem);
         margin-bottom: 20px;
     }
 
-    .carousel-caption p {
-        font-size: clamp(1.0rem, 3vh, 1.0rem);
-        line-height: 1.7;
-        margin-bottom: 20px;
+    .hero-caption p {
+        font-size: 1.3rem;
+        line-height: 1.5;
+        margin-bottom: 16px;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
     }
 
-    .carousel-caption .hero-actions {
+    .hero-caption .hero-actions {
         gap: 15px;
     }
 
-    .carousel-caption .hero-actions .button {
+    .hero-caption .hero-actions .button {
         padding: 8px 12px;
         font-size: 0.85rem;
     }
@@ -410,27 +449,84 @@
     }
 }
 
+@media (max-width: 600px) and (max-height: 400px) {
+    .primary-nav.open {
+        padding: 8px 16px;
+    }
+
+    .hamburger {
+        width: 38px;
+        height: 38px;
+        gap: 5px;
+    }
+
+    .hamburger .line.transition:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger .line.transition:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger .line.transition:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .primary-nav .menu {
+        gap: 4px;
+    }
+
+    .primary-nav .menu li a {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+    }
+
+    .nav-cta-btn {
+        padding: 7px 12px !important;
+        font-size: 0.75rem !important;
+    }
+}
+
 /* Small Phones (480px and down) */
 @media (max-width: 480px) {
+
+    .hero-caption h2 {
+        font-size: clamp(2.2rem, 6vh, 2rem);
+        margin-bottom: 15px;
+    }
 
     select {
         font-size: 1.0rem;
     }
 
+    .hero-caption p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-bottom: 16px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
     .carousel-inner,
     .carousel-inner .item {
-        height: 400px;
+        height: 350px;
     }
 
     .carousel-control {
         display: none;
     }
 
+    .poster-column .overlay .button {
+        align-self: center;
+    }
+
     .poster-column .overlay .button,
-    .poster-column .overlay button,
     .poster-column .overlay .btn-secondary {
         font-size: 1.0rem;
-        height: 2.6rem;
+        height: 2.2rem;
+        width: 80%;
     }
 
     .step-header h2 {
@@ -508,4 +604,39 @@
         height: 35px;
     }
 
+    .section-header h1,
+    .section-header h2,
+    .poster-section > h1,
+    .offers > h1,
+    .genre > h1 {
+        font-size: 1.8rem;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .hero-caption h2 {
+        font-size: clamp(2rem, 6vh, 2rem);
+        margin-bottom: 10px;
+    }
+
+    .hero-actions button {
+        display: none;
+    }
+
+    .carousel-indicators li {
+        width: 28px;
+    }
+
+    .carousel-indicators li.active {
+        width: 44px;
+        background: var(--accent-red);
+        box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    .poster-section,
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 16px;
+    }
 }

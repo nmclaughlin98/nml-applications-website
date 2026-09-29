@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {movieId} from '../movies';
 import {Layout} from '../shared';
+import {PageLoader} from '../shared/PageLoader';
 import {useMovies} from './useMovies';
 import {downloadTimetablePdf} from './timetablePdf';
 
@@ -112,6 +113,14 @@ export function Timetable() {
     const printableMovies = movies.filter((movie) => movie.visible !== false && movie.isComingSoon !== true);
     const weekCommencing = getWeekCommencing();
 
+    if (loading) {
+        return (
+            <Layout current="now" loading>
+                <PageLoader label="Loading movie timetable"/>
+            </Layout>
+        );
+    }
+
     async function handleDownload() {
         setDownloading(true);
         setDownloadMessage('Preparing your timetable PDF...');
@@ -141,7 +150,7 @@ export function Timetable() {
                     onSearch={setSearch}
                     onDownload={handleDownload}
                     downloadMessage={downloadMessage}
-                    disabled={loading || Boolean(error) || downloading}
+                    disabled={Boolean(error) || downloading}
                     downloading={downloading}
                 />
                 <div
@@ -151,14 +160,12 @@ export function Timetable() {
                     aria-labelledby={`timetable-tab-${day.toLowerCase()}`}
                     aria-live="polite"
                 >
-                    {loading
-                        ? <p>Loading timetable...</p>
-                        : error
-                            ? <p>Movie timetable is temporarily unavailable.</p>
-                            : filteredMovies.length
-                                ? filteredMovies.map((movie) => <TimetableMovie movie={movie} day={day}
-                                                                                key={movieId(movie)}/>)
-                                : <p>No movies available for this search and day.</p>}
+                    {error
+                        ? <p>Movie timetable is temporarily unavailable.</p>
+                        : filteredMovies.length
+                            ? filteredMovies.map((movie) => <TimetableMovie movie={movie} day={day}
+                                                                            key={movieId(movie)}/>)
+                            : <p>No movies available for this search and day.</p>}
                 </div>
             </div>
         </Layout>
