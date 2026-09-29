@@ -12,7 +12,8 @@
       // the requested path/query into the query string and redirects to the
       // real index.html, where a small script in <head> decodes it back into
       // the URL before the React app reads window.location.
-      var segmentCount = 1; // number of path segments that make up the repo name for a GitHub Pages project site
+      // This site uses a custom domain at the root, not a project subpath.
+      var segmentCount = 0;
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
