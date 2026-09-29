@@ -16,6 +16,11 @@ export function HeroCarousel({ movies }) {
     const [isPaused, setIsPaused] = useState(false);
     const [trailerUrl, setTrailerUrl] = useState('');
 
+    function handleBlurClick(e, action) {
+        e.currentTarget.blur();
+        if (action) action();
+    }
+
     function changeSlide(nextIndex, direction) {
         if (nextIndex === index) return;
         setPreviousIndex(index);
@@ -56,9 +61,13 @@ export function HeroCarousel({ movies }) {
                 onMouseLeave={() => setIsPaused(false)}
             >
                 <ol className="carousel-indicators">
-                    {movies.map((item, itemIndex) => <li key={movieId(item)}
-                        className={itemIndex === index ? 'active' : ''}
-                        onClick={() => changeSlide(itemIndex, itemIndex > index ? 'right' : 'left')} />)}
+                    {movies.map((item, itemIndex) => (
+                        <li 
+                            key={movieId(item)}
+                            className={itemIndex === index ? 'active' : ''}
+                            onClick={(e) => handleBlurClick(e, () => changeSlide(itemIndex, itemIndex > index ? 'right' : 'left'))} 
+                        />
+                    ))}
                 </ol>
                 <div className="carousel-inner" role="listbox">
                     {movies.map((movie, itemIndex) => (
@@ -77,37 +86,67 @@ export function HeroCarousel({ movies }) {
                                 <h2>{movie.title}</h2>
                                 <p>{movie.tagline}</p>
                                 <div className="hero-actions">
-                                    <a className="button"
-                                        href={`./bookNow.html?movie=${encodeURIComponent(movie.title)}`}>Book Tickets</a>
-                                    {movie.trailer && <button type="button" className="button btn-secondary"
-                                        onClick={() => setTrailerUrl(movie.trailer)}>Watch
-                                        Trailer</button>}
-                                    <a className="button btn-glass"
-                                        href={`./templates/movie-detail.html?movie=${movieId(movie)}`}>More Info</a>
+                                    <a 
+                                        className="button"
+                                        href={`./bookNow.html?movie=${encodeURIComponent(movie.title)}`}
+                                        onClick={(e) => e.currentTarget.blur()}
+                                    >
+                                        Book Tickets
+                                    </a>
+                                    {movie.trailer && (
+                                        <button 
+                                            type="button" 
+                                            className="button btn-secondary"
+                                            onClick={(e) => handleBlurClick(e, () => setTrailerUrl(movie.trailer))}
+                                        >
+                                            Watch Trailer
+                                        </button>
+                                    )}
+                                    <a 
+                                        className="button btn-glass"
+                                        href={`./templates/movie-detail.html?movie=${movieId(movie)}`}
+                                        onClick={(e) => e.currentTarget.blur()}
+                                    >
+                                        More Info
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
-                <button className="carousel-control left" aria-label="Previous slide"
-                    onClick={() => changeSlide((index - 1 + movies.length) % movies.length, 'left')}><span
-                        className="material-symbols-outlined">chevron_left</span></button>
-                <button className="carousel-control right" aria-label="Next slide"
-                    onClick={() => changeSlide((index + 1) % movies.length, 'right')}><span
-                        className="material-symbols-outlined">chevron_right</span></button>
+                <button 
+                    className="carousel-control left" 
+                    aria-label="Previous slide"
+                    onClick={(e) => handleBlurClick(e, () => changeSlide((index - 1 + movies.length) % movies.length, 'left'))}
+                >
+                    <span className="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button 
+                    className="carousel-control right" 
+                    aria-label="Next slide"
+                    onClick={(e) => handleBlurClick(e, () => changeSlide((index + 1) % movies.length, 'right'))}
+                >
+                    <span className="material-symbols-outlined">chevron_right</span>
+                </button>
             </div>
             <div
                 id="trailer-modal"
                 className={`modal-backdrop ${trailerUrl ? 'open' : ''}`}
                 aria-hidden={!trailerUrl}
-                inert={!trailerUrl}
+                inert={!trailerUrl ? '' : undefined}
                 onClick={(event) => {
                     if (event.target === event.currentTarget) setTrailerUrl('');
                 }}
             >
                 <div className="modal-dialog" role="dialog" aria-modal="true" aria-label="Movie trailer">
-                    <button type="button" className="modal-close-btn" aria-label="Close trailer"
-                        onClick={() => setTrailerUrl('')}>&times;</button>
+                    <button 
+                        type="button" 
+                        className="modal-close-btn" 
+                        aria-label="Close trailer"
+                        onClick={(e) => handleBlurClick(e, () => setTrailerUrl(''))}
+                    >
+                        &times;
+                    </button>
                     <iframe
                         id="trailer-iframe"
                         src={trailerEmbedUrl || null}
