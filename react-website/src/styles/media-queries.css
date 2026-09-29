@@ -559,6 +559,10 @@
         padding-right: 5px;
     }
 
+    .countdown-label {
+        letter-spacing: 0;
+    }
+
     .seat-legend {
         column-gap: 18px;
     }
@@ -632,6 +636,10 @@
 }
 
 @media (max-width: 380px) {
+    .countdown-label {
+        font-size: 0.45rem;
+    }
+
     .hero-caption h2 {
         font-size: clamp(2rem, 6vh, 2rem);
         margin-bottom: 10px;
