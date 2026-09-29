@@ -1,10 +1,10 @@
 # Sample workflow for building and deploying a static site to GitHub Pages
-name: Deploy website
+name: Deploy react-website
 
 on:
   # Listens for the completion of the TMDB update workflow
   workflow_run:
-    workflows: ["Update Movies JSON from TMDB"] # Must match the exact `name:` inside update-tmdb.yml
+    workflows: [ "Update Movies JSON from TMDB" ] # Must match the exact `name:` inside update-tmdb.yml
     types:
       - completed
 
@@ -48,7 +48,7 @@ jobs:
               process.exit(1);
             }
             fs.writeFileSync(
-              "website/assets/js/config.js",
+              "react-website/src/config.js",
               "window.APP_CONFIG = Object.freeze({ moviesApiUrl: " + JSON.stringify(value) + " });\n"
             );
           '
@@ -57,7 +57,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: ./website
+          path: ./react-website
 
   # Deployment job
   deploy:

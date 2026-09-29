@@ -1,0 +1,511 @@
+/* ==========================================================================
+   Responsive Breakpoints & Fluid Mobile Layouts
+   ========================================================================== */
+
+/* Ultra-wide Displays (1920px+) */
+@media (min-width: 1920px) {
+
+    .poster-section,
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 36px;
+    }
+
+    .carousel-inner,
+    .carousel-inner .item {
+        height: 700px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .logo {
+        height: 54px;
+    }
+
+    .header-text {
+        font-size: 1.3rem;
+    }
+
+    .carousel-caption p {
+        max-width: 100%;
+    }
+}
+
+/* Tablets & Small Laptops (1024px and down) */
+@media (max-width: 1024px) {
+    #progressbar li {
+        font-size: 0.75rem;
+    }
+
+    #progressbar li::before {
+        width: 34px;
+        height: 34px;
+        line-height: 32px;
+    }
+
+    .logo {
+        height: 45px;
+    }
+
+    .header-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .coming-soon-release-date {
+        font-size: 1.2rem
+    }
+
+    .countdown-timer {
+        font-size: 1.0rem;
+    }
+
+    .countdown-unit {
+        padding: 6px 2px 5px;
+    }
+
+    .countdown-label {
+        font-size: 0.48rem;
+    }
+
+    .primary-nav {
+        display: flex;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--glass-bg);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 24px 20px;
+        z-index: 999;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-52px);
+        pointer-events: none;
+        transition: opacity var(--transition-smooth), transform var(--transition-smooth), visibility var(--transition-smooth);
+    }
+
+    .primary-nav.open {
+        display: flex;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+    }
+
+    .primary-nav .menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px
+    }
+
+    .primary-nav .menu li a {
+        width: 100%;
+        text-align: center;
+        padding: 12px 23px;
+        font-size: 1.05rem;
+    }
+
+    .primary-nav .menu li a.current {
+        box-shadow: 0 10px 22px var(--accent-glow);
+    }
+
+    .nav-cta-btn {
+        font-size: 1.05rem;
+        padding: 12px 23px !important;
+    }
+
+    .poster-section,
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 16px;
+    }
+
+    .ticket-row {
+        padding: 16px 10px;
+    }
+
+    .form-group {
+        font-size: 1.25rem;
+        width: 100%
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .movie-page {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 860px) {
+
+    .poster-column .overlay {
+        padding: 15px;
+    }
+
+    .overlay-text {
+        font-size: 1.4rem;
+    }
+
+    .poster-column:hover .overlay .button,
+    .poster-column:hover .overlay button,
+    .poster-column:hover .overlay .btn-secondary {
+        padding: 7px;
+        font-size: 1.0rem;
+    }
+}
+
+/* Mobile Devices (768px and down) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .carousel-control {
+        display: none;
+    }
+
+    .coming-soon-release-date {
+        font-size: 1.0rem
+    }
+
+    header {
+        height: 70px;
+    }
+
+    .page-banner {
+        padding-top: 32px;
+    }
+
+    .timetable-controls {
+        padding: 0 14px;
+    }
+
+    .day-tabs {
+        gap: 8px;
+    }
+
+    .day-tab {
+        padding: 9px 13px;
+        font-size: 0.72rem;
+    }
+
+    .movie-card {
+        grid-template-columns: 1fr;
+        padding: 18px 16px;
+        gap: 16px;
+    }
+
+    .showtimes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .carousel-inner,
+    .carousel-inner .item {
+        height: 400px;
+    }
+
+    .carousel-caption {
+        bottom: 40px;
+        max-width: 90%;
+    }
+
+    .carousel-caption .hero-actions {
+        font-size: clamp(0.8rem, 2vw, 1.0rem);
+        border-radius: var(--radius-sm);
+        gap: 8px;
+        max-width: 100%;
+    }
+
+    .seating-plan {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .seat-row {
+        gap: 5px;
+    }
+
+    .legend-item {
+        gap: 4px;
+        font-size: 0.7rem;
+    }
+
+    .legend-seat {
+        width: 18px;
+        height: 18px;
+    }
+
+    .seat-accessible-icon {
+        width: 19px;
+        height: 19px;
+    }
+
+    .booking-form {
+        padding: 20px 14px;
+    }
+
+    .carousel-caption.movie h1 {
+        font-size: clamp(2.2rem, 8vw, 2rem);
+        line-height: 1.2;
+    }
+
+    .carousel-caption.movie p,
+    .col-no-border.col-2-3 p,
+    .carousel-caption p {
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+
+    .runtime-movies,
+    .day-of-week {
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+    }
+
+    .col-no-border.col-2-3 h2,
+    .col.col-1-3 h1 {
+        font-size: 22px;
+    }
+
+    .show-time {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .genre-filter-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 12px;
+    }
+
+    .poster-section,
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 16px;
+    }
+
+    .poster-column .overlay {
+        padding: 12px;
+    }
+
+    .overlay-text {
+        font-size: 1.4rem;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .countdown-timer {
+        gap: 3px;
+    }
+
+    .countdown-value {
+        font-size: 1rem;
+    }
+
+    .payment-methods-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .btn,
+    .button,
+    .form-button {
+        font-size: 1.0rem;
+    }
+
+    .carousel-caption .hero-actions .button {
+        padding: 10px 10px;
+        font-size: 0.95rem;
+    }
+
+}
+
+/* Phones in landscape
+   iPhone 16 Pro Max landscape is ~956×440 CSS pixels. That is wider than the
+   768px breakpoint, so the hero would otherwise keep the desktop 600px height
+   — taller than the screen. Tie the slide to the short viewport instead. */
+@media (orientation: landscape) and (max-height: 500px) {
+
+    .primary-nav {
+        top: 60px;
+    }
+
+    .primary-nav .menu {
+        gap: 7px
+    }
+
+    .primary-nav .menu li a {
+        padding: 12px 15px;
+    }
+
+    body {
+        padding-top: 60px;
+    }
+    .carousel-inner,
+    .carousel-inner .item {
+        height: min(312px, calc((100svh - 90px) * 1.2));
+    }
+
+    .carousel-caption {
+        bottom: 28px;
+        left: 62px;
+        right: 60px;
+    }
+
+    .carousel-caption h2 {
+        font-size: clamp(2.5rem, 6vh, 2rem);
+        margin-bottom: 20px;
+    }
+
+    .carousel-caption p {
+        font-size: clamp(1.0rem, 3vh, 1.0rem);
+        line-height: 1.7;
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .carousel-caption .hero-actions {
+        gap: 15px;
+    }
+
+    .carousel-caption .hero-actions .button {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .carousel-indicators {
+        bottom: 10px;
+    }
+
+    .carousel-control {
+        width: 35px;
+        height: 35px;
+    }
+
+    header {
+        height: 60px;
+    }
+}
+
+/* Small Phones (480px and down) */
+@media (max-width: 480px) {
+
+    select {
+        font-size: 1.0rem;
+    }
+
+    .carousel-inner,
+    .carousel-inner .item {
+        height: 400px;
+    }
+
+    .carousel-control {
+        display: none;
+    }
+
+    .poster-column .overlay .button,
+    .poster-column .overlay button,
+    .poster-column .overlay .btn-secondary {
+        font-size: 1.0rem;
+        height: 2.6rem;
+    }
+
+    .step-header h2 {
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+    }
+
+    .step-header p {
+        font-size: 1.0rem;
+    }
+
+    .date-time-group {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .seating-plan {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .seat-legend {
+        column-gap: 18px;
+    }
+
+    .seat {
+        width: 22px;
+        height: 22px;
+    }
+
+    .legend-seat {
+        width: 16px;
+        height: 16px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions .form-button .wallet-badge-btn {
+        width: 100%;
+    }
+
+    .ticket-counter {
+        gap: 10px;
+    }
+
+    .ticket-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Live Booking Subtotal summary */
+    .booking-subtotal-bar {
+        box-sizing: border-box;
+        display: block;
+        justify-content: center;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .subtotal-item {
+        text-align: center;
+        align-content: center;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+    }
+
+    .subtotal-item button {
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    .rating {
+        height: 35px;
+    }
+
+}
