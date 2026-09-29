@@ -41,11 +41,13 @@ function MovieHero({ movie }) {
                     <div className="runtime-movies"><strong>Run
                         Time:</strong> {movie.runtime ? `${movie.runtime} mins` : 'TBD'}</div>
                 </div>
-                <p>
-                    <strong>{directors.length === 1 ? 'Director' : 'Directors'}:</strong> {directors.join(', ') || 'Unknown'}
-                </p>
-                {cast.length > 0 && <p><strong>Starring:</strong> {cast.join(', ')}</p>}
-                <p><strong>Release Date:</strong> {formatReleaseDate(movie.releaseDate)}</p>
+                <div className="movie-detail-meta">
+                    <p>
+                        <strong>{directors.length === 1 ? 'Director' : 'Directors'}:</strong> {directors.join(', ') || 'Unknown'}
+                    </p>
+                    {cast.length > 0 && <p><strong>Starring:</strong> {cast.join(', ')}</p>}
+                    <p><strong>Release Date:</strong> {formatReleaseDate(movie.releaseDate)}</p>
+                </div>
             </div>
         </section>
     );

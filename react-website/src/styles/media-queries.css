@@ -492,6 +492,10 @@
         padding: 7px 12px !important;
         font-size: 0.75rem !important;
     }
+
+    .hero-caption {
+        left: 30px;
+    }
 }
 
 /* Small Phones (480px and down) */
@@ -638,12 +642,11 @@
     }
 
     .carousel-indicators li {
-        width: 28px;
+        width: 23px;
     }
 
     .carousel-indicators li.active {
         width: 44px;
-        background: var(--accent-red);
         box-shadow: 0 0 12px var(--accent-glow);
     }
 

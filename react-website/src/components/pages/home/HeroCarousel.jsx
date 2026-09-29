@@ -11,14 +11,23 @@ function withAutoplay(url) {
 
 export function HeroCarousel({ movies }) {
     const [index, setIndex] = useState(0);
+    const [previousIndex, setPreviousIndex] = useState(null);
+    const [slideDirection, setSlideDirection] = useState('right');
     const [isPaused, setIsPaused] = useState(false);
     const [trailerUrl, setTrailerUrl] = useState('');
 
+    function changeSlide(nextIndex, direction) {
+        if (nextIndex === index) return;
+        setPreviousIndex(index);
+        setSlideDirection(direction);
+        setIndex(nextIndex);
+    }
+
     useEffect(() => {
         if (!movies.length || isPaused || trailerUrl) return undefined;
-        const timer = setInterval(() => setIndex((value) => (value + 1) % movies.length), 6000);
+        const timer = setInterval(() => changeSlide((index + 1) % movies.length, 'right'), 6000);
         return () => clearInterval(timer);
-    }, [movies.length, isPaused, trailerUrl]);
+    }, [movies.length, index, isPaused, trailerUrl]);
 
     useEffect(() => {
         if (!trailerUrl) return undefined;
@@ -49,11 +58,20 @@ export function HeroCarousel({ movies }) {
                 <ol className="carousel-indicators">
                     {movies.map((item, itemIndex) => <li key={movieId(item)}
                         className={itemIndex === index ? 'active' : ''}
-                        onClick={() => setIndex(itemIndex)} />)}
+                        onClick={() => changeSlide(itemIndex, itemIndex > index ? 'right' : 'left')} />)}
                 </ol>
                 <div className="carousel-inner" role="listbox">
                     {movies.map((movie, itemIndex) => (
-                        <div key={movieId(movie)} className={`item ${itemIndex === index ? 'active' : ''}`}>
+                        <div
+                            key={movieId(movie)}
+                            className={[
+                                'item',
+                                itemIndex === index && 'active',
+                                previousIndex !== null && itemIndex === index && `slide-in-${slideDirection}`,
+                                previousIndex !== null && itemIndex === previousIndex && `slide-out-${slideDirection === 'right' ? 'left' : 'right'}`,
+                            ].filter(Boolean).join(' ')}
+                            aria-hidden={itemIndex !== index}
+                        >
                             <img src={movie.largeStill || movie.still || movie.poster} alt={movie.title} />
                             <div className="hero-caption">
                                 <h2>{movie.title}</h2>
@@ -72,10 +90,10 @@ export function HeroCarousel({ movies }) {
                     ))}
                 </div>
                 <button className="carousel-control left" aria-label="Previous slide"
-                    onClick={() => setIndex((index - 1 + movies.length) % movies.length)}><span
+                    onClick={() => changeSlide((index - 1 + movies.length) % movies.length, 'left')}><span
                         className="material-symbols-outlined">chevron_left</span></button>
                 <button className="carousel-control right" aria-label="Next slide"
-                    onClick={() => setIndex((index + 1) % movies.length)}><span
+                    onClick={() => changeSlide((index + 1) % movies.length, 'right')}><span
                         className="material-symbols-outlined">chevron_right</span></button>
             </div>
             <div
