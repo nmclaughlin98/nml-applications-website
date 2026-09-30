@@ -54,6 +54,7 @@ jobs:
             echo "Set the MOVIES_API_URL GitHub Actions repository variable or secret."
             exit 1
           fi
+          node --input-type=module -e 'import fs from "node:fs"; fs.writeFileSync("src/config.js", "export const MOVIES_API_URL = " + JSON.stringify(process.env.VITE_MOVIES_API_URL) + ";\n");'
           npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v6

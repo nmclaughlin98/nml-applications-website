@@ -16,5 +16,5 @@ export default function App() {
 
   // Remounting on route change re-runs each page's initial state (e.g. query
   // params read once via useState/useMemo initializers in Detail/Booking).
-  return <div key={path + search}>{page}</div>;
+  return <div className="app-shell" key={path + search}>{page}</div>;
 }

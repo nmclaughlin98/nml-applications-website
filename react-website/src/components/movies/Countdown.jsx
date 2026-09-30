@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 
 const labels = ['Days', 'Hours', 'Mins', 'Secs'];
 
-export function Countdown({ movie }) {
+export function Countdown({ movie, className = '' }) {
     const target = movie.countdownTarget || movie.releaseDate;
     const [diff, setDiff] = useState(NaN);
+    const countdownClassName = ['countdown-timer', className].filter(Boolean).join(' ');
 
     useEffect(() => {
         if (!target) return undefined;
@@ -14,8 +15,8 @@ export function Countdown({ movie }) {
         return () => clearInterval(timer);
     }, [target]);
 
-    if (Number.isNaN(diff)) return <div className="countdown-timer is-unavailable">Release date coming soon</div>;
-    if (diff <= 0) return <div className="countdown-timer is-live">Now showing</div>;
+    if (Number.isNaN(diff)) return <div className={`${countdownClassName} is-unavailable`}>Release date coming soon</div>;
+    if (diff <= 0) return <div className={`${countdownClassName} is-live`}>Now showing</div>;
 
     const values = [
         Math.floor(diff / 86400000),
@@ -25,7 +26,7 @@ export function Countdown({ movie }) {
     ];
 
     return (
-        <div className="countdown-timer">
+        <div className={countdownClassName}>
             { values.map((value, index) => (
                 <span className="countdown-unit" key={ labels[index] }>
           <span className="countdown-value">{ String(value).padStart(index ? 2 : 1, '0') }</span>
