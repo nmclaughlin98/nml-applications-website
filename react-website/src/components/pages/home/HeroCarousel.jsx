@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { movieId } from '../../movies';
 
 function withAutoplay(url) {
@@ -16,6 +16,7 @@ export function HeroCarousel({ movies }) {
     const [isPaused, setIsPaused] = useState(false);
     const [trailerUrl, setTrailerUrl] = useState('');
     const [isReady, setIsReady] = useState(false);
+    const swipeStart = useRef(null);
 
     useEffect(() => {
         const frame = window.requestAnimationFrame(() => setIsReady(true));
@@ -32,6 +33,31 @@ export function HeroCarousel({ movies }) {
         setPreviousIndex(index);
         setSlideDirection(direction);
         setIndex(nextIndex);
+    }
+
+    function handleSwipeStart(event) {
+        if (
+            event.pointerType !== 'touch'
+            || (event.target instanceof Element && event.target.closest('a, button'))
+        ) return;
+        swipeStart.current = { x: event.clientX, y: event.clientY };
+        event.currentTarget.setPointerCapture(event.pointerId);
+    }
+
+    function handleSwipeEnd(event) {
+        const start = swipeStart.current;
+        swipeStart.current = null;
+        if (!start || event.pointerType !== 'touch') return;
+
+        const deltaX = event.clientX - start.x;
+        const deltaY = event.clientY - start.y;
+        if (Math.abs(deltaX) < 50 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+
+        const direction = deltaX < 0 ? 'right' : 'left';
+        const nextIndex = deltaX < 0
+            ? (index + 1) % movies.length
+            : (index - 1 + movies.length) % movies.length;
+        changeSlide(nextIndex, direction);
     }
 
     useEffect(() => {
@@ -75,7 +101,13 @@ export function HeroCarousel({ movies }) {
                         />
                     ))}
                 </ol>
-                <div className={`carousel-inner${isReady ? ' is-ready' : ''}`} role="listbox">
+                <div
+                    className={`carousel-inner${isReady ? ' is-ready' : ''}`}
+                    role="listbox"
+                    onPointerDown={handleSwipeStart}
+                    onPointerUp={handleSwipeEnd}
+                    onPointerCancel={() => { swipeStart.current = null; }}
+                >
                     {movies.map((movie, itemIndex) => (
                         <div
                             key={movieId(movie)}
