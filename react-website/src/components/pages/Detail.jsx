@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Countdown } from '../movies/index.js';
 import { asset, Layout } from '../shared';
 import { PageLoader } from '../shared/PageLoader';
 import { useMovieDetail } from './useMovieDetail';
@@ -157,7 +158,12 @@ function MovieContent({ movie, comingSoon }) {
                         ) }
                     </div>
                 </div>
-                { !comingSoon && (
+                { comingSoon ? (
+                    <aside className="col col-1-3">
+                        <h1>Coming Soon:</h1>
+                        <Countdown movie={ movie } className="detail-countdown"/>
+                    </aside>
+                ) : (
                     <ShowtimeSchedule
                         movie={ movie }
                         selectedDay={ selectedDay }
