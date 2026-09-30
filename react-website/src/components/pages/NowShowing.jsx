@@ -21,7 +21,7 @@ function MovieFilters({ search, sort, genre, onSearch, onSort, onGenre }) {
                         className="search-input"
                         value={ search }
                         onChange={ (event) => onSearch(event.target.value) }
-                        placeholder="Enter a movie title"
+                        placeholder="Enter a movie title..."
                     />
                 </div>
                 <div className="sort-wrapper">

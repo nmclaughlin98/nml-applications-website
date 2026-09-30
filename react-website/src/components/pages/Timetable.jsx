@@ -1,9 +1,9 @@
-import {useState} from 'react';
-import {movieId} from '../movies';
-import {Layout} from '../shared';
-import {PageLoader} from '../shared/PageLoader';
-import {useMovies} from './useMovies';
-import {downloadTimetablePdf} from './timetablePdf';
+import { useState } from 'react';
+import { movieId } from '../movies';
+import { Layout } from '../shared';
+import { PageLoader } from '../shared/PageLoader';
+import { useMovies } from './useMovies';
+import { downloadTimetablePdf } from './timetablePdf';
 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -12,7 +12,8 @@ function getMovieTitle(movie) {
 }
 
 function getMovieGenre(movie) {
-    if (Array.isArray(movie.genres) && movie.genres.length) return movie.genres.join(' / ');
+    if (Array.isArray(movie.genres) && movie.genres.length)
+        return movie.genres.slice(0, 3).join(' / ');
     return movie.genre || 'General';
 }
 
@@ -25,79 +26,86 @@ function getWeekCommencing() {
     const monday = new Date();
     monday.setHours(0, 0, 0, 0);
     monday.setDate(monday.getDate() - ((monday.getDay() + 6) % 7));
-    return monday.toLocaleDateString('en-GB', {day: '2-digit', month: '2-digit', year: 'numeric'});
+    return monday.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
 }
 
-function TimetableControls({day, search, onDayChange, onSearch, onDownload, downloadMessage, disabled, downloading}) {
+function TimetableControls({ day, search, onDayChange, onSearch, onDownload, downloadMessage, disabled, downloading }) {
     return (
         <div className="timetable-controls">
             <div className="day-tabs" role="tablist" aria-label="Showtimes by day">
-                {days.map((item) => (
+                { days.map((item) => (
                     <button
-                        className={`day-tab ${day === item ? 'active' : ''}`}
-                        key={item}
-                        id={`timetable-tab-${item.toLowerCase()}`}
+                        className={ `day-tab ${ day === item ? 'active' : '' }` }
+                        key={ item }
+                        id={ `timetable-tab-${ item.toLowerCase() }` }
                         type="button"
                         role="tab"
-                        aria-selected={day === item}
+                        aria-selected={ day === item }
                         aria-controls="timetable-panel"
-                        onClick={() => onDayChange(item)}
+                        onClick={ () => onDayChange(item) }
                     >
-                        {item}
+                        { item }
                     </button>
-                ))}
+                )) }
             </div>
             <div className="timetable-toolbar">
                 <div className="filter-bar">
+                    <svg className="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="5"/>
+                        <path d="m16 16 4 4"/>
+                    </svg>
+                    <label htmlFor="movie-search-input">Search by movie title:</label>
                     <input
+                        id="movie-search-input"
                         className="search-input"
                         type="search"
                         aria-label="Search film title"
-                        value={search}
-                        onChange={(event) => onSearch(event.target.value)}
-                        placeholder="Search film title..."
+                        value={ search }
+                        onChange={ (event) => onSearch(event.target.value) }
+                        placeholder="Enter a movie title..."
                     />
                 </div>
-                <button className="button btn-glass print-pdf-btn" type="button" onClick={onDownload} disabled={disabled}>
-                    {downloading ? 'Preparing PDF...' : 'Download PDF'}
+                <button className="button btn-glass print-pdf-btn" type="button" onClick={ onDownload }
+                        disabled={ disabled }>
+                    { downloading ? 'Preparing PDF...' : 'Download PDF' }
                     <span className="material-symbols-outlined">download</span>
                 </button>
-                {downloadMessage && <span className="timetable-download-status" role="status">{downloadMessage}</span>}
+                { downloadMessage &&
+                    <span className="timetable-download-status" role="status">{ downloadMessage }</span> }
             </div>
         </div>
     );
 }
 
-function TimetableMovie({movie, day}) {
+function TimetableMovie({ movie, day }) {
     const times = getShowtimes(movie, day);
     if (!times.length) return null;
 
     return (
         <div className="movie-card">
             <div className="movie-info">
-                <div className="movie-title">{getMovieTitle(movie)}</div>
+                <div className="movie-title">{ getMovieTitle(movie) }</div>
                 <div className="movie-meta">
-                    <span className="badge-genre">{getMovieGenre(movie)}</span>
-                    <span>2D / 4K Laser</span>
+                    <span className="badge-genre">{ getMovieGenre(movie) }</span>
                 </div>
             </div>
             <div className="showtimes-grid">
-                {times.map((time, index) => (
+                { times.map((time, index) => (
                     <a
                         className="showtime-btn"
-                        href={`./bookNow.html?movie=${encodeURIComponent(getMovieTitle(movie))}&time=${encodeURIComponent(time)}&day=${encodeURIComponent(day)}`}
-                        key={`${time}-${index}`}
+                        href={ `./bookNow.html?movie=${ encodeURIComponent(getMovieTitle(movie)) }&time=${ encodeURIComponent(time) }&day=${ encodeURIComponent(day) }` }
+                        key={ `${ time }-${ index }` }
                     >
-                        {time}<span>Screen {index + 1}</span>
+                        { time }<span>Screen { index + 1 }</span>
                     </a>
-                ))}
+                )) }
             </div>
         </div>
     );
 }
 
 export function Timetable() {
-    const {movies, loading, error} = useMovies();
+    const { movies, loading, error } = useMovies();
     const [day, setDay] = useState('Monday');
     const [search, setSearch] = useState('');
     const [downloadMessage, setDownloadMessage] = useState('');
@@ -109,7 +117,7 @@ export function Timetable() {
             && getMovieTitle(movie).toLowerCase().includes(search.trim().toLowerCase())
             && getShowtimes(movie, day).length > 0
         ))
-        .sort((a, b) => getMovieTitle(a).localeCompare(getMovieTitle(b), undefined, {sensitivity: 'base'}));
+        .sort((a, b) => getMovieTitle(a).localeCompare(getMovieTitle(b), undefined, { sensitivity: 'base' }));
     const printableMovies = movies.filter((movie) => movie.visible !== false && movie.isComingSoon !== true);
     const weekCommencing = getWeekCommencing();
 
@@ -129,7 +137,7 @@ export function Timetable() {
             setDownloadMessage('Your timetable PDF is downloading.');
         } catch (downloadError) {
             setDownloadMessage(downloadError instanceof Error
-                ? `Unable to download timetable PDF: ${downloadError.message}`
+                ? `Unable to download timetable PDF: ${ downloadError.message }`
                 : 'Unable to download timetable PDF.');
         } finally {
             setDownloading(false);
@@ -141,31 +149,31 @@ export function Timetable() {
             <div id="timetablePrintArea">
                 <section className="page-banner">
                     <h1>Weekly Movie Timetable</h1>
-                    <p id="weekCommencingLabel">Schedule for Week Commencing {weekCommencing}</p>
+                    <p id="weekCommencingLabel">Schedule for Week Commencing { weekCommencing }</p>
                 </section>
                 <TimetableControls
-                    day={day}
-                    search={search}
-                    onDayChange={setDay}
-                    onSearch={setSearch}
-                    onDownload={handleDownload}
-                    downloadMessage={downloadMessage}
-                    disabled={Boolean(error) || downloading}
-                    downloading={downloading}
+                    day={ day }
+                    search={ search }
+                    onDayChange={ setDay }
+                    onSearch={ setSearch }
+                    onDownload={ handleDownload }
+                    downloadMessage={ downloadMessage }
+                    disabled={ Boolean(error) || downloading }
+                    downloading={ downloading }
                 />
                 <div
                     className="timetable-container"
                     id="timetable-panel"
                     role="tabpanel"
-                    aria-labelledby={`timetable-tab-${day.toLowerCase()}`}
+                    aria-labelledby={ `timetable-tab-${ day.toLowerCase() }` }
                     aria-live="polite"
                 >
-                    {error
+                    { error
                         ? <p>Movie timetable is temporarily unavailable.</p>
                         : filteredMovies.length
-                            ? filteredMovies.map((movie) => <TimetableMovie movie={movie} day={day}
-                                                                            key={movieId(movie)}/>)
-                            : <p>No movies available for this search and day.</p>}
+                            ? filteredMovies.map((movie) => <TimetableMovie movie={ movie } day={ day }
+                                                                            key={ movieId(movie) }/>)
+                            : <p>No movies available for this search and day.</p> }
                 </div>
             </div>
         </Layout>
