@@ -20,6 +20,7 @@
     --accent-gold: #fbbf24;
     --accent-blue: #38bdf8;
     --accent-green: #34d399;
+    --accent-hover-grey: rgba(255, 255, 255, 0.06);
 
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
@@ -69,6 +70,12 @@
 html {
     scroll-behavior: smooth;
     color-scheme: dark;
+    /* Clip horizontal overflow here rather than on body: iOS Safari has a
+       long-standing bug where fixed-position descendants (header, mobile
+       nav, overlay) get mis-sized when body has its own overflow clipping
+       and the dynamic toolbar collapses/expands (landscape especially).
+       This only reproduces on real devices, not in DevTools emulation. */
+    overflow-x: hidden;
 }
 
 body {
@@ -77,7 +84,6 @@ body {
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
-    overflow-x: hidden;
     padding-top: 80px;
     /* Offset for fixed header */
     -webkit-font-smoothing: antialiased;
@@ -288,7 +294,7 @@ header {
 
 .primary-nav .menu li a {
     display: block;
-    padding: 10px 18px;
+    padding: 13px 18px;
     font-weight: 600;
     font-size: 0.95rem;
     letter-spacing: 0.04em;
@@ -301,7 +307,7 @@ header {
 
 .primary-nav .menu li a:hover {
     color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--accent-hover-grey);
     transform: translateY(-2px) !important;
 }
 
@@ -313,7 +319,7 @@ header {
 }
 
 .primary-nav .menu li a.current:hover {
-    background: var(--accent-red-hover-transparent);
+    background: var(--accent-red-hover);
 }
 
 /* Header Book Tickets CTA Button - Distinct Gold VIP Theme */
@@ -415,10 +421,10 @@ header {
     pointer-events: auto;
 }
 
-/* ==========================================================================
-   Hero Cinematic Carousel & Spotlight
-   ========================================================================== */
-
+carous
+    /* ==========================================================================
+       Hero Cinematic Carousel & Spotlight
+       ========================================================================== */
 #picturecarousel,
 .carousel {
     position: relative;
@@ -472,26 +478,47 @@ header {
 }
 
 @keyframes carousel-slide-in-right {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 @keyframes carousel-slide-in-left {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0); }
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 @keyframes carousel-slide-out-left {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 @keyframes carousel-slide-out-right {
-    from { transform: translateX(0); }
-    to { transform: translateX(100%); }
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .carousel-inner .item.slide-in-right,
     .carousel-inner .item.slide-in-left,
     .carousel-inner .item.slide-out-left,
@@ -505,12 +532,11 @@ header {
     height: 100%;
     object-fit: cover;
     object-position: center 25%;
-    filter: brightness(0.68);
     transform: scale(1.04);
     transition: transform 6s ease-out;
 }
 
-.carousel-inner .item.active img {
+.carousel-inner.is-ready .item.active img {
     transform: scale(1);
 }
 
@@ -518,7 +544,7 @@ header {
 .carousel-inner .item::after {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: 0 -100%;
     background: linear-gradient(to bottom,
     rgba(12, 13, 18, 0.2) 0%,
     rgba(12, 13, 18, 0.5) 50%,
@@ -775,7 +801,7 @@ main {
 }
 
 section {
-    padding: clamp(36px, 6vw, 70px) clamp(16px, 5vw, 60px);
+    padding: clamp(36px, 6vw, 70px) clamp(16px, 5vw, 50px);
     position: relative;
 }
 
@@ -1234,6 +1260,7 @@ section {
     margin-bottom: 8px;
     position: relative;
     background: linear-gradient(135deg, #fff 30%, #ffb0ba 55%, #ffd7d7 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -2433,6 +2460,10 @@ select option {
     color: #fff;
 }
 
+.movie-trailer {
+    margin-top: 300px;
+}
+
 /* ==========================================================================
    About Page & FAQs Accordion
    ========================================================================== */
@@ -2762,7 +2793,7 @@ select option {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 40px;
-    padding: 30px clamp(16px, 5vw, 60px);
+    padding: 30px clamp(16px, 5vw, 50px);
     margin: 0 auto;
 }
 
@@ -2842,9 +2873,10 @@ select option {
 .day-of-week {
     font-weight: 700;
     color: #fff;
-    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-size: clamp(1.2rem, 1.5vw, 1rem);
     margin-top: 10px;
     display: block;
+    margin-bottom: clamp(12px, 1vw, 20px);
 }
 
 .show-time-list {
@@ -2972,7 +3004,7 @@ footer small {
 .secondary-nav ul li a {
     color: var(--text-secondary);
     text-transform: uppercase;
-    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
     font-family: var(--font-body);
     font-weight: 700;
     transition: color var(--transition);
@@ -2984,7 +3016,7 @@ footer small {
 
 .loader {
     --color-1: #fff;
-    --color-2: #ff3d00;
+    --color-2: var(--accent-red);
     --size: 1px;
 
     width: calc(48 * var(--size));

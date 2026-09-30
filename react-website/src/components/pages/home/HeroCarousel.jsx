@@ -15,6 +15,12 @@ export function HeroCarousel({ movies }) {
     const [slideDirection, setSlideDirection] = useState('right');
     const [isPaused, setIsPaused] = useState(false);
     const [trailerUrl, setTrailerUrl] = useState('');
+    const [isReady, setIsReady] = useState(false);
+
+    useEffect(() => {
+        const frame = window.requestAnimationFrame(() => setIsReady(true));
+        return () => window.cancelAnimationFrame(frame);
+    }, []);
 
     function handleBlurClick(e, action) {
         e.currentTarget.blur();
@@ -62,14 +68,14 @@ export function HeroCarousel({ movies }) {
             >
                 <ol className="carousel-indicators">
                     {movies.map((item, itemIndex) => (
-                        <li 
+                        <li
                             key={movieId(item)}
                             className={itemIndex === index ? 'active' : ''}
-                            onClick={(e) => handleBlurClick(e, () => changeSlide(itemIndex, itemIndex > index ? 'right' : 'left'))} 
+                            onClick={(e) => handleBlurClick(e, () => changeSlide(itemIndex, itemIndex > index ? 'right' : 'left'))}
                         />
                     ))}
                 </ol>
-                <div className="carousel-inner" role="listbox">
+                <div className={`carousel-inner${isReady ? ' is-ready' : ''}`} role="listbox">
                     {movies.map((movie, itemIndex) => (
                         <div
                             key={movieId(movie)}
@@ -86,7 +92,7 @@ export function HeroCarousel({ movies }) {
                                 <h2>{movie.title}</h2>
                                 <p>{movie.tagline}</p>
                                 <div className="hero-actions">
-                                    <a 
+                                    <a
                                         className="button"
                                         href={`./bookNow.html?movie=${encodeURIComponent(movie.title)}`}
                                         onClick={(e) => e.currentTarget.blur()}
@@ -94,15 +100,15 @@ export function HeroCarousel({ movies }) {
                                         Book Tickets
                                     </a>
                                     {movie.trailer && (
-                                        <button 
-                                            type="button" 
+                                        <button
+                                            type="button"
                                             className="button btn-secondary"
                                             onClick={(e) => handleBlurClick(e, () => setTrailerUrl(movie.trailer))}
                                         >
                                             Watch Trailer
                                         </button>
                                     )}
-                                    <a 
+                                    <a
                                         className="button btn-glass"
                                         href={`./templates/movie-detail.html?movie=${movieId(movie)}`}
                                         onClick={(e) => e.currentTarget.blur()}
@@ -114,15 +120,15 @@ export function HeroCarousel({ movies }) {
                         </div>
                     ))}
                 </div>
-                <button 
-                    className="carousel-control left" 
+                <button
+                    className="carousel-control left"
                     aria-label="Previous slide"
                     onClick={(e) => handleBlurClick(e, () => changeSlide((index - 1 + movies.length) % movies.length, 'left'))}
                 >
                     <span className="material-symbols-outlined">chevron_left</span>
                 </button>
-                <button 
-                    className="carousel-control right" 
+                <button
+                    className="carousel-control right"
                     aria-label="Next slide"
                     onClick={(e) => handleBlurClick(e, () => changeSlide((index + 1) % movies.length, 'right'))}
                 >
@@ -139,9 +145,9 @@ export function HeroCarousel({ movies }) {
                 }}
             >
                 <div className="modal-dialog" role="dialog" aria-modal="true" aria-label="Movie trailer">
-                    <button 
-                        type="button" 
-                        className="modal-close-btn" 
+                    <button
+                        type="button"
+                        className="modal-close-btn"
                         aria-label="Close trailer"
                         onClick={(e) => handleBlurClick(e, () => setTrailerUrl(''))}
                     >

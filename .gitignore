@@ -4,5 +4,6 @@
 
 # Local IDE settings
 .idea/
+.vscode
 
-website/assets/js/config.js
+react-website/src/config.js
