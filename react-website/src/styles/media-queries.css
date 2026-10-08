@@ -91,7 +91,8 @@
 
     /*HAMBURGER MENU STARTS*/
     .primary-nav {
-        display: flex;
+        display: grid;
+        grid-template-rows: 0fr;
         position: fixed;
         top: 70px;
         left: 0;
@@ -103,40 +104,44 @@
         padding: 0 20px;
         z-index: 999;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-        max-height: 0;
         overflow: hidden;
         visibility: hidden;
         pointer-events: none;
-        transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-        padding 0.35s ease,
-        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-        visibility 0s linear 0.35s;
+        transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+            padding 0.35s ease,
+            transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+            visibility 0s linear 0.35s;
     }
 
     .primary-nav.open {
-        display: flex;
-        max-height: min(360px, calc(100svh - 70px));
-        overflow-y: auto;
+        grid-template-rows: 1fr;
         padding: 10px 20px;
         visibility: visible;
         transform: translateY(0);
         pointer-events: auto !important;
-        transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-        padding 0.35s ease,
-        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-        visibility 0s;
+        transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+            padding 0.35s ease,
+            transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+            visibility 0s;
     }
 
     .primary-nav .menu {
         flex-direction: column;
         width: 100%;
         gap: 10px;
+        padding: 0 10px;
+        min-height: 0;
+        overflow: hidden;
+        transition: padding 0.35s ease;
+    }
+
+    .primary-nav.open .menu {
         padding: 10px;
     }
 
     .primary-nav .menu li {
         opacity: 0;
-        transition: opacity 0.1s ease;
+        transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .primary-nav.open .menu li {
@@ -324,7 +329,7 @@
         line-height: 1.2;
     }
 
-    .movie-detail-caption p {
+    .movie-detail-meta p {
         line-height: 1.45;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -369,7 +374,8 @@
 
     .genre-filter-container {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        flex-wrap: nowrap;
         align-items: stretch;
         gap: 12px;
     }
@@ -378,6 +384,7 @@
         flex-direction: column;
         align-items: stretch;
         gap: 12px;
+        width: 100%;
     }
 
     .poster-section,
@@ -660,9 +667,9 @@
 
     .section-header h1,
     .section-header h2,
-    .poster-section > h1,
-    .offers > h1,
-    .genre > h1 {
+    .poster-section>h1,
+    .offers>h1,
+    .genre>h1 {
         font-size: 1.8rem;
     }
 
