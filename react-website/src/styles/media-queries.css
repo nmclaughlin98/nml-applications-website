@@ -573,17 +573,6 @@
         display: none;
     }
 
-    .poster-column .overlay .button {
-        align-self: center;
-    }
-
-    .poster-column .overlay .button,
-    .poster-column .overlay .btn-secondary {
-        font-size: 1.0rem;
-        height: 2.2rem;
-        width: 80%;
-    }
-
     .step-header h2 {
         font-size: 1.7rem;
         margin-bottom: 10px;

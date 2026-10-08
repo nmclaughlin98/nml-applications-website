@@ -878,6 +878,7 @@ section {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg), 0 0 30px rgba(255, 51, 75, 0.2);
     border-color: var(--border-accent);
+    color: inherit;
 }
 
 /* Movie Poster Image */
@@ -973,54 +974,6 @@ section {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-}
-
-/* Movie Poster Buttons: ONLY show up when hovering */
-.poster-column .overlay .button,
-.poster-column .overlay button,
-.poster-column .overlay .btn-secondary {
-    width: 100%;
-    font-size: 1.1rem;
-    letter-spacing: 0.05em;
-    border-radius: var(--radius-sm);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(16px);
-    pointer-events: none;
-    max-height: 0;
-    margin: 0;
-    padding: 0 14px;
-    overflow: hidden;
-    border-width: 0;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    margin 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    padding 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    border-width 0.3s ease;
-}
-
-.poster-column:hover .overlay .button,
-.poster-column:hover .overlay .btn-secondary {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-    max-height: 48px;
-    margin: 4px 0;
-    padding: 10px 16px;
-    border-width: 1px;
-}
-
-.poster-column .overlay .button:nth-of-type(2) {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--border-subtle);
-    color: var(--text-primary) !important;
-}
-
-.poster-column .overlay .button:nth-of-type(2):hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Coming-soon countdown clock */
